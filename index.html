@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AP Bio Ch. 1–3 Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f1;--card:#fff;--fg:#10262b;--mut:#5b7075;--ac:#0f766e;--am:#f5a524;--ok:#16a34a;--no:#e11d48;--ln:#d3dfdc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ln:#1f3d42}}
+:root[data-theme="dark"]{--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ln:#1f3d42}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--fg);font-family:'Bricolage Grotesque',system-ui,sans-serif}
+body{min-height:100vh;overflow-x:hidden}
+.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.25;z-index:0;animation:fl 14s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--ac);top:-80px;left:-60px}.b2{width:280px;height:280px;background:var(--am);bottom:-60px;right:-40px;animation-delay:-6s}
+@keyframes fl{to{transform:translate(60px,80px) scale(1.2)}}
+header,main{position:relative;z-index:1;max-width:820px;margin:auto;padding:14px}
+h1{margin:0;font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.xp{font-size:.85rem;color:var(--mut);text-align:right}.xpb{width:120px;height:6px;background:var(--ln);border-radius:9px;overflow:hidden;margin-top:4px}.xpb i{display:block;height:100%;background:var(--am);transition:width .6s}
+nav{display:flex;gap:6px;margin-top:12px;overflow-x:auto}
+nav button,.chip{border:1px solid var(--ln);background:var(--card);color:var(--fg);font:inherit;padding:8px 14px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:.2s}
+nav button:hover,.chip:hover{transform:translateY(-2px)}nav .on,.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:20px;margin-top:14px}
+.in{animation:in .45s cubic-bezier(.2,.9,.3,1.2)}@keyframes in{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.shake{animation:sk .4s}@keyframes sk{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.top{display:flex;justify-content:space-between;color:var(--mut)}.bar{height:8px;background:var(--ln);border-radius:9px;margin:10px 0;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--am));transition:width .5s}
+.q{font-size:1.2rem;line-height:1.5;margin:14px 0}.bl{display:inline-block;border-bottom:3px solid var(--am);min-width:70px;text-align:center;font-weight:800;color:var(--ac)}
+.opts{display:grid;gap:9px}.opt,.go{font:inherit;text-align:left;padding:13px 16px;border-radius:12px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;transition:.2s}
+.opt:hover:not(:disabled){border-color:var(--ac);transform:translateX(6px)}.opt.ok{background:var(--ok);border-color:var(--ok);color:#fff;animation:pop .4s}.opt.no{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.opt.sel{border-color:var(--am);background:var(--am);color:#111}
+@keyframes pop{50%{transform:scale(1.04)}}
+.go{background:var(--ac);color:#fff;border-color:var(--ac);margin-top:12px;text-align:center;font-weight:600}.go:hover{transform:scale(1.04)}
+.fb{margin-top:12px;padding:12px;border-radius:12px;font-size:.95rem;animation:in .3s}.fb.g{background:#16a34a22}.fb.b{background:#e11d4822}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.fc{perspective:900px;height:250px;margin:14px 0;cursor:pointer}.fi{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}.flip .fi{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:var(--card);border:2px solid var(--ac);font-size:1.15rem}
+.face.back{transform:rotateY(180deg);background:var(--ac);color:#fff;font-size:1rem}.face h2{font-size:2rem;margin:0}.face small{opacity:.8;margin-top:10px}
+.row{display:flex;gap:8px}.row .go{flex:1}
+.ring{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;flex:none;transition:.6s}.ring div{width:100px;height:100px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.7rem;font-weight:800}
+.hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:7px;margin-top:12px}
+.tile{font:inherit;font-size:.8rem;padding:10px 6px;border-radius:10px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;animation:tp .5s backwards;transition:.2s}.tile:hover{transform:scale(1.08) rotate(-2deg)}
+@keyframes tp{from{opacity:0;transform:scale(.3)}}
+.tile.done{background:var(--ok);color:#fff;border-color:var(--ok)}.tile.weak{border-color:var(--no);color:var(--no);font-weight:600}.tile.learn{border-color:var(--am)}
+.mg{display:grid;grid-template-columns:1.6fr 1fr;gap:8px;margin-top:12px}.mg div{display:grid;gap:8px;align-content:start}
+.m{font:inherit;font-size:.88rem;text-align:left;padding:10px;border-radius:10px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;transition:.25s}.m.s{border-color:var(--am);transform:scale(1.03)}.m.x{animation:sk .4s;border-color:var(--no)}.m.gone{opacity:.25;transform:scale(.9);pointer-events:none;background:var(--ok);color:#fff}
+.c{text-align:center}.big{font-size:4.5rem;font-weight:800;color:var(--ac);animation:pop .8s}.rev .fb{text-align:left}
+.cf{position:fixed;top:-14px;width:8px;height:13px;z-index:9;pointer-events:none;animation:fall 2.2s ease-in forwards}@keyframes fall{to{transform:translate(var(--dx),105vh) rotate(720deg)}}
+ul{padding-left:18px;line-height:1.6;font-size:.92rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:560px){.mg{grid-template-columns:1fr 1fr}.fc{height:280px}}
+</style></head><body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<header><div class="hd"><h1>⚛ AP Bio Lab<br><small style="font-weight:400;font-size:.8rem;color:var(--mut)">Ch. 1–3 · 45 terms · apply them, don't recite them</small></h1><div class="xp" id="xp"></div></div>
+<nav id="nav"></nav></header><main id="app"></main>
+<script>
+const D=`Mass Number|Total protons + neutrons in an atom|Carbon-14 has a ___ of 14 because its nucleus holds 6 protons and 8 neutrons.|A
+Valence Electrons|Electrons in the outermost energy level|Chlorine readily grabs one more electron because it has seven ___.|A
+Polar Covalent Bond|Covalent bond with unequal electron sharing|The O–H bonds in water are ___ bonds, leaving oxygen slightly negative.|B
+Element|Pure substance made of one type of atom|Gold is an ___ because it cannot be broken into simpler substances by chemical means.|A
+Dalton|Unit of atomic/molecular mass (1 amu)|A biochemist reports a protein's mass in ___, the unit for atomic and molecular mass.|A
+Potential Energy|Stored energy from position or structure|A boulder at the top of a hill has ___ that becomes motion as it rolls.|E
+Nonpolar Covalent Bond|Covalent bond with equal electron sharing|Two identical oxygen atoms in O₂ share electrons equally in a ___.|B
+Compound|Two or more different elements bonded in a fixed ratio|NaCl is a ___ because sodium and chlorine are chemically joined 1:1 with new properties.|A
+Isotope|Atoms of one element with different neutron numbers|Carbon-12 and carbon-14 are ___ of each other: same protons, different neutrons.|A
+Orbital|Region where an electron is found ~90% of the time|Electrons are not on tracks; each one occupies a 3D ___ where it is most likely found.|A
+Cation|Positively charged ion (lost electrons)|When sodium gives up an electron it becomes a ___ with a +1 charge.|B
+Proton|Positive particle in the nucleus; defines the element|Changing the number of ___ in an atom turns it into a different element.|A
+Radioactive Isotope|Unstable isotope that decays and emits radiation|Carbon-14 is a ___ because its nucleus spontaneously decays over time.|R
+Covalent Bond|Atoms share electron pairs|Two nonmetals sharing electrons to fill their outer shells are joined by a ___.|B
+Anion|Negatively charged ion (gained electrons)|Chlorine gains an electron and becomes a ___ (Cl⁻).|B
+Neutron|Uncharged particle in the nucleus|Adding one ___ to a nucleus changes mass number but not charge or element.|A
+Half-life|Time for half a radioactive sample to decay|After one ___ of 5,730 years, half of a fossil's original C-14 remains.|R
+Molecule|Two or more atoms held by covalent bonds|H₂O is a ___ because its atoms share electrons; NaCl is not, since its ions are attracted.|B
+Ionic Bond|Attraction between oppositely charged ions after electron transfer|Na⁺ and Cl⁻ stick together in table salt through an ___.|B
+Electron|Negative particle outside the nucleus|In a neutral atom, the number of ___ equals the number of protons.|A
+Radiometric Dating|Finding age by measuring decay of radioactive isotopes|A geologist estimated a rock's age using ___, comparing parent and daughter isotopes.|R
+Single Bond|One shared electron pair|In H–H the two atoms share one pair of electrons in a ___.|B
+Double Bond|Two shared electron pairs|The O=O link in O₂ is a ___: two pairs of electrons are shared.|B
+Triple Bond|Three shared electron pairs|N≡N in nitrogen gas is extremely hard to break because it is a ___.|B
+Hydrogen Bond|Weak attraction between a partly positive H and a partly negative atom (O, N)|Water molecules cling together because the δ+ H of one is drawn to the δ− O of another through a ___.|W
+Atomic Nucleus|Center of an atom holding protons and neutrons|Nearly all of an atom's mass is packed into its tiny ___.|A
+Energy|Capacity to do work or cause change|Muscle contraction requires ___, the capacity to do work.|E
+Electronegativity|An atom's pull on shared electrons|Oxygen drags shared electrons closer than hydrogen does because of its higher ___.|B
+Van der Waals|Weak attraction from temporary uneven electron distribution|A gecko clings to glass through many weak ___ attractions caused by fleeting charge shifts.|W
+Specific Heat|Heat needed to raise 1 g of a substance by 1°C|A lake warms far more slowly than the sand beside it because water has a high ___.|W
+Reactants|Starting substances in a chemical reaction|In photosynthesis, CO₂ and H₂O are the ___ that get converted.|E
+Products|Substances formed by a reaction|In cellular respiration, CO₂ and H₂O are the ___ that are released.|E
+Acid|Substance that increases H⁺ concentration|Lemon juice, at pH 2, is an ___ because it adds H⁺ to a solution.|P
+Base|Substance that decreases H⁺ concentration|Adding NaOH, a ___, to a solution lowers its H⁺ concentration.|P
+Hydroxide|Negative ion OH⁻|A base often releases ___ ions (OH⁻) that bind free H⁺.|P
+Buffer|Resists pH change when acid or base is added|Blood stays near pH 7.4 after exercise thanks to a ___ that absorbs extra H⁺ or OH⁻.|P
+pH Scale|0–14 logarithmic measure of H⁺ concentration|Moving from 3 to 4 on the ___ means ten times less H⁺.|P
+Solution|Homogeneous mixture of solute dissolved in solvent|Salt stirred into water makes a ___ that stays evenly mixed and never settles.|S
+Solvent|The substance that does the dissolving|In salt water, water is the ___ because it does the dissolving.|S
+Solute|The substance that gets dissolved|In sweet tea, sugar is the ___.|S
+Hydrophilic|Water-loving; polar or charged|Sugars dissolve easily in water because they are ___, with polar groups.|S
+Hydrophobic|Water-fearing; nonpolar|Oil beads up on water because its nonpolar molecules are ___.|S
+Adhesion|Attraction between different substances|Water creeping up the wall of a narrow glass tube shows ___ between water and glass.|W
+Cohesion|Attraction between molecules of the same substance|A water strider walks on a pond because of ___ among water molecules.|W
+Dissolved Substances|Particles spread evenly through a solution; the solutes|The ions and sugar spread evenly through the water are ___, which are the solutes.|S`.split('\n').map(l=>{const p=l.split('|');return{t:p[0],d:p[1],s:p[2],g:p[3]}});
+const X=[
+{q:'An atom has 11 protons and 12 neutrons, then loses one electron. Its mass number and charge are:',o:['23, +1','23, −1','22, +1','12, 0'],a:0,e:'Mass number = 11 + 12 = 23. Losing an electron leaves one more proton than electrons: +1 (a cation).'},
+{q:'For {75, 80, 85, 90, 95}, the sample standard deviation (n − 1) is about:',o:['7.07','7.91','3.54','50'],a:1,e:'Squared deviations sum to 250; 250/4 = 62.5; √62.5 ≈ 7.91. Dividing by N gives 7.07 (population).'},
+{q:'With SD = 7.91 and n = 5, the standard error is:',o:['7.91','1.58','3.54','17.7'],a:2,e:'SE = SD/√n = 7.91/2.236 ≈ 3.54.'},
+{q:'100 g of an isotope has a half-life of 10 years. How much remains after 30 years?',o:['50 g','25 g','12.5 g','33 g'],a:2,e:'Three half-lives: 100 → 50 → 25 → 12.5 g.'},
+{q:'Solution A has pH 3 and solution B has pH 6. Compared with B, A has:',o:['3× more H⁺','30× more H⁺','1,000× more H⁺','1,000× less H⁺'],a:2,e:'Each pH unit is a factor of 10; 3 units = 10³ = 1,000× more H⁺.'},
+{q:'A bond forms between two atoms of nearly identical electronegativity. It is most likely:',o:['Ionic','Polar covalent','Nonpolar covalent','Hydrogen'],a:2,e:'Equal pull on electrons means equal sharing: nonpolar covalent.'},
+{q:'Which best explains why water has a high specific heat?',o:['Hydrogen bonds must break before molecules speed up','Water is a nonpolar solvent','Water has ionic bonds','Water has a low mass number'],a:0,e:'Heat energy goes into breaking hydrogen bonds first, so temperature rises slowly.'},
+{q:'A neutral atom has 17 protons. Its valence electrons and the ion it tends to form are:',o:['1; cation','7; anion','7; cation','17; anion'],a:1,e:'Cl has 2-8-7 electrons: 7 valence, gains one to become Cl⁻ (anion).'}];
+const G={A:'Atoms',B:'Bonds & Ions',R:'Radioactivity',E:'Energy & Reactions',W:'Water',S:'Solutions',P:'Acids & pH'};
+const $=s=>document.querySelector(s),app=$('#app');
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const all=D.map((_,i)=>i);
+let S={m:{},xp:0};try{S=JSON.parse(localStorage.getItem('apbio')||'')||S}catch(e){}
+const save=()=>{try{localStorage.setItem('apbio',JSON.stringify(S))}catch(e){}};
+const rec=(i,ok)=>{const m=S.m[i]||(S.m[i]={c:0,w:0});ok?(m.c++,S.xp+=10):m.w++;save();hdr()};
+const lvl=i=>{const m=S.m[i];return!m?'new':m.c>=2&&m.c>m.w?'done':m.w>=m.c?'weak':'learn'};
+const hdr=()=>{$('#xp').innerHTML=`Level ${1+(S.xp/100|0)} · ${S.xp} XP<div class=xpb><i style="width:${S.xp%100}%"></i></div>`};
+function boom(){for(let i=0;i<55;i++){const e=document.createElement('i');e.className='cf';e.style.cssText=`left:${Math.random()*100}vw;background:hsl(${Math.random()*360} 90% 60%);--dx:${Math.random()*220-110}px;animation-delay:${Math.random()*.4}s`;document.body.append(e);setTimeout(()=>e.remove(),2700)}}
+const blank=s=>s.replace('___','<span class=bl>_____</span>');
+function mkQ(i){const x=D[i];let p=sh(all.filter(k=>k!==i&&D[k].g===x.g)).slice(0,3);if(p.length<3)p=p.concat(sh(all.filter(k=>k!==i&&!p.includes(k))).slice(0,3-p.length));const o=sh([i,...p]);return{t:i,q:x.s,o:o.map(k=>D[k].t),a:o.indexOf(i),e:`${x.t}: ${x.d}.`}}
+const pr={weak:0,new:1,learn:2,done:3};
+let Q,cur='home';
+function quiz(list,title,ex,re){Q={l:list,i:0,s:0,st:0,ex,title,miss:[],re};ask()}
+function ask(){if(Q.i>=Q.l.length)return fin();const q=Q.l[Q.i];
+app.innerHTML=`<div class="card in" id=qc><div class=top><b>${Q.title}</b><span>${Q.i+1}/${Q.l.length} · streak ${Q.st}</span></div><div class=bar><i style="width:${Q.i/Q.l.length*100}%"></i></div><p class=q>${blank(q.q)}</p><div class=opts>${q.o.map((o,k)=>`<button class=opt data-k=${k}>${o}</button>`).join('')}</div><div id=fb></div></div>`;
+app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k))}
+function pick(k){const q=Q.l[Q.i],ok=k===q.a,bs=app.querySelectorAll('.opt');bs.forEach(b=>b.disabled=true);
+if(q.t!=null)rec(q.t,ok);else if(ok)S.xp+=10;
+if(ok){Q.s++;Q.st++}else{Q.st=0;Q.miss.push(q);$('#qc').classList.add('shake')}
+if(Q.ex){bs[k].classList.add('sel');setTimeout(()=>{Q.i++;ask()},400);return}
+bs[k].classList.add(ok?'ok':'no');if(!ok)bs[q.a].classList.add('ok');
+if(q.t!=null)$('.bl').textContent=q.o[q.a];
+$('#fb').innerHTML=`<div class="fb ${ok?'g':'b'}">${ok?'✔ Correct.':'✘ Not quite.'} ${q.e}</div><button class=go id=nx style="width:100%">Next</button>`;
+$('#nx').onclick=()=>{Q.i++;ask()};if(ok&&Q.st%5==0)boom();save();hdr()}
+function fin(){const p=Math.round(Q.s/Q.l.length*100);if(p>=80)boom();
+app.innerHTML=`<div class="card in c"><h2>${Q.title} finished</h2><div class=big>${p}%</div><p>${Q.s} of ${Q.l.length} correct</p>${Q.miss.length?`<h3>Review what you missed</h3><div class=rev>${Q.miss.map(q=>`<div class="fb b"><small>${q.q.replace('___','_____')}</small><br><b>${q.e}</b></div>`).join('')}</div>`:'<p>Flawless run.</p>'}<button class=go id=re>Go again</button></div>`;$('#re').onclick=Q.re}
+const applyStart=()=>quiz(sh(sh(all).sort((a,b)=>pr[lvl(a)]-pr[lvl(b)]).slice(0,15)).map(mkQ),'Apply it',false,applyStart);
+const examStart=()=>quiz(sh([...sh(all).slice(0,22).map(mkQ),...X]),'Practice exam',true,examStart);
+let F={g:'All',i:0,fl:false};
+function learn(){const ks=['All','Weak',...Object.keys(G)];
+const deck=all.filter(i=>F.g=='All'||(F.g=='Weak'?lvl(i)=='weak':D[i].g==F.g));if(F.i>=deck.length)F.i=0;
+const chips=ks.map(k=>`<button class="chip ${F.g==k?'on':''}" data-k=${k}>${G[k]||k}</button>`).join('');
+if(!deck.length){app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p>Nothing here yet. Miss a few terms in Apply it and they'll show up under Weak.</p></div>`;bind();return}
+const i=deck[F.i],x=D[i];
+app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p class=top><span>${G[x.g]}</span><span>${F.i+1}/${deck.length}</span></p><div class="fc ${F.fl?'flip':''}" id=fc><div class=fi><div class=face><h2>${x.t}</h2><small>tap to flip</small></div><div class="face back"><b>${x.d}</b><small>${x.s.replace('___',x.t.toUpperCase())}</small></div></div></div><div class=row><button class=go id=ag style="background:var(--no);border-color:var(--no)">Again</button><button class=go id=gt>Got it</button></div></div>`;
+$('#fc').onclick=()=>$('#fc').classList.toggle('flip');
+const nx=ok=>{rec(i,ok);F.i=ok?F.i+1:(F.i+1)%deck.length;F.fl=false;learn()};
+$('#gt').onclick=()=>{if(F.i+1>=deck.length)boom();nx(true)};$('#ag').onclick=()=>nx(false);bind()}
+function bind(){app.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{F.g=b.dataset.k;F.i=0;F.fl=false;learn()})}
+function match(){const gs=sh(Object.keys(G)).slice(0,3);let ids=sh(all.filter(i=>gs.includes(D[i].g))).slice(0,8);if(ids.length<8)ids=ids.concat(sh(all.filter(i=>!ids.includes(i))).slice(0,8-ids.length));
+let L=null,R=null,n=0;
+app.innerHTML=`<div class="card in"><div class=top><b>Match the situation to the term</b><span id=mc>0/8</span></div><div class=mg><div>${sh(ids).map(i=>`<button class=m data-l=${i}>${blank(D[i].s)}</button>`).join('')}</div><div>${sh(ids).map(i=>`<button class=m data-r=${i}>${D[i].t}</button>`).join('')}</div></div></div>`;
+const chk=()=>{if(L==null||R==null)return;const l=$(`[data-l="${L}"]`),r=$(`[data-r="${R}"]`);
+if(L==R){[l,r].forEach(e=>{e.className='m gone'});rec(L,true);$('#mc').textContent=++n+'/8';if(n==8){boom();app.firstChild.insertAdjacentHTML('beforeend','<button class=go id=nr style="width:100%">Next round</button>');$('#nr').onclick=match}}
+else{[l,r].forEach(e=>{e.className='m x';setTimeout(()=>e.className='m',450)});rec(L,false)}L=R=null};
+app.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{app.querySelectorAll('[data-l]').forEach(e=>e.classList.remove('s'));b.classList.add('s');L=+b.dataset.l;chk()});
+app.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{app.querySelectorAll('[data-r]').forEach(e=>e.classList.remove('s'));b.classList.add('s');R=+b.dataset.r;chk()})}
+function home(){const d=all.filter(i=>lvl(i)=='done').length,w=all.filter(i=>lvl(i)=='weak').length,p=Math.round(d/45*100);
+app.innerHTML=`<div class="card in"><div class=hero><div class=ring style="background:conic-gradient(var(--ac) ${p*3.6}deg,var(--ln) 0)"><div>${p}%</div></div><div><h2 style="margin:0">${d} of 45 terms mastered</h2><p style="color:var(--mut)">${w} need work. Get a term right twice in a row-ish (more right than wrong, min. 2) to turn it green. Tap any tile to peek.</p></div></div><div class=tiles>${all.map(i=>`<button class="tile ${lvl(i)}" style="animation-delay:${i*18}ms" data-i=${i}>${D[i].t}</button>`).join('')}</div><div id=info></div></div>
+<div class="card in"><b>Fix these on your sheet first</b><ul><li><b>Neutron</b>: no charge (not positive and negative).</li><li><b>Reactants</b> are what you start with; <b>products</b> are what forms. Your sheet has them swapped.</li><li><b>C</b> is Carbon, not Calcium.</li><li><b>Specific heat</b>: heat to raise 1 g of a substance 1°C. Water's is high.</li><li><b>Hydrogen bond</b>: weak attraction between a partly + hydrogen and a partly − atom like O or N.</li><li><b>Std. deviation</b>: dividing by N gives 7.07; your 7.91 uses n − 1 (sample). Ask which your teacher wants.</li></ul><button class=go id=rs style="background:var(--no);border-color:var(--no)">Reset progress</button></div>`;
+app.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{const x=D[b.dataset.i];$('#info').innerHTML=`<div class="fb g"><b>${x.t}</b>: ${x.d}.<br><small>${x.s.replace('___','<u>'+x.t+'</u>')}</small></div>`});
+$('#rs').onclick=()=>{S={m:{},xp:0};save();hdr();home()}}
+const V={home,learn,apply:applyStart,match,exam:examStart};
+const N={home:'Progress',learn:'Flashcards',apply:'Apply it',match:'Match',exam:'Practice exam'};
+$('#nav').innerHTML=Object.keys(N).map(k=>`<button data-v=${k}>${N[k]}</button>`).join('');
+function go(v){cur=v;document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==v));V[v]()}
+document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.v));
+hdr();go('home');
+</script></body></html>
