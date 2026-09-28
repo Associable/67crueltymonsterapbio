@@ -4,53 +4,59 @@
 <title>AP Bio Ch. 1–3 Lab</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef3f1;--card:#fff;--fg:#10262b;--mut:#5b7075;--ac:#0f766e;--am:#f5a524;--ok:#16a34a;--no:#e11d48;--ln:#d3dfdc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ln:#1f3d42}}
-:root[data-theme="dark"]{--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ln:#1f3d42}
+:root{--bg:#eef3f1;--card:#fff;--fg:#10262b;--mut:#5b7075;--ac:#0f766e;--ac2:#14b8a6;--on:#fff;--am:#f5a524;--ok:#16a34a;--no:#e11d48;--ln:#d3dfdc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ac2:#0f9d8f;--on:#062326;--ln:#1f3d42}}
+:root[data-theme="dark"]{--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ac2:#0f9d8f;--on:#062326;--ln:#1f3d42}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--fg);font-family:'Bricolage Grotesque',system-ui,sans-serif}
 body{min-height:100vh;overflow-x:hidden}
-.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.25;z-index:0;animation:fl 14s ease-in-out infinite alternate}
-.b1{width:340px;height:340px;background:var(--ac);top:-80px;left:-60px}.b2{width:280px;height:280px;background:var(--am);bottom:-60px;right:-40px;animation-delay:-6s}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.28;z-index:0;pointer-events:none;animation:fl 14s ease-in-out infinite alternate}
+.b1{width:360px;height:360px;background:var(--ac);top:-90px;left:-70px}.b2{width:300px;height:300px;background:var(--am);bottom:-70px;right:-50px;animation-delay:-6s}.b3{width:220px;height:220px;background:#6366f1;top:40%;right:-90px;opacity:.15;animation-delay:-3s}
 @keyframes fl{to{transform:translate(60px,80px) scale(1.2)}}
-header,main{position:relative;z-index:1;max-width:820px;margin:auto;padding:14px}
-h1{margin:0;font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
-.hd{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.xp{font-size:.85rem;color:var(--mut);text-align:right}.xpb{width:120px;height:6px;background:var(--ln);border-radius:9px;overflow:hidden;margin-top:4px}.xpb i{display:block;height:100%;background:var(--am);transition:width .6s}
-nav{display:flex;gap:6px;margin-top:12px;overflow-x:auto}
-nav button,.chip{border:1px solid var(--ln);background:var(--card);color:var(--fg);font:inherit;padding:8px 14px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:.2s}
-nav button:hover,.chip:hover{transform:translateY(-2px)}nav .on,.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
-.card{background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:20px;margin-top:14px}
-.in{animation:in .45s cubic-bezier(.2,.9,.3,1.2)}@keyframes in{from{opacity:0;transform:translateY(24px) scale(.97)}}
-.shake{animation:sk .4s}@keyframes sk{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
-.top{display:flex;justify-content:space-between;color:var(--mut)}.bar{height:8px;background:var(--ln);border-radius:9px;margin:10px 0;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--am));transition:width .5s}
-.q{font-size:1.2rem;line-height:1.5;margin:14px 0}.bl{display:inline-block;border-bottom:3px solid var(--am);min-width:70px;text-align:center;font-weight:800;color:var(--ac)}
-.opts{display:grid;gap:9px}.opt,.go{font:inherit;text-align:left;padding:13px 16px;border-radius:12px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;transition:.2s}
-.opt:hover:not(:disabled){border-color:var(--ac);transform:translateX(6px)}.opt.ok{background:var(--ok);border-color:var(--ok);color:#fff;animation:pop .4s}.opt.no{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.opt.sel{border-color:var(--am);background:var(--am);color:#111}
-@keyframes pop{50%{transform:scale(1.04)}}
-.go{background:var(--ac);color:#fff;border-color:var(--ac);margin-top:12px;text-align:center;font-weight:600}.go:hover{transform:scale(1.04)}
-.fb{margin-top:12px;padding:12px;border-radius:12px;font-size:.95rem;animation:in .3s}.fb.g{background:#16a34a22}.fb.b{background:#e11d4822}
+header,main{position:relative;z-index:1;max-width:840px;margin:auto;padding:14px}
+h1{margin:0;font-size:1.6rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;background:linear-gradient(90deg,var(--ac),var(--am));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 small{display:block;font-weight:400;font-size:.8rem;margin-top:3px;-webkit-text-fill-color:var(--mut)}
+h2,h3{margin:0}h3{font-size:1rem;margin:20px 0 8px}h3 small{color:var(--mut);font-weight:400}
+.hd,.top,.row,.hero{display:flex;gap:10px}.hd{justify-content:space-between;align-items:center}.top{justify-content:space-between;color:var(--mut)}
+.xp{font-size:.85rem;color:var(--mut);text-align:right;font-weight:600}.xpb{width:130px;height:7px;background:var(--ln);border-radius:9px;overflow:hidden;margin:4px 0 0 auto}.xpb i{display:block;height:100%;background:linear-gradient(90deg,var(--am),#fb7185);transition:width .6s}
+nav{display:flex;gap:6px;margin-top:12px;overflow-x:auto;padding:2px 2px 6px}
+nav button,.chip{border:1px solid var(--ln);background:var(--card);color:var(--fg);font:inherit;padding:8px 15px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:.2s}
+nav button:hover,.chip:hover{transform:translateY(-2px);border-color:var(--ac)}nav .on,.chip.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);border-color:transparent;box-shadow:0 4px 14px #0f766e55}
+.card{background:color-mix(in srgb,var(--card) 90%,transparent);backdrop-filter:blur(10px);border:1px solid var(--ln);border-radius:20px;padding:22px;margin-top:14px;box-shadow:0 8px 30px #0f766e14}
+.in{animation:in .5s cubic-bezier(.2,.9,.3,1.2)}@keyframes in{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.shake{animation:sk .4s}@keyframes sk{25%{transform:translateX(-9px)}75%{transform:translateX(9px)}}@keyframes pop{50%{transform:scale(1.05)}}
+.bar{height:8px;background:var(--ln);border-radius:9px;margin:10px 0;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--am));border-radius:9px;transition:width .5s}
+.q{font-size:1.2rem;line-height:1.55;margin:16px 0}.bl{display:inline-block;border-bottom:3px solid var(--am);min-width:80px;text-align:center;font-weight:800;color:var(--ac)}
+.opts{display:grid;gap:9px}
+.opt,.m,.tile{font:inherit;text-align:left;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;transition:.2s}
+.opt{display:flex;gap:12px;align-items:center;position:relative;width:100%;padding:12px 14px;border-radius:14px}.opt b{flex:none;width:28px;height:28px;border-radius:9px;background:var(--ln);display:grid;place-items:center;font-size:.8rem}
+.opt:hover:not(:disabled){border-color:var(--ac);transform:translateX(6px)}.opt.ok{background:var(--ok);border-color:var(--ok);color:#fff;animation:pop .4s}.opt.no{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.opt.ok b,.opt.no b{background:#fff3}.opt.sel{background:var(--am);border-color:var(--am);color:#111}
+.xpf{position:absolute;right:14px;top:6px;font-style:normal;font-weight:800;animation:up 1s forwards}@keyframes up{to{transform:translateY(-30px);opacity:0}}
+.go{font:inherit;font-weight:600;padding:12px 18px;border-radius:14px;border:0;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);cursor:pointer;margin-top:12px;transition:.2s;box-shadow:0 4px 14px #0f766e40}.go:hover{transform:translateY(-2px) scale(1.03)}.go.alt{background:var(--bg);color:var(--fg);box-shadow:none;border:2px solid var(--ln)}
+.fb{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:.93rem;animation:in .3s;background:#0f766e1f}.fb.g{background:#16a34a22}.fb.b{background:#e11d4822}
+.hint{font-size:.78rem;color:var(--mut);margin:14px 0 0;text-align:center}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .fc{perspective:900px;height:250px;margin:14px 0;cursor:pointer}.fi{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}.flip .fi{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:var(--card);border:2px solid var(--ac);font-size:1.15rem}
-.face.back{transform:rotateY(180deg);background:var(--ac);color:#fff;font-size:1rem}.face h2{font-size:2rem;margin:0}.face small{opacity:.8;margin-top:10px}
-.row{display:flex;gap:8px}.row .go{flex:1}
-.ring{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;flex:none;transition:.6s}.ring div{width:100px;height:100px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.7rem;font-weight:800}
-.hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:7px;margin-top:12px}
-.tile{font:inherit;font-size:.8rem;padding:10px 6px;border-radius:10px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;animation:tp .5s backwards;transition:.2s}.tile:hover{transform:scale(1.08) rotate(-2deg)}
-@keyframes tp{from{opacity:0;transform:scale(.3)}}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;background:var(--card);border:2px solid var(--ac);font-size:1.1rem}
+.face.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);font-size:1rem}.face h2{font-size:2rem}.face small{display:block;margin-top:12px;opacity:.8}
+.row .go{flex:1}
+.ring{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;flex:none;animation:pop .9s}.ring div{width:100px;height:100px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.7rem;font-weight:800}
+.hero{gap:22px;align-items:center;flex-wrap:wrap}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:7px}
+.tile{font-size:.8rem;padding:10px 8px;border-radius:12px;animation:tp .5s backwards}.tile:hover{transform:scale(1.08) rotate(-2deg);border-color:var(--ac)}@keyframes tp{from{opacity:0;transform:scale(.3)}}
 .tile.done{background:var(--ok);color:#fff;border-color:var(--ok)}.tile.weak{border-color:var(--no);color:var(--no);font-weight:600}.tile.learn{border-color:var(--am)}
-.mg{display:grid;grid-template-columns:1.6fr 1fr;gap:8px;margin-top:12px}.mg div{display:grid;gap:8px;align-content:start}
-.m{font:inherit;font-size:.88rem;text-align:left;padding:10px;border-radius:10px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;transition:.25s}.m.s{border-color:var(--am);transform:scale(1.03)}.m.x{animation:sk .4s;border-color:var(--no)}.m.gone{opacity:.25;transform:scale(.9);pointer-events:none;background:var(--ok);color:#fff}
-.c{text-align:center}.big{font-size:4.5rem;font-weight:800;color:var(--ac);animation:pop .8s}.rev .fb{text-align:left}
+#info{position:sticky;bottom:12px;margin-top:8px}#info .fb{background:var(--card);border:2px solid var(--ac);box-shadow:0 8px 24px #0004}
+.mg{display:grid;grid-template-columns:1.6fr 1fr;gap:8px;margin-top:12px}.mg>div{display:grid;gap:8px;align-content:start}
+.m{font-size:.88rem;padding:10px;border-radius:12px}.m:hover{border-color:var(--ac)}.m.s{border-color:var(--am);transform:scale(1.03)}.m.x{animation:sk .4s;border-color:var(--no)}.m.gone{opacity:.3;transform:scale(.9);pointer-events:none;background:var(--ok);color:#fff}
+.c{text-align:center}.big{font-size:4.5rem;font-weight:800;color:var(--ac);line-height:1.2}
+.bd{display:grid;gap:6px;text-align:left;margin:14px auto;max-width:460px;font-size:.88rem}.bd>div{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center}.bd .bar{margin:0}.bd .bar i{animation:gr 1s}@keyframes gr{from{width:0!important}}
+.rev .fb{text-align:left}
 .cf{position:fixed;top:-14px;width:8px;height:13px;z-index:9;pointer-events:none;animation:fall 2.2s ease-in forwards}@keyframes fall{to{transform:translate(var(--dx),105vh) rotate(720deg)}}
 ul{padding-left:18px;line-height:1.6;font-size:.92rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media(max-width:560px){.mg{grid-template-columns:1fr 1fr}.fc{height:280px}}
+@media(max-width:560px){.fc{height:290px}.bd>div{grid-template-columns:90px 1fr 36px}}
 </style></head><body>
-<div class="blob b1"></div><div class="blob b2"></div>
-<header><div class="hd"><h1>⚛ AP Bio Lab<br><small style="font-weight:400;font-size:.8rem;color:var(--mut)">Ch. 1–3 · 45 terms · apply them, don't recite them</small></h1><div class="xp" id="xp"></div></div>
-<nav id="nav"></nav></header><main id="app"></main>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<header><div class="hd"><h1>⚛ AP Bio Lab<small>Ch. 1–3 · 45 terms · apply them, don't recite them</small></h1><div class="xp" id="xp"></div></div><nav id="nav"></nav></header><main id="app"></main>
 <script>
 const D=`Mass Number|Total protons + neutrons in an atom|Carbon-14 has a ___ of 14 because its nucleus holds 6 protons and 8 neutrons.|A
 Valence Electrons|Electrons in the outermost energy level|Chlorine readily grabs one more electron because it has seven ___.|A
@@ -109,61 +115,72 @@ const X=[
 const G={A:'Atoms',B:'Bonds & Ions',R:'Radioactivity',E:'Energy & Reactions',W:'Water',S:'Solutions',P:'Acids & pH'};
 const $=s=>document.querySelector(s),app=$('#app');
 const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
-const all=D.map((_,i)=>i);
+const all=D.map((_,i)=>i),fmt=ms=>{const s=Math.round(ms/1000);return(s/60|0)+':'+String(s%60).padStart(2,'0')};
 let S={m:{},xp:0};try{S=JSON.parse(localStorage.getItem('apbio')||'')||S}catch(e){}
 const save=()=>{try{localStorage.setItem('apbio',JSON.stringify(S))}catch(e){}};
 const rec=(i,ok)=>{const m=S.m[i]||(S.m[i]={c:0,w:0});ok?(m.c++,S.xp+=10):m.w++;save();hdr()};
 const lvl=i=>{const m=S.m[i];return!m?'new':m.c>=2&&m.c>m.w?'done':m.w>=m.c?'weak':'learn'};
 const hdr=()=>{$('#xp').innerHTML=`Level ${1+(S.xp/100|0)} · ${S.xp} XP<div class=xpb><i style="width:${S.xp%100}%"></i></div>`};
 function boom(){for(let i=0;i<55;i++){const e=document.createElement('i');e.className='cf';e.style.cssText=`left:${Math.random()*100}vw;background:hsl(${Math.random()*360} 90% 60%);--dx:${Math.random()*220-110}px;animation-delay:${Math.random()*.4}s`;document.body.append(e);setTimeout(()=>e.remove(),2700)}}
-const blank=s=>s.replace('___','<span class=bl>_____</span>');
-function mkQ(i){const x=D[i];let p=sh(all.filter(k=>k!==i&&D[k].g===x.g)).slice(0,3);if(p.length<3)p=p.concat(sh(all.filter(k=>k!==i&&!p.includes(k))).slice(0,3-p.length));const o=sh([i,...p]);return{t:i,q:x.s,o:o.map(k=>D[k].t),a:o.indexOf(i),e:`${x.t}: ${x.d}.`}}
-const pr={weak:0,new:1,learn:2,done:3};
+const blank=s=>s.replace('___','<span class=bl>_____</span>'),fill=(s,t)=>s.replace('___',t),amb=t=>/^(Solute|Dissolved)/.test(t);
+const near=(i,f)=>{const g=D[i].g;let p=sh(all.filter(k=>k!==i&&f(k)&&D[k].g===g)).slice(0,3);if(p.length<3)p=p.concat(sh(all.filter(k=>k!==i&&f(k)&&!p.includes(k))).slice(0,3-p.length));return p};
+function mkQ(i){const x=D[i],o=sh([i,...near(i,k=>!amb(x.t)||!amb(D[k].t))]);return{t:i,q:x.s,o:o.map(k=>D[k].t),a:o.indexOf(i),e:`${x.t}: ${x.d}.`}}
+function mkS(i){const x=D[i],o=sh([i,...near(i,k=>!amb(D[k].t))]);return{t:i,q:`Which sentence uses <b>${x.t}</b> correctly?`,o:o.map(k=>fill(D[k].s,x.t)),a:o.indexOf(i),e:`${x.t}: ${x.d}. The other choices drop the term into a sentence about a different idea.`}}
+const mk=i=>Math.random()<.5||amb(D[i].t)?mkQ(i):mkS(i),pr={weak:0,new:1,learn:2,done:3};
 let Q,cur='home';
-function quiz(list,title,ex,re){Q={l:list,i:0,s:0,st:0,ex,title,miss:[],re};ask()}
+function quiz(list,title,ex,re){Q={l:list,i:0,s:0,st:0,ex,title,miss:[],re,t0:Date.now(),gs:{}};ask()}
 function ask(){if(Q.i>=Q.l.length)return fin();const q=Q.l[Q.i];
-app.innerHTML=`<div class="card in" id=qc><div class=top><b>${Q.title}</b><span>${Q.i+1}/${Q.l.length} · streak ${Q.st}</span></div><div class=bar><i style="width:${Q.i/Q.l.length*100}%"></i></div><p class=q>${blank(q.q)}</p><div class=opts>${q.o.map((o,k)=>`<button class=opt data-k=${k}>${o}</button>`).join('')}</div><div id=fb></div></div>`;
-app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k))}
+app.innerHTML=`<div class="card in" id=qc><div class=top><b>${Q.title}</b><span>${Q.ex?'⏱ <span id=tm></span> · ':''}${Q.i+1}/${Q.l.length} · 🔥${Q.st}</span></div><div class=bar><i style="width:${Q.i/Q.l.length*100}%"></i></div><p class=q>${blank(q.q)}</p><div class=opts>${q.o.map((o,k)=>`<button class=opt data-k=${k}><b>${'ABCD'[k]}</b><span>${o}</span></button>`).join('')}</div><div id=fb></div><p class=hint>Press 1–4 to answer${Q.ex?'':' · Enter for next'}</p></div>`;
+app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+if(Q.ex){clearInterval(Q.iv);const f=()=>{const e=$('#tm');e?e.textContent=fmt(Date.now()-Q.t0):clearInterval(Q.iv)};f();Q.iv=setInterval(f,1000)}}
+const nxt=()=>{Q.i++;ask()};
 function pick(k){const q=Q.l[Q.i],ok=k===q.a,bs=app.querySelectorAll('.opt');bs.forEach(b=>b.disabled=true);
-if(q.t!=null)rec(q.t,ok);else if(ok)S.xp+=10;
+if(q.t!=null){rec(q.t,ok);const g=Q.gs[D[q.t].g]||(Q.gs[D[q.t].g]=[0,0]);g[1]++;ok&&g[0]++}else if(ok)S.xp+=10;
 if(ok){Q.s++;Q.st++}else{Q.st=0;Q.miss.push(q);$('#qc').classList.add('shake')}
-if(Q.ex){bs[k].classList.add('sel');setTimeout(()=>{Q.i++;ask()},400);return}
+if(Q.ex){bs[k].classList.add('sel');setTimeout(nxt,450);return}
 bs[k].classList.add(ok?'ok':'no');if(!ok)bs[q.a].classList.add('ok');
-if(q.t!=null)$('.bl').textContent=q.o[q.a];
-$('#fb').innerHTML=`<div class="fb ${ok?'g':'b'}">${ok?'✔ Correct.':'✘ Not quite.'} ${q.e}</div><button class=go id=nx style="width:100%">Next</button>`;
-$('#nx').onclick=()=>{Q.i++;ask()};if(ok&&Q.st%5==0)boom();save();hdr()}
-function fin(){const p=Math.round(Q.s/Q.l.length*100);if(p>=80)boom();
-app.innerHTML=`<div class="card in c"><h2>${Q.title} finished</h2><div class=big>${p}%</div><p>${Q.s} of ${Q.l.length} correct</p>${Q.miss.length?`<h3>Review what you missed</h3><div class=rev>${Q.miss.map(q=>`<div class="fb b"><small>${q.q.replace('___','_____')}</small><br><b>${q.e}</b></div>`).join('')}</div>`:'<p>Flawless run.</p>'}<button class=go id=re>Go again</button></div>`;$('#re').onclick=Q.re}
-const applyStart=()=>quiz(sh(sh(all).sort((a,b)=>pr[lvl(a)]-pr[lvl(b)]).slice(0,15)).map(mkQ),'Apply it',false,applyStart);
-const examStart=()=>quiz(sh([...sh(all).slice(0,22).map(mkQ),...X]),'Practice exam',true,examStart);
+const bl=$('.bl');if(bl)bl.textContent=q.o[q.a];if(ok)bs[k].insertAdjacentHTML('beforeend','<i class=xpf>+10 XP</i>');
+$('#fb').innerHTML=`<div class="fb ${ok?'g':'b'}">${ok?'✔ Correct!':'✘ Not quite.'} ${q.e}</div><button class=go id=nx style="width:100%">Next →</button>`;
+$('#nx').onclick=nxt;if(ok&&Q.st%5==0)boom();save();hdr()}
+function fin(){clearInterval(Q.iv);const p=Math.round(Q.s/Q.l.length*100),gk=Object.keys(Q.gs);if(p>=80)boom();
+app.innerHTML=`<div class="card in c"><h2>${Q.title} complete</h2><div class=big>0%</div><p>${Q.s} of ${Q.l.length} correct · ${fmt(Date.now()-Q.t0)}</p>${gk.length?`<div class=bd>${gk.map(g=>{const[c,t]=Q.gs[g];return`<div><span>${G[g]}</span><div class=bar><i style="width:${c/t*100}%"></i></div><b>${c}/${t}</b></div>`}).join('')}</div>`:''}${Q.miss.length?`<h3>Review your misses</h3><div class=rev>${Q.miss.map(q=>`<div class="fb b"><small>${q.q.replace('___','_____')}</small><br><b>${q.e}</b></div>`).join('')}</div>`:'<p>Flawless run! 🎉</p>'}<div class=row><button class=go id=re>Go again</button><button class="go alt" id=hm>Progress</button></div></div>`;
+let n=0;const el=$('.big'),t=setInterval(()=>{n+=Math.ceil((p-n)/6)||1;el.textContent=Math.min(n,p)+'%';if(n>=p)clearInterval(t)},30);
+$('#re').onclick=Q.re;$('#hm').onclick=()=>go('home')}
+function applyStart(weak){let ids=sh(all).sort((a,b)=>pr[lvl(a)]-pr[lvl(b)]);if(weak===true){const w=ids.filter(i=>lvl(i)=='weak');if(w.length)ids=w}
+quiz(sh(ids.slice(0,15)).map(mk),weak===true?'Weak-term drill':'Apply it',false,()=>applyStart(weak))}
+const examStart=()=>quiz(sh([...sh(all).slice(0,22).map(mk),...X]),'Practice exam',true,examStart);
 let F={g:'All',i:0,fl:false};
 function learn(){const ks=['All','Weak',...Object.keys(G)];
 const deck=all.filter(i=>F.g=='All'||(F.g=='Weak'?lvl(i)=='weak':D[i].g==F.g));if(F.i>=deck.length)F.i=0;
-const chips=ks.map(k=>`<button class="chip ${F.g==k?'on':''}" data-k=${k}>${G[k]||k}</button>`).join('');
-if(!deck.length){app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p>Nothing here yet. Miss a few terms in Apply it and they'll show up under Weak.</p></div>`;bind();return}
+const chips=ks.map(k=>`<button class="chip ${F.g==k?'on':''}" data-k=${k}>${G[k]||(k=='Weak'?'Needs review':k)}</button>`).join('');
+if(!deck.length){app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p>Nothing here yet. Terms you miss will collect under Needs review.</p></div>`;bind();return}
 const i=deck[F.i],x=D[i];
-app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p class=top><span>${G[x.g]}</span><span>${F.i+1}/${deck.length}</span></p><div class="fc ${F.fl?'flip':''}" id=fc><div class=fi><div class=face><h2>${x.t}</h2><small>tap to flip</small></div><div class="face back"><b>${x.d}</b><small>${x.s.replace('___',x.t.toUpperCase())}</small></div></div></div><div class=row><button class=go id=ag style="background:var(--no);border-color:var(--no)">Again</button><button class=go id=gt>Got it</button></div></div>`;
+app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p class=top style="margin-bottom:0"><span>${G[x.g]}</span><span>${F.i+1}/${deck.length}</span></p><div class="fc ${F.fl?'flip':''}" id=fc><div class=fi><div class=face><h2>${x.t}</h2><small>tap to flip</small></div><div class="face back"><b>${x.d}</b><small>${x.s.replace('___',x.t.toUpperCase())}</small></div></div></div><div class=row><button class="go alt" id=ag>Review again</button><button class=go id=gt>Got it</button></div><p class=hint>Space flips · ← review again · → got it</p></div>`;
 $('#fc').onclick=()=>$('#fc').classList.toggle('flip');
 const nx=ok=>{rec(i,ok);F.i=ok?F.i+1:(F.i+1)%deck.length;F.fl=false;learn()};
 $('#gt').onclick=()=>{if(F.i+1>=deck.length)boom();nx(true)};$('#ag').onclick=()=>nx(false);bind()}
 function bind(){app.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{F.g=b.dataset.k;F.i=0;F.fl=false;learn()})}
 function match(){const gs=sh(Object.keys(G)).slice(0,3);let ids=sh(all.filter(i=>gs.includes(D[i].g))).slice(0,8);if(ids.length<8)ids=ids.concat(sh(all.filter(i=>!ids.includes(i))).slice(0,8-ids.length));
-let L=null,R=null,n=0;
-app.innerHTML=`<div class="card in"><div class=top><b>Match the situation to the term</b><span id=mc>0/8</span></div><div class=mg><div>${sh(ids).map(i=>`<button class=m data-l=${i}>${blank(D[i].s)}</button>`).join('')}</div><div>${sh(ids).map(i=>`<button class=m data-r=${i}>${D[i].t}</button>`).join('')}</div></div></div>`;
+let L=null,R=null,n=0,bad=0;const t0=Date.now();
+app.innerHTML=`<div class="card in"><div class=top><b>Match each situation to its term</b><span id=mc>0/8</span></div><div class=mg><div>${sh(ids).map(i=>`<button class=m data-l=${i}>${blank(D[i].s)}</button>`).join('')}</div><div>${sh(ids).map(i=>`<button class=m data-r=${i}>${D[i].t}</button>`).join('')}</div></div></div>`;
 const chk=()=>{if(L==null||R==null)return;const l=$(`[data-l="${L}"]`),r=$(`[data-r="${R}"]`);
-if(L==R){[l,r].forEach(e=>{e.className='m gone'});rec(L,true);$('#mc').textContent=++n+'/8';if(n==8){boom();app.firstChild.insertAdjacentHTML('beforeend','<button class=go id=nr style="width:100%">Next round</button>');$('#nr').onclick=match}}
-else{[l,r].forEach(e=>{e.className='m x';setTimeout(()=>e.className='m',450)});rec(L,false)}L=R=null};
-app.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{app.querySelectorAll('[data-l]').forEach(e=>e.classList.remove('s'));b.classList.add('s');L=+b.dataset.l;chk()});
-app.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{app.querySelectorAll('[data-r]').forEach(e=>e.classList.remove('s'));b.classList.add('s');R=+b.dataset.r;chk()})}
-function home(){const d=all.filter(i=>lvl(i)=='done').length,w=all.filter(i=>lvl(i)=='weak').length,p=Math.round(d/45*100);
-app.innerHTML=`<div class="card in"><div class=hero><div class=ring style="background:conic-gradient(var(--ac) ${p*3.6}deg,var(--ln) 0)"><div>${p}%</div></div><div><h2 style="margin:0">${d} of 45 terms mastered</h2><p style="color:var(--mut)">${w} need work. Get a term right twice in a row-ish (more right than wrong, min. 2) to turn it green. Tap any tile to peek.</p></div></div><div class=tiles>${all.map(i=>`<button class="tile ${lvl(i)}" style="animation-delay:${i*18}ms" data-i=${i}>${D[i].t}</button>`).join('')}</div><div id=info></div></div>
-<div class="card in"><b>Fix these on your sheet first</b><ul><li><b>Neutron</b>: no charge (not positive and negative).</li><li><b>Reactants</b> are what you start with; <b>products</b> are what forms. Your sheet has them swapped.</li><li><b>C</b> is Carbon, not Calcium.</li><li><b>Specific heat</b>: heat to raise 1 g of a substance 1°C. Water's is high.</li><li><b>Hydrogen bond</b>: weak attraction between a partly + hydrogen and a partly − atom like O or N.</li><li><b>Std. deviation</b>: dividing by N gives 7.07; your 7.91 uses n − 1 (sample). Ask which your teacher wants.</li></ul><button class=go id=rs style="background:var(--no);border-color:var(--no)">Reset progress</button></div>`;
+if(L==R){[l,r].forEach(e=>{e.className='m gone'});rec(L,true);$('#mc').textContent=++n+'/8';if(n==8){boom();app.firstChild.insertAdjacentHTML('beforeend',`<p class=c>Cleared in ${fmt(Date.now()-t0)} with ${bad} miss${bad==1?'':'es'}.</p><button class=go id=nr style="width:100%">Next round</button>`);$('#nr').onclick=match}}
+else{bad++;[l,r].forEach(e=>{e.className='m x';setTimeout(()=>e.className='m',450)});rec(L,false)}L=R=null};
+['l','r'].forEach(k=>app.querySelectorAll(`[data-${k}]`).forEach(b=>b.onclick=()=>{app.querySelectorAll(`[data-${k}]`).forEach(e=>e.classList.remove('s'));b.classList.add('s');k=='l'?L=+b.dataset.l:R=+b.dataset.r;chk()}))}
+function home(){const c={done:0,learn:0,weak:0,new:0};all.forEach(i=>c[lvl(i)]++);const p=Math.round(c.done/45*100);
+app.innerHTML=`<div class="card in"><div class=hero><div class=ring style="background:conic-gradient(var(--ac) ${p*3.6}deg,var(--ln) 0)"><div>${p}%</div></div><div style="flex:1;min-width:220px"><h2>${c.done} of 45 terms mastered</h2><p style="color:var(--mut);margin:6px 0">${c.weak?c.weak+' need work':'No weak terms yet'} · ${c.learn} in progress · ${c.new} not started. Master a term by getting it right twice, with more hits than misses.</p><div class=row><button class=go id=dw>${c.weak?'Drill weak terms':'Start practicing'}</button><button class="go alt" id=de>Take practice exam</button></div></div></div></div>
+<div class="card in">${Object.keys(G).map(g=>{const ids=all.filter(i=>D[i].g==g);return`<h3>${G[g]} <small>${ids.filter(i=>lvl(i)=='done').length}/${ids.length}</small></h3><div class=tiles>${ids.map(i=>`<button class="tile ${lvl(i)}" style="animation-delay:${i*18}ms" data-i=${i}>${D[i].t}</button>`).join('')}</div>`}).join('')}<div id=info></div></div>
+<div class="card in"><b>Fix these on your sheet first</b><ul><li><b>Neutron</b>: no charge (not positive and negative).</li><li><b>Reactants</b> are what you start with; <b>products</b> are what forms. Your sheet has them swapped.</li><li><b>C</b> is Carbon, not Calcium.</li><li><b>Specific heat</b>: heat to raise 1 g of a substance 1°C. Water's is high.</li><li><b>Hydrogen bond</b>: weak attraction between a partly + hydrogen and a partly − atom like O or N.</li><li><b>Std. deviation</b>: dividing by N gives 7.07; your 7.91 uses n − 1 (sample). Ask which your teacher wants.</li></ul><button class="go alt" id=rs>Reset progress</button></div>`;
+$('#dw').onclick=()=>go('apply',c.weak>0);$('#de').onclick=()=>go('exam');
 app.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{const x=D[b.dataset.i];$('#info').innerHTML=`<div class="fb g"><b>${x.t}</b>: ${x.d}.<br><small>${x.s.replace('___','<u>'+x.t+'</u>')}</small></div>`});
 $('#rs').onclick=()=>{S={m:{},xp:0};save();hdr();home()}}
 const V={home,learn,apply:applyStart,match,exam:examStart};
-const N={home:'Progress',learn:'Flashcards',apply:'Apply it',match:'Match',exam:'Practice exam'};
+const N={home:'📊 Progress',learn:'🃏 Flashcards',apply:'🎯 Apply it',match:'🧩 Match',exam:'📝 Practice exam'};
 $('#nav').innerHTML=Object.keys(N).map(k=>`<button data-v=${k}>${N[k]}</button>`).join('');
-function go(v){cur=v;document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==v));V[v]()}
+function go(v,a){cur=v;if(Q)clearInterval(Q.iv);document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==v));V[v](a);scrollTo({top:0,behavior:'smooth'})}
 document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.v));
+document.addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.altKey)return;const k=e.key;
+if(cur=='learn'){if(k==' '||k=='Enter'){e.preventDefault();$('#fc')&&$('#fc').classList.toggle('flip')}else if(k=='ArrowRight')$('#gt')&&$('#gt').click();else if(k=='ArrowLeft')$('#ag')&&$('#ag').click()}
+else if(cur=='apply'||cur=='exam'){const b=app.querySelectorAll('.opt');if(/^[1-4]$/.test(k)){b[k-1]&&!b[k-1].disabled&&b[k-1].click()}else if((k=='Enter'||k==' ')&&$('#nx')){e.preventDefault();$('#nx').click()}}});
 hdr();go('home');
 </script></body></html>
