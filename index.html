@@ -1,254 +1,458 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AP Bio Ch. 1–3 Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Chap. 4 &amp; 5 Vocab Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Public+Sans:wght@400;500;700;800&display=swap">
 <style>
-:root{--bg:#eef3f1;--card:#fff;--fg:#10262b;--mut:#5b7075;--ac:#0f766e;--ac2:#14b8a6;--on:#fff;--am:#f5a524;--ok:#16a34a;--no:#e11d48;--ln:#d3dfdc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ac2:#0f9d8f;--on:#062326;--ln:#1f3d42}}
-:root[data-theme="dark"]{--bg:#081619;--card:#11262a;--fg:#e6f4f1;--mut:#8fb0b0;--ac:#2dd4bf;--ac2:#0f9d8f;--on:#062326;--ln:#1f3d42}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--fg);font-family:'Bricolage Grotesque',system-ui,sans-serif}
-body{min-height:100vh;overflow-x:hidden}
-.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.28;z-index:0;pointer-events:none;animation:fl 14s ease-in-out infinite alternate}
-.b1{width:360px;height:360px;background:var(--ac);top:-90px;left:-70px}.b2{width:300px;height:300px;background:var(--am);bottom:-70px;right:-50px;animation-delay:-6s}.b3{width:220px;height:220px;background:#6366f1;top:40%;right:-90px;opacity:.15;animation-delay:-3s}
-@keyframes fl{to{transform:translate(60px,80px) scale(1.2)}}
-header,main{position:relative;z-index:1;max-width:840px;margin:auto;padding:14px}
-h1{margin:0;font-size:1.6rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;background:linear-gradient(90deg,var(--ac),var(--am));-webkit-background-clip:text;background-clip:text;color:transparent}
-h1 small{display:block;font-weight:400;font-size:.8rem;margin-top:3px;-webkit-text-fill-color:var(--mut)}
-h2,h3{margin:0}h3{font-size:1rem;margin:20px 0 8px}h3 small{color:var(--mut);font-weight:400}
-.hd,.top,.row,.hero{display:flex;gap:10px}.hd{justify-content:space-between;align-items:center}.top{justify-content:space-between;color:var(--mut)}
-.xp{font-size:.85rem;color:var(--mut);text-align:right;font-weight:600}.xpb{width:130px;height:7px;background:var(--ln);border-radius:9px;overflow:hidden;margin:4px 0 0 auto}.xpb i{display:block;height:100%;background:linear-gradient(90deg,var(--am),#fb7185);transition:width .6s}
-nav{display:flex;gap:6px;margin-top:12px;overflow-x:auto;padding:2px 2px 6px}
-nav button,.chip{border:1px solid var(--ln);background:var(--card);color:var(--fg);font:inherit;padding:8px 15px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:.2s}
-nav button:hover,.chip:hover{transform:translateY(-2px);border-color:var(--ac)}nav .on,.chip.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);border-color:transparent;box-shadow:0 4px 14px #0f766e55}
-.card{background:color-mix(in srgb,var(--card) 90%,transparent);backdrop-filter:blur(10px);border:1px solid var(--ln);border-radius:20px;padding:22px;margin-top:14px;box-shadow:0 8px 30px #0f766e14}
-.in{animation:in .5s cubic-bezier(.2,.9,.3,1.2)}@keyframes in{from{opacity:0;transform:translateY(24px) scale(.97)}}
-.shake{animation:sk .4s}@keyframes sk{25%{transform:translateX(-9px)}75%{transform:translateX(9px)}}@keyframes pop{50%{transform:scale(1.05)}}
-.bar{height:8px;background:var(--ln);border-radius:9px;margin:10px 0;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--am));border-radius:9px;transition:width .5s}
-.q{font-size:1.2rem;line-height:1.55;margin:16px 0}.bl{display:inline-block;border-bottom:3px solid var(--am);min-width:80px;text-align:center;font-weight:800;color:var(--ac)}
-.opts{display:grid;gap:9px}
-.opt,.m,.tile{font:inherit;text-align:left;border:2px solid var(--ln);background:var(--bg);color:var(--fg);cursor:pointer;transition:.2s}
-.opt{display:flex;gap:12px;align-items:center;position:relative;width:100%;padding:12px 14px;border-radius:14px}.opt b{flex:none;width:28px;height:28px;border-radius:9px;background:var(--ln);display:grid;place-items:center;font-size:.8rem}
-.opt:hover:not(:disabled){border-color:var(--ac);transform:translateX(6px)}.opt.ok{background:var(--ok);border-color:var(--ok);color:#fff;animation:pop .4s}.opt.no{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.opt.ok b,.opt.no b{background:#fff3}.opt.sel{background:var(--am);border-color:var(--am);color:#111}
-.xpf{position:absolute;right:14px;top:6px;font-style:normal;font-weight:800;animation:up 1s forwards}@keyframes up{to{transform:translateY(-30px);opacity:0}}
-.go{font:inherit;font-weight:600;padding:12px 18px;border-radius:14px;border:0;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);cursor:pointer;margin-top:12px;transition:.2s;box-shadow:0 4px 14px #0f766e40}.go:hover{transform:translateY(-2px) scale(1.03)}.go.alt{background:var(--bg);color:var(--fg);box-shadow:none;border:2px solid var(--ln)}
-.fb{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:.93rem;animation:in .3s;background:#0f766e1f}.fb.g{background:#16a34a22}.fb.b{background:#e11d4822}
-.hint{font-size:.78rem;color:var(--mut);margin:14px 0 0;text-align:center}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.fc{perspective:900px;height:250px;margin:14px 0;cursor:pointer}.fi{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}.flip .fi{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;background:var(--card);border:2px solid var(--ac);font-size:1.1rem}
-.face.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);font-size:1rem}.face h2{font-size:2rem}.face small{display:block;margin-top:12px;opacity:.8}
-.row .go{flex:1}
-.ring{width:130px;height:130px;border-radius:50%;display:grid;place-items:center;flex:none;animation:pop .9s}.ring div{width:100px;height:100px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.7rem;font-weight:800}
-.hero{gap:22px;align-items:center;flex-wrap:wrap}
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:7px}
-.tile{font-size:.8rem;padding:10px 8px;border-radius:12px;animation:tp .5s backwards}.tile:hover{transform:scale(1.08) rotate(-2deg);border-color:var(--ac)}@keyframes tp{from{opacity:0;transform:scale(.3)}}
-.tile.done{background:var(--ok);color:#fff;border-color:var(--ok)}.tile.weak{border-color:var(--no);color:var(--no);font-weight:600}.tile.learn{border-color:var(--am)}
-#info{position:sticky;bottom:12px;margin-top:8px}#info .fb{background:var(--card);border:2px solid var(--ac);box-shadow:0 8px 24px #0004}
-.mg{display:grid;grid-template-columns:1.6fr 1fr;gap:8px;margin-top:12px}.mg>div{display:grid;gap:8px;align-content:start}
-.m{font-size:.88rem;padding:10px;border-radius:12px}.m:hover{border-color:var(--ac)}.m.s{border-color:var(--am);transform:scale(1.03)}.m.x{animation:sk .4s;border-color:var(--no)}.m.gone{opacity:.3;transform:scale(.9);pointer-events:none;background:var(--ok);color:#fff}
-.c{text-align:center}.big{font-size:4.5rem;font-weight:800;color:var(--ac);line-height:1.2}
-.bd{display:grid;gap:6px;text-align:left;margin:14px auto;max-width:460px;font-size:.88rem}.bd>div{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center}.bd .bar{margin:0}.bd .bar i{animation:gr 1s}@keyframes gr{from{width:0!important}}
-.rev .fb{text-align:left}
-.cf{position:fixed;top:-14px;width:8px;height:13px;z-index:9;pointer-events:none;animation:fall 2.2s ease-in forwards}@keyframes fall{to{transform:translate(var(--dx),105vh) rotate(720deg)}}
-ul{padding-left:18px;line-height:1.6;font-size:.92rem}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media(max-width:560px){.fc{height:290px}.bd>div{grid-template-columns:90px 1fr 36px}}
-.srch{width:100%;font:inherit;padding:12px 16px;border-radius:14px;border:2px solid var(--ln);background:var(--bg);color:var(--fg);outline:0;transition:.2s}.srch:focus{border-color:var(--ac)}
-.wi{padding:14px 0;border-top:1px solid var(--ln);animation:in .4s backwards}.wi p{margin:4px 0}.wi small{color:var(--mut)}.wi b{font-size:1.05rem}
-.lb{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:9px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);font-size:.8rem;margin-right:8px;font-weight:700}
-.tag{float:right;font-size:.72rem;color:var(--mut);border:1px solid var(--ln);border-radius:99px;padding:2px 9px}
-html{scroll-behavior:smooth}
-@supports selector(::-webkit-scrollbar){::-webkit-scrollbar{width:14px;height:14px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--ac),var(--ac2));border-radius:99px;border:4px solid transparent;background-clip:padding-box;min-height:48px}::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--am),#fb7185);background-clip:padding-box}::-webkit-scrollbar-corner{background:transparent}}
-@supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:var(--ac) transparent}}
-nav{scrollbar-width:none}nav::-webkit-scrollbar{display:none}
-#sp{position:fixed;top:0;left:0;height:3px;width:0;z-index:20;background:linear-gradient(90deg,var(--ac),var(--am));pointer-events:none}
-.wide header,.wide main{max-width:1040px}
-.lhr{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.pill{background:var(--bg);border:1px solid var(--ln);border-radius:99px;padding:4px 14px;font-weight:600;font-variant-numeric:tabular-nums}
-.sg{display:inline-flex;background:var(--bg);border:2px solid var(--ln);border-radius:99px;padding:3px;gap:2px}.sg button{border:0;background:none;font:inherit;font-size:.86rem;padding:7px 14px;border-radius:99px;color:var(--mut);cursor:pointer;transition:.2s}.sg .on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);box-shadow:0 3px 10px #0f766e55}
-.pg{display:flex;align-items:center;gap:12px;margin-top:14px}.pg .bar{flex:1;margin:0}.pg span{white-space:nowrap}
-.lmg{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;align-items:start;margin-top:14px}.lcol{display:grid;gap:10px}
-.lr{display:flex;gap:14px;align-items:flex-start;padding:14px;border:2px solid var(--ln);border-radius:16px;background:var(--card);cursor:pointer;transition:.2s;animation:in .4s backwards}
-.lr.cur{border-color:var(--ac);box-shadow:0 0 0 4px #14b8a622}
-.li{flex:none;width:56px;height:56px;padding:0;font:inherit;font-weight:800;font-size:1.35rem;text-align:center;text-transform:uppercase;border:2px dashed var(--mut);border-radius:14px;background:var(--bg);color:var(--ac);outline:0;transition:.2s}
-.li::placeholder{color:var(--ln)}.li:focus{border-style:solid;border-color:var(--ac)}.li.fl{border-style:solid;border-color:var(--ac);background:color-mix(in srgb,var(--ac) 12%,var(--card))}.li.dup{border-color:var(--am);background:color-mix(in srgb,var(--am) 18%,var(--card))}
-.lr.ok{border-color:var(--ok)}.lr.ok .li{border-color:var(--ok);color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,var(--card))}.lr.no{border-color:var(--no)}.lr.no .li{border-color:var(--no);color:var(--no);background:color-mix(in srgb,var(--no) 12%,var(--card))}
-.lt{flex:1;min-width:0}.lt p{margin:0;line-height:1.55}.nb{display:inline-block;font-size:.72rem;font-weight:700;color:var(--mut);letter-spacing:.04em;margin-bottom:2px}
-.pv{display:block;min-height:1em;margin-top:6px;font-size:.82rem;color:var(--ac);font-weight:600}
-.ans{display:block;margin-top:6px;font-size:.85rem;color:var(--no);font-style:normal;font-weight:600}
-.bankp{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;background:var(--card);border:1px solid var(--ln);border-radius:20px;padding:14px;box-shadow:0 8px 30px #0f766e14}
-.bph{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.lbk{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:10px}
-.bk{display:flex;gap:8px;align-items:center;font:inherit;font-size:.83rem;text-align:left;background:var(--bg);border:1px solid transparent;color:var(--fg);padding:6px 8px;border-radius:10px;cursor:pointer;transition:.15s}.bk b{flex:none;min-width:26px;height:22px;padding:0 4px;display:grid;place-items:center;border-radius:7px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);font-size:.72rem}.bk:hover{border-color:var(--ac);transform:translateY(-1px)}.bk.used{opacity:.4}.bk.used span{text-decoration:line-through}.bk[hidden]{display:none}
-.dc{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0 4px}.dc span{font-size:.78rem;background:var(--bg);border:1px solid var(--ln);border-radius:99px;padding:3px 10px}
-@media(max-width:820px){.lmg{grid-template-columns:1fr}.bankp{order:-1;top:6px;max-height:36vh}.lbk{grid-template-columns:1fr 1fr}}
-</style></head><body>
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-<header><div class="hd"><h1>⚛ AP Bio Lab<small>Ch. 1–3 · 45 terms · apply them, don't recite them</small></h1><div class="xp" id="xp"></div></div><nav id="nav"></nav></header><main id="app"></main>
+/* Layout: one printed worksheet on a desk. Word bank on top (3 columns), then 40 numbered questions with a blank at the left, as on the paper. */
+:root {
+  --desk: #d3dccd;
+  --paper: #eef6e3;
+  --ink: #1d2a1e;
+  --muted: #566656;
+  --rule: #9db08f;
+  --pen: #1e44c8;
+  --good: #17703a;
+  --bad: #c0281f;
+  --accent: #2c6a3d;
+  --accent-ink: #f3fbe9;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --desk: #11160f;
+    --paper: #1b231a;
+    --ink: #e5eddb;
+    --muted: #a4b59f;
+    --rule: #3f503b;
+    --pen: #8fb2ff;
+    --good: #66d28f;
+    --bad: #ff8f84;
+    --accent: #86c996;
+    --accent-ink: #10190f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --desk: #11160f;
+  --paper: #1b231a;
+  --ink: #e5eddb;
+  --muted: #a4b59f;
+  --rule: #3f503b;
+  --pen: #8fb2ff;
+  --good: #66d28f;
+  --bad: #ff8f84;
+  --accent: #86c996;
+  --accent-ink: #10190f;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.45;
+  padding-inline: 16px;
+  padding-block: 16px 40px;
+}
+.wrap { max-width: 54rem; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+/* toolbar */
+.bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px 10px;
+}
+.seg { display: inline-flex; border: 1px solid var(--accent); }
+.seg button, .act button {
+  font: 700 0.85rem/1 var(--body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  min-height: 40px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: var(--accent);
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.act { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.act button { border: 1px solid var(--accent); }
+.act button.primary { background: var(--accent); color: var(--accent-ink); }
+.count { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--pen); outline-offset: 2px; }
+
+/* the sheet */
+.sheet {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.55);
+  padding: 20px clamp(14px, 4vw, 36px) 28px;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+}
+.head h1 { margin: 0; font-size: 1.35rem; font-weight: 800; line-height: 1.15; text-wrap: balance; }
+.head p { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
+.score { font: 700 2.2rem/1 var(--hand); color: var(--bad); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* answer bank */
+details.bank { margin-top: 14px; }
+details.bank summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-block: 4px;
+}
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 4px 24px; margin-top: 8px; }
+.cols ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; min-width: 0; }
+.chip {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: 400 0.9rem/1.3 var(--body);
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  padding: 4px 4px;
+  min-height: 28px;
+  cursor: pointer;
+}
+.chip b { display: inline-block; min-width: 2.2rem; font-weight: 700; }
+.chip:disabled { color: var(--ink); cursor: default; opacity: 1; }
+[data-mode="quiz"] .chip:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.chip.used span { text-decoration: line-through; text-decoration-color: var(--pen); text-decoration-thickness: 2px; color: var(--muted); }
+
+/* questions */
+.qs { margin-top: 12px; border-top: 1px solid var(--rule); }
+.q {
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  gap: 4px 14px;
+  align-items: end;
+  padding-block: 9px;
+  border-bottom: 1px dotted var(--rule);
+}
+.blank {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--pen);
+  font: 700 1.75rem/1 var(--hand);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 0 2px;
+}
+.blank[readonly] { cursor: default; }
+.txt { margin: 0; max-width: 65ch; font-size: 0.97rem; }
+.txt b { font-weight: 800; margin-right: 0.3em; font-variant-numeric: tabular-nums; }
+.term { grid-column: 2; margin: 0; font-size: 0.85rem; color: var(--muted); }
+.q.ok .blank { border-bottom-color: var(--good); color: var(--good); }
+.q.ok .term { color: var(--good); }
+.q.bad .blank { border-bottom-color: var(--bad); color: var(--bad); text-decoration: line-through; }
+.q.bad .term { color: var(--bad); font-weight: 700; }
+
+@media (max-width: 30rem) {
+  .q { grid-template-columns: 3.6rem minmax(0, 1fr); gap: 4px 10px; }
+  .head h1 { font-size: 1.15rem; }
+  .score { font-size: 1.8rem; }
+}
+</style>
+
+<div class="wrap" id="app" data-mode="study">
+  <div class="bar" role="toolbar" aria-label="Study controls">
+    <div class="seg" role="group" aria-label="Mode">
+      <button type="button" id="m-study" aria-pressed="true">Study</button>
+      <button type="button" id="m-quiz" aria-pressed="false">Quiz</button>
+    </div>
+    <div class="act">
+      <span class="count" id="count" aria-live="polite"></span>
+      <button type="button" class="primary" id="check" hidden>Check</button>
+      <button type="button" id="clear" hidden>Clear</button>
+    </div>
+  </div>
+
+  <main class="sheet">
+    <header class="head">
+      <div>
+        <h1>Chap. 4 &amp; 5 Vocab Quiz</h1>
+        <p>Mr. McKenzie/Mr. Schuelein</p>
+      </div>
+      <div class="score" id="score" aria-label="Score">&mdash;/40</div>
+    </header>
+
+    <details class="bank" open>
+      <summary>Answer bank</summary>
+      <div class="cols" id="bank"></div>
+    </details>
+
+    <div class="qs" id="qs"></div>
+  </main>
+</div>
+
 <script>
-const D=`Mass Number|Total protons + neutrons in an atom|Carbon-14 has a ___ of 14 because its nucleus holds 6 protons and 8 neutrons.|A
-Valence Electrons|Electrons in the outermost energy level|Chlorine readily grabs one more electron because it has seven ___.|A
-Polar Covalent Bond|Covalent bond with unequal electron sharing|The O–H bonds in water are ___ bonds, leaving oxygen slightly negative.|B
-Element|Pure substance made of one type of atom|Gold is an ___ because it cannot be broken into simpler substances by chemical means.|A
-Dalton|Unit of atomic/molecular mass (1 amu)|A biochemist reports a protein's mass in ___, the unit for atomic and molecular mass.|A
-Potential Energy|Stored energy from position or structure|A boulder at the top of a hill has ___ that becomes motion as it rolls.|E
-Nonpolar Covalent Bond|Covalent bond with equal electron sharing|Two identical oxygen atoms in O₂ share electrons equally in a ___.|B
-Compound|Two or more different elements bonded in a fixed ratio|NaCl is a ___ because sodium and chlorine are chemically joined 1:1 with new properties.|A
-Isotope|Atoms of one element with different neutron numbers|Carbon-12 and carbon-14 are ___ of each other: same protons, different neutrons.|A
-Orbital|Region where an electron is found ~90% of the time|Electrons are not on tracks; each one occupies a 3D ___ where it is most likely found.|A
-Cation|Positively charged ion (lost electrons)|When sodium gives up an electron it becomes a ___ with a +1 charge.|B
-Proton|Positive particle in the nucleus; defines the element|Changing the number of ___ in an atom turns it into a different element.|A
-Radioactive Isotope|Unstable isotope that decays and emits radiation|Carbon-14 is a ___ because its nucleus spontaneously decays over time.|R
-Covalent Bond|Atoms share electron pairs|Two nonmetals sharing electrons to fill their outer shells are joined by a ___.|B
-Anion|Negatively charged ion (gained electrons)|Chlorine gains an electron and becomes a ___ (Cl⁻).|B
-Neutron|Uncharged particle in the nucleus|Adding one ___ to a nucleus changes mass number but not charge or element.|A
-Half-life|Time for half a radioactive sample to decay|After one ___ of 5,730 years, half of a fossil's original C-14 remains.|R
-Molecule|Two or more atoms held by covalent bonds|H₂O is a ___ because its atoms share electrons; NaCl is not, since its ions are attracted.|B
-Ionic Bond|Attraction between oppositely charged ions after electron transfer|Na⁺ and Cl⁻ stick together in table salt through an ___.|B
-Electron|Negative particle outside the nucleus|In a neutral atom, the number of ___ equals the number of protons.|A
-Radiometric Dating|Finding age by measuring decay of radioactive isotopes|A geologist estimated a rock's age using ___, comparing parent and daughter isotopes.|R
-Single Bond|One shared electron pair|In H–H the two atoms share one pair of electrons in a ___.|B
-Double Bond|Two shared electron pairs|The O=O link in O₂ is a ___: two pairs of electrons are shared.|B
-Triple Bond|Three shared electron pairs|N≡N in nitrogen gas is extremely hard to break because it is a ___.|B
-Hydrogen Bond|Weak attraction between a partly positive H and a partly negative atom (O, N)|Water molecules cling together because the δ+ H of one is drawn to the δ− O of another through a ___.|W
-Atomic Nucleus|Center of an atom holding protons and neutrons|Nearly all of an atom's mass is packed into its tiny ___.|A
-Energy|Capacity to do work or cause change|Muscle contraction requires ___, the capacity to do work.|E
-Electronegativity|An atom's pull on shared electrons|Oxygen drags shared electrons closer than hydrogen does because of its higher ___.|B
-Van der Waals|Weak attraction from temporary uneven electron distribution|A gecko clings to glass through many weak ___ attractions caused by fleeting charge shifts.|W
-Specific Heat|Heat needed to raise 1 g of a substance by 1°C|A lake warms far more slowly than the sand beside it because water has a high ___.|W
-Reactants|Starting substances in a chemical reaction|In photosynthesis, CO₂ and H₂O are the ___ that get converted.|E
-Products|Substances formed by a reaction|In cellular respiration, CO₂ and H₂O are the ___ that are released.|E
-Acid|Substance that increases H⁺ concentration|Lemon juice, at pH 2, is an ___ because it adds H⁺ to a solution.|P
-Base|Substance that decreases H⁺ concentration|Adding NaOH, a ___, to a solution lowers its H⁺ concentration.|P
-Hydroxide|Negative ion OH⁻|A base often releases ___ ions (OH⁻) that bind free H⁺.|P
-Buffer|Resists pH change when acid or base is added|Blood stays near pH 7.4 after exercise thanks to a ___ that absorbs extra H⁺ or OH⁻.|P
-pH Scale|0–14 logarithmic measure of H⁺ concentration|Moving from 3 to 4 on the ___ means ten times less H⁺.|P
-Solution|Homogeneous mixture of solute dissolved in solvent|Salt stirred into water makes a ___ that stays evenly mixed and never settles.|S
-Solvent|The substance that does the dissolving|In salt water, water is the ___ because it does the dissolving.|S
-Solute|The substance that gets dissolved|In sweet tea, sugar is the ___.|S
-Hydrophilic|Water-loving; polar or charged|Sugars dissolve easily in water because they are ___, with polar groups.|S
-Hydrophobic|Water-fearing; nonpolar|Oil beads up on water because its nonpolar molecules are ___.|S
-Adhesion|Attraction between different substances|Water creeping up the wall of a narrow glass tube shows ___ between water and glass.|W
-Cohesion|Attraction between molecules of the same substance|A water strider walks on a pond because of ___ among water molecules.|W
-Dissolved Substances|Particles spread evenly through a solution; the solutes|The ions and sugar spread evenly through the water are ___, which are the solutes.|S`.split('\n').map(l=>{const p=l.split('|');return{t:p[0],d:p[1],s:p[2],g:p[3]}});
-const X=[
-{q:'An atom has 11 protons and 12 neutrons, then loses one electron. Its mass number and charge are:',o:['23, +1','23, −1','22, +1','12, 0'],a:0,e:'Mass number = 11 + 12 = 23. Losing an electron leaves one more proton than electrons: +1 (a cation).'},
-{q:'For {75, 80, 85, 90, 95}, the sample standard deviation (n − 1) is about:',o:['7.07','7.91','3.54','50'],a:1,e:'Squared deviations sum to 250; 250/4 = 62.5; √62.5 ≈ 7.91. Dividing by N gives 7.07 (population).'},
-{q:'With SD = 7.91 and n = 5, the standard error is:',o:['7.91','1.58','3.54','17.7'],a:2,e:'SE = SD/√n = 7.91/2.236 ≈ 3.54.'},
-{q:'100 g of an isotope has a half-life of 10 years. How much remains after 30 years?',o:['50 g','25 g','12.5 g','33 g'],a:2,e:'Three half-lives: 100 → 50 → 25 → 12.5 g.'},
-{q:'Solution A has pH 3 and solution B has pH 6. Compared with B, A has:',o:['3× more H⁺','30× more H⁺','1,000× more H⁺','1,000× less H⁺'],a:2,e:'Each pH unit is a factor of 10; 3 units = 10³ = 1,000× more H⁺.'},
-{q:'A bond forms between two atoms of nearly identical electronegativity. It is most likely:',o:['Ionic','Polar covalent','Nonpolar covalent','Hydrogen'],a:2,e:'Equal pull on electrons means equal sharing: nonpolar covalent.'},
-{q:'Which best explains why water has a high specific heat?',o:['Hydrogen bonds must break before molecules speed up','Water is a nonpolar solvent','Water has ionic bonds','Water has a low mass number'],a:0,e:'Heat energy goes into breaking hydrogen bonds first, so temperature rises slowly.'},
-{q:'A neutral atom has 17 protons. Its valence electrons and the ion it tends to form are:',o:['1; cation','7; anion','7; cation','17; anion'],a:1,e:'Cl has 2-8-7 electrons: 7 valence, gains one to become Cl⁻ (anion).'}];
-const G={A:'Atoms',B:'Bonds & Ions',R:'Radioactivity',E:'Energy & Reactions',W:'Water',S:'Solutions',P:'Acids & pH'};
-const $=s=>document.querySelector(s),app=$('#app');
-const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
-const all=D.map((_,i)=>i),fmt=ms=>{const s=Math.round(ms/1000);return(s/60|0)+':'+String(s%60).padStart(2,'0')};
-let S={m:{},xp:0};try{S=JSON.parse(localStorage.getItem('apbio')||'')||S}catch(e){}
-const save=()=>{try{localStorage.setItem('apbio',JSON.stringify(S))}catch(e){}};
-const rec=(i,ok)=>{const m=S.m[i]||(S.m[i]={c:0,w:0});ok?(m.c++,S.xp+=10):m.w++;save();hdr()};
-const lvl=i=>{const m=S.m[i];return!m?'new':m.c>=2&&m.c>m.w?'done':m.w>=m.c?'weak':'learn'};
-const hdr=()=>{$('#xp').innerHTML=`Level ${1+(S.xp/100|0)} · ${S.xp} XP<div class=xpb><i style="width:${S.xp%100}%"></i></div>`};
-function boom(){for(let i=0;i<55;i++){const e=document.createElement('i');e.className='cf';e.style.cssText=`left:${Math.random()*100}vw;background:hsl(${Math.random()*360} 90% 60%);--dx:${Math.random()*220-110}px;animation-delay:${Math.random()*.4}s`;document.body.append(e);setTimeout(()=>e.remove(),2700)}}
-const blank=s=>s.replace('___','<span class=bl>_____</span>'),fill=(s,t)=>s.replace('___',t),amb=t=>/^(Solute|Dissolved)/.test(t);
-const near=(i,f)=>{const g=D[i].g;let p=sh(all.filter(k=>k!==i&&f(k)&&D[k].g===g)).slice(0,3);if(p.length<3)p=p.concat(sh(all.filter(k=>k!==i&&f(k)&&!p.includes(k))).slice(0,3-p.length));return p};
-function mkQ(i){const x=D[i],o=sh([i,...near(i,k=>!amb(x.t)||!amb(D[k].t))]);return{t:i,q:x.s,o:o.map(k=>D[k].t),a:o.indexOf(i),e:`${x.t}: ${x.d}.`}}
-function mkS(i){const x=D[i],o=sh([i,...near(i,k=>!amb(D[k].t))]);return{t:i,q:`Which sentence uses <b>${x.t}</b> correctly?`,o:o.map(k=>fill(D[k].s,x.t)),a:o.indexOf(i),e:`${x.t}: ${x.d}. The other choices drop the term into a sentence about a different idea.`}}
-const mk=i=>Math.random()<.5||amb(D[i].t)?mkQ(i):mkS(i),pr={weak:0,new:1,learn:2,done:3};
-let Q,cur='home';
-function quiz(list,title,ex,re){Q={l:list,i:0,s:0,st:0,ex,title,miss:[],re,t0:Date.now(),gs:{}};ask()}
-function ask(){if(Q.i>=Q.l.length)return fin();const q=Q.l[Q.i];
-app.innerHTML=`<div class="card in" id=qc><div class=top><b>${Q.title}</b><span>${Q.ex?'⏱ <span id=tm></span> · ':''}${Q.i+1}/${Q.l.length} · 🔥${Q.st}</span></div><div class=bar><i style="width:${Q.i/Q.l.length*100}%"></i></div><p class=q>${blank(q.q)}</p><div class=opts>${q.o.map((o,k)=>`<button class=opt data-k=${k}><b>${'ABCD'[k]}</b><span>${o}</span></button>`).join('')}</div><div id=fb></div><p class=hint>Press 1–4 to answer${Q.ex?'':' · Enter for next'}</p></div>`;
-app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
-if(Q.ex){clearInterval(Q.iv);const f=()=>{const e=$('#tm');e?e.textContent=fmt(Date.now()-Q.t0):clearInterval(Q.iv)};f();Q.iv=setInterval(f,1000)}}
-const nxt=()=>{Q.i++;ask()};
-function pick(k){const q=Q.l[Q.i],ok=k===q.a,bs=app.querySelectorAll('.opt');bs.forEach(b=>b.disabled=true);
-if(q.t!=null){rec(q.t,ok);const g=Q.gs[D[q.t].g]||(Q.gs[D[q.t].g]=[0,0]);g[1]++;ok&&g[0]++}else if(ok)S.xp+=10;
-if(ok){Q.s++;Q.st++}else{Q.st=0;Q.miss.push(q);$('#qc').classList.add('shake')}
-if(Q.ex){bs[k].classList.add('sel');setTimeout(nxt,450);return}
-bs[k].classList.add(ok?'ok':'no');if(!ok)bs[q.a].classList.add('ok');
-const bl=$('.bl');if(bl)bl.textContent=q.o[q.a];if(ok)bs[k].insertAdjacentHTML('beforeend','<i class=xpf>+10 XP</i>');
-$('#fb').innerHTML=`<div class="fb ${ok?'g':'b'}">${ok?'✔ Correct!':'✘ Not quite.'} ${q.e}</div><button class=go id=nx style="width:100%">Next →</button>`;
-$('#nx').onclick=nxt;if(ok&&Q.st%5==0)boom();save();hdr()}
-function fin(){clearInterval(Q.iv);const p=Math.round(Q.s/Q.l.length*100),gk=Object.keys(Q.gs);if(p>=80)boom();
-app.innerHTML=`<div class="card in c"><h2>${Q.title} complete</h2><div class=big>0%</div><p>${Q.s} of ${Q.l.length} correct · ${fmt(Date.now()-Q.t0)}</p>${gk.length?`<div class=bd>${gk.map(g=>{const[c,t]=Q.gs[g];return`<div><span>${G[g]}</span><div class=bar><i style="width:${c/t*100}%"></i></div><b>${c}/${t}</b></div>`}).join('')}</div>`:''}${Q.miss.length?`<h3>Review your misses</h3><div class=rev>${Q.miss.map(q=>`<div class="fb b"><small>${q.q.replace('___','_____')}</small><br><b>${q.e}</b></div>`).join('')}</div>`:'<p>Flawless run! 🎉</p>'}<div class=row><button class=go id=re>Go again</button><button class="go alt" id=hm>Progress</button></div></div>`;
-let n=0;const el=$('.big'),t=setInterval(()=>{n+=Math.ceil((p-n)/6)||1;el.textContent=Math.min(n,p)+'%';if(n>=p)clearInterval(t)},30);
-$('#re').onclick=Q.re;$('#hm').onclick=()=>go('home')}
-function applyStart(weak){let ids=sh(all).sort((a,b)=>pr[lvl(a)]-pr[lvl(b)]);if(weak===true){const w=ids.filter(i=>lvl(i)=='weak');if(w.length)ids=w}
-quiz(sh(ids.slice(0,15)).map(mk),weak===true?'Weak-term drill':'Apply it',false,()=>applyStart(weak))}
-const examStart=()=>quiz(sh([...sh(all).slice(0,22).map(mk),...X]),'Practice exam',true,examStart);
-let F={g:'All',i:0,fl:false};
-function learn(){const ks=['All','Weak',...Object.keys(G)];
-const deck=all.filter(i=>F.g=='All'||(F.g=='Weak'?lvl(i)=='weak':D[i].g==F.g));if(F.i>=deck.length)F.i=0;
-const chips=ks.map(k=>`<button class="chip ${F.g==k?'on':''}" data-k=${k}>${G[k]||(k=='Weak'?'Needs review':k)}</button>`).join('');
-if(!deck.length){app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p>Nothing here yet. Terms you miss will collect under Needs review.</p></div>`;bind();return}
-const i=deck[F.i],x=D[i];
-app.innerHTML=`<div class="card in"><div class=chips>${chips}</div><p class=top style="margin-bottom:0"><span>${G[x.g]}</span><span>${F.i+1}/${deck.length}</span></p><div class="fc ${F.fl?'flip':''}" id=fc><div class=fi><div class=face><h2>${x.t}</h2><small>tap to flip</small></div><div class="face back"><b>${x.d}</b><small>${x.s.replace('___',x.t.toUpperCase())}</small></div></div></div><div class=row><button class="go alt" id=ag>Review again</button><button class=go id=gt>Got it</button></div><p class=hint>Space flips · ← review again · → got it</p></div>`;
-$('#fc').onclick=()=>$('#fc').classList.toggle('flip');
-const nx=ok=>{rec(i,ok);F.i=ok?F.i+1:(F.i+1)%deck.length;F.fl=false;learn()};
-$('#gt').onclick=()=>{if(F.i+1>=deck.length)boom();nx(true)};$('#ag').onclick=()=>nx(false);bind()}
-function bind(){app.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{F.g=b.dataset.k;F.i=0;F.fl=false;learn()})}
-function match(){const gs=sh(Object.keys(G)).slice(0,3);let ids=sh(all.filter(i=>gs.includes(D[i].g))).slice(0,8);if(ids.length<8)ids=ids.concat(sh(all.filter(i=>!ids.includes(i))).slice(0,8-ids.length));
-let L=null,R=null,n=0,bad=0;const t0=Date.now();
-app.innerHTML=`<div class="card in"><div class=top><b>Match each situation to its term</b><span id=mc>0/8</span></div><div class=mg><div>${sh(ids).map(i=>`<button class=m data-l=${i}>${blank(D[i].s)}</button>`).join('')}</div><div>${sh(ids).map(i=>`<button class=m data-r=${i}>${D[i].t}</button>`).join('')}</div></div></div>`;
-const chk=()=>{if(L==null||R==null)return;const l=$(`[data-l="${L}"]`),r=$(`[data-r="${R}"]`);
-if(L==R){[l,r].forEach(e=>{e.className='m gone'});rec(L,true);$('#mc').textContent=++n+'/8';if(n==8){boom();app.firstChild.insertAdjacentHTML('beforeend',`<p class=c>Cleared in ${fmt(Date.now()-t0)} with ${bad} miss${bad==1?'':'es'}.</p><button class=go id=nr style="width:100%">Next round</button>`);$('#nr').onclick=match}}
-else{bad++;[l,r].forEach(e=>{e.className='m x';setTimeout(()=>e.className='m',450)});rec(L,false)}L=R=null};
-['l','r'].forEach(k=>app.querySelectorAll(`[data-${k}]`).forEach(b=>b.onclick=()=>{app.querySelectorAll(`[data-${k}]`).forEach(e=>e.classList.remove('s'));b.classList.add('s');k=='l'?L=+b.dataset.l:R=+b.dataset.r;chk()}))}
-function home(){const c={done:0,learn:0,weak:0,new:0};all.forEach(i=>c[lvl(i)]++);const p=Math.round(c.done/45*100);
-app.innerHTML=`<div class="card in"><div class=hero><div class=ring style="background:conic-gradient(var(--ac) ${p*3.6}deg,var(--ln) 0)"><div>${p}%</div></div><div style="flex:1;min-width:220px"><h2>${c.done} of 45 terms mastered</h2><p style="color:var(--mut);margin:6px 0">${c.weak?c.weak+' need work':'No weak terms yet'} · ${c.learn} in progress · ${c.new} not started. Master a term by getting it right twice, with more hits than misses.</p><div class=row><button class=go id=dw>${c.weak?'Drill weak terms':'Start practicing'}</button><button class="go alt" id=de>Take practice exam</button></div></div></div></div>
-<div class="card in">${Object.keys(G).map(g=>{const ids=all.filter(i=>D[i].g==g);return`<h3>${G[g]} <small>${ids.filter(i=>lvl(i)=='done').length}/${ids.length}</small></h3><div class=tiles>${ids.map(i=>`<button class="tile ${lvl(i)}" style="animation-delay:${i*18}ms" data-i=${i}>${D[i].t}</button>`).join('')}</div>`}).join('')}<div id=info></div></div>
-<div class="card in"><b>Fix these on your sheet first</b><ul><li><b>Neutron</b>: no charge (not positive and negative).</li><li><b>Reactants</b> are what you start with; <b>products</b> are what forms. Your sheet has them swapped.</li><li><b>C</b> is Carbon, not Calcium.</li><li><b>Specific heat</b>: heat to raise 1 g of a substance 1°C. Water's is high.</li><li><b>Hydrogen bond</b>: weak attraction between a partly + hydrogen and a partly − atom like O or N.</li><li><b>Std. deviation</b>: dividing by N gives 7.07; your 7.91 uses n − 1 (sample). Ask which your teacher wants.</li></ul><button class="go alt" id=rs>Reset progress</button></div>`;
-$('#dw').onclick=()=>go('apply',c.weak>0);$('#de').onclick=()=>go('exam');
-app.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{const x=D[b.dataset.i];$('#info').innerHTML=`<div class="fb g"><b>${x.t}</b>: ${x.d}.<br><small>${x.s.replace('___','<u>'+x.t+'</u>')}</small></div>`});
-$('#rs').onclick=()=>{S={m:{},xp:0};save();hdr();home()}}
-const lab=n=>n<26?String.fromCharCode(65+n):String.fromCharCode(64+(n/26|0))+String.fromCharCode(65+n%26);
-const ORD=[...all].sort((a,b)=>D[a].t.localeCompare(D[b].t)),LAB={};ORD.forEach((t,n)=>LAB[t]=lab(n));
-let WB={q:'',g:'All'},LM={mode:'s'};
-function bankView(){const ks=['All',...Object.keys(G)];
-app.innerHTML=`<div class="card in"><h2>Word bank</h2><p class=sub style="color:var(--mut);margin:4px 0 12px">All 45 terms with their letters from Letter match, plus a definition and an example of each in use.</p><input id=sq class=srch placeholder="Search terms, definitions or examples"><div class=chips style="margin-top:10px">${ks.map(k=>`<button class="chip ${WB.g==k?'on':''}" data-k=${k}>${G[k]||k}</button>`).join('')}</div><p class=hint id=cnt style="text-align:left"></p><div id=wl></div></div>`;
-$('#sq').value=WB.q;
-const draw=()=>{const q=WB.q.toLowerCase(),ids=ORD.filter(i=>(WB.g=='All'||D[i].g==WB.g)&&(D[i].t+' '+D[i].d+' '+D[i].s).toLowerCase().includes(q));
-$('#cnt').textContent=ids.length+' of 45 terms';
-$('#wl').innerHTML=ids.map((i,n)=>`<div class=wi style="animation-delay:${Math.min(n,15)*25}ms"><span class=tag>${G[D[i].g]}</span><span class=lb>${LAB[i]}</span><b>${D[i].t}</b><p>${D[i].d}.</p><small>${D[i].s.replace('___','<u>'+D[i].t+'</u>')}</small></div>`).join('')||'<p>No matches. Try a shorter search.</p>'};
-draw();$('#sq').oninput=e=>{WB.q=e.target.value;draw()};
-app.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{WB.g=b.dataset.k;bankView()})}
-function lm(){const ds=D.findIndex(x=>x.t=='Solute'),dd=D.findIndex(x=>x.t=='Dissolved Substances');
-let p=sh(all).slice(0,30);if(p.includes(ds)&&p.includes(dd))p[p.indexOf(dd)]=sh(all.filter(i=>!p.includes(i)))[0];
-const rows=p.map(i=>({i,d:LM.mode=='d'||(LM.mode=='m'&&Math.random()<.5)})),un=all.filter(i=>!p.includes(i)),t0=Date.now(),byL={};ORD.forEach(i=>byL[LAB[i]]=i);
-app.innerHTML=`<div class="card in"><div class=lhr><div><h2>Letter match</h2><p class=sub style="color:var(--mut);margin:2px 0 0">Write the letter of the term that fits each blank. 15 of the 45 terms are decoys.</p></div><span class=pill>⏱ <span id=tm>0:00</span></span></div>
-<div class=lhr style="margin-top:14px"><div class=sg>${[['s','Sentences'],['d','Definitions'],['m','Mixed']].map(([k,l])=>`<button class="${LM.mode==k?'on':''}" data-m=${k}>${l}</button>`).join('')}</div><button class="go chk" style="margin:0">Check answers</button></div>
-<div class=pg><div class=bar><i id=pb style="width:0"></i></div><span class=sub id=pc style="color:var(--mut)">0 of 30 answered</span></div></div>
-<div class=lmg><div class=lcol><div id=res></div>${rows.map((r,k)=>`<div class=lr style="animation-delay:${k*18}ms"><input class=li maxlength=2 autocomplete=off autocapitalize=characters placeholder="–" aria-label="Answer ${k+1}"><div class=lt><span class=nb>${k+1}</span><p>${r.d?D[r.i].d+'.':blank(D[r.i].s)}</p><small class=pv></small></div></div>`).join('')}<button class="go chk" style="width:100%;margin:6px 0 0">Check answers</button></div>
-<aside class=bankp><div class=bph><b>Word bank</b><span class=sub style="color:var(--mut)">click a term to fill the highlighted blank</span></div><input class=srch id=bs placeholder="Filter the bank"><div class=lbk>${ORD.map(i=>`<button class=bk data-t=${i}><b>${LAB[i]}</b><span>${D[i].t}</span></button>`).join('')}</div></aside></div>`;
-const ins=[...app.querySelectorAll('.li')],re=[...app.querySelectorAll('.lr')];let cf=ins[0],done=false;
-const cur_=e=>{cf=e;re.forEach((x,k)=>x.classList.toggle('cur',ins[k]==e))};cur_(cf);
-const upd=()=>{const v=ins.map(e=>e.value.trim().toUpperCase()),n={};v.forEach(x=>x&&(n[x]=(n[x]||0)+1));
-ins.forEach((e,k)=>{e.classList.toggle('dup',!!v[k]&&n[v[k]]>1);e.classList.toggle('fl',!!v[k]);re[k].querySelector('.pv').textContent=v[k]?(byL[v[k]]!=null?'→ '+D[byL[v[k]]].t:'No term has that letter'):''});
-app.querySelectorAll('.bk').forEach(b=>b.classList.toggle('used',!!n[LAB[b.dataset.t]]));
-const a=v.filter(Boolean).length;$('#pb').style.width=a/30*100+'%';$('#pc').textContent=a+' of 30 answered'};
-ins.forEach((e,k)=>{e.onfocus=()=>cur_(e);e.oninput=()=>{e.value=e.value.replace(/[^a-zA-Z]/g,'').toUpperCase();upd()};e.onkeydown=ev=>{if(ev.key=='Enter'){ev.preventDefault();const n=ins[k+1];n?n.focus():e.blur()}}});
-re.forEach((x,k)=>x.onclick=ev=>{if(!done&&ev.target!==ins[k])cur_(ins[k])});
-const nextEmpty=()=>ins.find((e,k)=>k>ins.indexOf(cf)&&!e.value)||ins.find(e=>!e.value)||cf;
-app.querySelectorAll('.bk').forEach(b=>b.onclick=()=>{if(done)return;cf.value=LAB[b.dataset.t];upd();const n=nextEmpty();cur_(n);n.scrollIntoView({block:'nearest',behavior:'smooth'})});
-$('#bs').oninput=e=>{const q=e.target.value.toLowerCase();app.querySelectorAll('.bk').forEach(b=>b.hidden=!(LAB[b.dataset.t]+' '+D[b.dataset.t].t).toLowerCase().includes(q))};
-app.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{LM.mode=b.dataset.m;lm()});
-clearInterval(LM.iv);const f=()=>{const e=$('#tm');e?e.textContent=fmt(Date.now()-t0):clearInterval(LM.iv)};f();LM.iv=setInterval(f,1000);
-const grade=()=>{if(done)return;done=true;clearInterval(LM.iv);let sc=0;
-rows.forEach((r,k)=>{const e=ins[k],v=e.value.trim().toUpperCase(),alt=amb(D[r.i].t)?LAB[r.i==ds?dd:ds]:null,ok=v==LAB[r.i]||(!!v&&v==alt);e.disabled=true;ok&&sc++;rec(r.i,ok);re[k].classList.remove('cur');re[k].classList.add(ok?'ok':'no');re[k].querySelector('.pv').textContent='';if(!ok)re[k].querySelector('.lt').insertAdjacentHTML('beforeend',`<i class=ans>Answer: ${LAB[r.i]}) ${D[r.i].t}${v?'':' (left blank)'}</i>`)});
-app.querySelectorAll('.chk').forEach(b=>b.disabled=true);const pc=Math.round(sc/30*100);if(pc>=80)boom();
-$('#res').innerHTML=`<div class="card in c" style="margin:0"><div class=big>${pc}%</div><p style="margin:0"><b>${sc} of 30 correct</b> in ${fmt(Date.now()-t0)}</p><p class=sub style="color:var(--mut);margin:10px 0 0">Decoys not used in this test</p><div class=dc>${un.map(i=>`<span>${LAB[i]} · ${D[i].t}</span>`).join('')}</div><div class=row><button class=go id=nt>New test</button><button class="go alt" id=hm>Progress</button></div></div>`;
-$('#nt').onclick=lm;$('#hm').onclick=()=>go('home');$('#res').scrollIntoView({behavior:'smooth',block:'start'})};
-app.querySelectorAll('.chk').forEach(b=>b.onclick=grade)}
-const V={home,learn,bank:bankView,apply:applyStart,match,lm,exam:examStart};
-const N={home:'📊 Progress',learn:'🃏 Flashcards',bank:'📚 Word bank',apply:'🎯 Apply it',match:'🧩 Match',lm:'🔤 Letter match',exam:'📝 Practice exam'};
-$('#nav').innerHTML=Object.keys(N).map(k=>`<button data-v=${k}>${N[k]}</button>`).join('');
-function go(v,a){cur=v;document.body.classList.toggle('wide',v=='lm');if(Q)clearInterval(Q.iv);clearInterval(LM.iv);document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==v));V[v](a);scrollTo({top:0,behavior:'smooth'})}
-document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>go(b.dataset.v));
-document.addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.altKey)return;const k=e.key;
-if(cur=='learn'){if(k==' '||k=='Enter'){e.preventDefault();$('#fc')&&$('#fc').classList.toggle('flip')}else if(k=='ArrowRight')$('#gt')&&$('#gt').click();else if(k=='ArrowLeft')$('#ag')&&$('#ag').click()}
-else if(cur=='apply'||cur=='exam'){const b=app.querySelectorAll('.opt');if(/^[1-4]$/.test(k)){b[k-1]&&!b[k-1].disabled&&b[k-1].click()}else if((k=='Enter'||k==' ')&&$('#nx')){e.preventDefault();$('#nx').click()}}});
-const sp=document.createElement('div');sp.id='sp';document.body.prepend(sp);addEventListener('scroll',()=>{const h=document.documentElement;sp.style.width=h.scrollTop/((h.scrollHeight-h.clientHeight)||1)*100+'%'},{passive:true});
-hdr();go('home');
-</script></body></html>
+(function () {
+  var BANK = [
+    ["A","Aldehyde Group"],["B","Amino Acid"],["C","Amino Group"],["D","Amylose"],["E","Carbonyl Group"],["F","Carboxyl Group"],
+    ["G","Cellulose"],["H","Chitin"],["I","Cholesterol"],["J","Cis-Trans Isomer"],["K","Dehydration Synthesis"],["L","Disaccharide"],
+    ["M","DNA"],["N","Enantiomer"],["O","Fatty Acid"],["P","Fructose"],["Q","Functional Group"],["R","Glucose"],
+    ["S","Glycogen"],["T","Glycosidic Linkage"],["U","Hydrocarbon"],["V","Hydrolysis"],["W","Hydroxyl Group"],["X","Isomer"],
+    ["Y","Ketone Group"],["Z","Lipid"],["AA","Macromolecule"],["BB","Methyl Group"],["CC","Monomer"],["DD","Monosaccharide"],
+    ["EE","Nucleic Acid"],["FF","Nucleotide"],["GG","Oligosaccharide"],["HH","Organic Compound"],["II","Peptide"],["JJ","Peptide Bond"],
+    ["KK","Phosphate Group"],["LL","Phospholipid"],["MM","Polymer"],["NN","Polypeptide"],["OO","Polysaccharide"],["PP","Purine"],
+    ["QQ","Pyrimidine"],["RR","RNA"],["SS","Saturated Fatty Acid"],["TT","Starch"],["UU","Steroid"],["VV","Stereoisomer"],
+    ["WW","Structural Isomer"],["XX","Sucrose"],["YY","Sulfhydryl Group"],["ZZ","Triacylglycerol (Triglyceride)"],["AAA","Unsaturated Fatty Acid"]
+  ];
+  var TERM = {};
+  BANK.forEach(function (b) { TERM[b[0]] = b[1]; });
+
+  var Q = [
+    [1, "A class of large biological molecules.", "AA"],
+    [2, "A large molecule built by linking many smaller molecules together.", "MM"],
+    [3, "The monomer of a protein.", "B"],
+    [4, "A functional group that contains a carbon atom double bonded to an oxygen atom and single bonded to a hydroxyl (COOH).", "F"],
+    [5, "Molecules that possess the same molecular formulas and structure.", "VV"],
+    [6, "A group or chain of carbon atoms that contain a carbonyl group on a middle carbon.", "Y"],
+    [7, "A long chain of amino acids. It is another term for protein.", "NN"],
+    [8, "The monomer of a nucleic acid.", "FF"],
+    [9, "The disaccharide produced when a glucose molecule and a fructose molecule are combined.", "XX"],
+    [10, "This polysaccharide is composed of beta linkages and is used by plants to make cell wall material.", "G"],
+    [11, "Isomers that are mirror images of each other.", "N"],
+    [12, "Only single bonds exist between the carbons in this chain. They are solids at room temperature.", "SS"],
+    [13, "This nucleic acid contains the base uracil.", "RR"],
+    [14, "This catabolic reaction occurs by adding water (causes molecules or compounds to break apart).", "V"],
+    [15, "At least one double bond exists between the carbons in this chain. They are liquid at room temperature.", "AAA"],
+    [16, "DNA and RNA are examples of this macromolecule.", "EE"],
+    [17, "A functional group that is composed of a hydrogen atom and an oxygen atom (OH).", "W"],
+    [18, "The type of bond that links amino acids together.", "JJ"],
+    [19, "The type of bond that links monosaccharides together.", "T"],
+    [20, "A polysaccharide that makes up the exoskeleton in arthropods, such as beetles and lobsters.", "H"],
+    [21, "A functional group that contains a nitrogen and two hydrogens bonded to a carbon (NH₂).", "C"],
+    [22, "A type of compound molecule containing polar “heads” and nonpolar “tails”.", "LL"],
+    [23, "A type of starch that is found in muscle tissue.", "S"],
+    [24, "A functional group that contains an oxygen double bonded to a carbon (C=O).", "E"],
+    [25, "This category of nitrogenous bases are double ringed structures (Adenine and Guanine).", "PP"],
+    [26, "This category of nitrogenous bases are single ringed structures (Cytosine, Thymine & Uracil).", "QQ"],
+    [27, "This anabolic reaction forms a covalent bond between two monomers by removing water.", "K"],
+    [28, "A structural isomer of glucose.", "P"],
+    [29, "A compound that is made up of carbon and hydrogen. It may also contain oxygen and nitrogen.", "HH"],
+    [30, "These compounds are insoluble in water and are made up of glycerol and fatty acids. This includes fats, oils, and waxes.", "Z"],
+    [31, "The monomer of a carbohydrate.", "DD"],
+    [32, "Molecules that possess the same molecular formulas but differ in their structure.", "WW"],
+    [33, "A functional group that is composed of a carbon atom bonded to three hydrogen atoms (CH₃).", "BB"],
+    [34, "A group or chain of carbon atoms that contain a carbonyl group on an end carbon.", "A"],
+    [35, "A functional group that contains a sulfur atom bonded to a hydrogen atom (SH).", "YY"],
+    [36, "When covalently bonded to amino acids, they will form glycoproteins.", "GG"],
+    [37, "An alpha linked polysaccharide.", "D"],
+    [38, "A molecule that is considered to be the starting material for the biosynthesis of other molecules of its kind.", "I"],
+    [39, "A functional group that is composed of a phosphorus atom bonded to four oxygen atoms (PO₄).", "KK"],
+    [40, "The most common monosaccharide with an empirical formula of C₆H₁₂O₆.", "R"]
+  ];
+
+  var KEY = "chap45-vocab-answers";
+  var app = document.getElementById("app");
+  var qsEl = document.getElementById("qs");
+  var bankEl = document.getElementById("bank");
+  var scoreEl = document.getElementById("score");
+  var countEl = document.getElementById("count");
+  var btnStudy = document.getElementById("m-study");
+  var btnQuiz = document.getElementById("m-quiz");
+  var btnCheck = document.getElementById("check");
+  var btnClear = document.getElementById("clear");
+
+  var mode = "study";
+  var checked = false;
+  var ans = {};
+  var last = null;
+  try { ans = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { ans = {}; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(ans)); } catch (e) {} }
+
+  // word bank in three columns, split as on the paper (A-R, S-JJ, KK-AAA)
+  var groups = [BANK.slice(0, 18), BANK.slice(18, 36), BANK.slice(36)];
+  var chips = {};
+  groups.forEach(function (g) {
+    var ul = document.createElement("ul");
+    g.forEach(function (b) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip";
+      btn.innerHTML = "<b>" + b[0] + ".</b><span>" + b[1] + "</span>";
+      btn.addEventListener("mousedown", function (e) { e.preventDefault(); });
+      btn.addEventListener("click", function () { pick(b[0]); });
+      chips[b[0]] = btn;
+      li.appendChild(btn);
+      ul.appendChild(li);
+    });
+    bankEl.appendChild(ul);
+  });
+
+  // questions
+  var rows = Q.map(function (q) {
+    var row = document.createElement("div");
+    row.className = "q";
+    var input = document.createElement("input");
+    input.type = "text";
+    input.id = "a" + q[0];
+    input.className = "blank";
+    input.maxLength = 3;
+    input.autocomplete = "off";
+    input.autocapitalize = "characters";
+    input.spellcheck = false;
+    input.setAttribute("enterkeyhint", "next");
+    input.setAttribute("aria-label", "Answer for question " + q[0]);
+    var txt = document.createElement("p");
+    txt.className = "txt";
+    var num = document.createElement("b");
+    num.textContent = q[0] + ".";
+    txt.appendChild(num);
+    txt.appendChild(document.createTextNode(q[1]));
+    var term = document.createElement("p");
+    term.className = "term";
+    term.hidden = true;
+    row.appendChild(input);
+    row.appendChild(txt);
+    row.appendChild(term);
+    qsEl.appendChild(row);
+
+    input.addEventListener("focus", function () { last = input; });
+    input.addEventListener("input", function () {
+      var v = input.value.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3);
+      input.value = v;
+      setAnswer(q[0], v);
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); focusNext(input); }
+    });
+    return { q: q, row: row, input: input, term: term };
+  });
+
+  function focusNext(input) {
+    var i = rows.findIndex(function (r) { return r.input === input; });
+    if (i > -1 && rows[i + 1]) rows[i + 1].input.focus();
+  }
+
+  function setAnswer(n, v) {
+    if (v) ans[n] = v; else delete ans[n];
+    save();
+    if (checked) { checked = false; clearMarks(); }
+    refresh();
+  }
+
+  function pick(letter) {
+    if (mode !== "quiz") return;
+    var target = last || rows[0].input;
+    var n = parseInt(target.id.slice(1), 10);
+    target.value = letter;
+    setAnswer(n, letter);
+    focusNext(target);
+  }
+
+  function clearMarks() {
+    rows.forEach(function (r) {
+      r.row.classList.remove("ok", "bad");
+      r.term.hidden = (mode !== "study");
+      if (mode === "study") r.term.textContent = "= " + TERM[r.q[2]];
+    });
+    scoreEl.innerHTML = "&mdash;/40";
+  }
+
+  function refresh() {
+    var used = {};
+    var n = 0;
+    Object.keys(ans).forEach(function (k) { used[ans[k]] = true; n++; });
+    Object.keys(chips).forEach(function (l) {
+      chips[l].classList.toggle("used", mode === "quiz" && !!used[l]);
+    });
+    if (mode === "quiz" && !checked) countEl.textContent = n + " of 40 answered";
+  }
+
+  function setMode(m) {
+    mode = m;
+    checked = false;
+    app.setAttribute("data-mode", m);
+    btnStudy.setAttribute("aria-pressed", String(m === "study"));
+    btnQuiz.setAttribute("aria-pressed", String(m === "quiz"));
+    btnCheck.hidden = btnClear.hidden = (m !== "quiz");
+    rows.forEach(function (r) {
+      r.row.classList.remove("ok", "bad");
+      if (m === "study") {
+        r.input.readOnly = true;
+        r.input.tabIndex = -1;
+        r.input.value = r.q[2];
+        r.term.hidden = false;
+        r.term.textContent = "= " + TERM[r.q[2]];
+      } else {
+        r.input.readOnly = false;
+        r.input.tabIndex = 0;
+        r.input.value = ans[r.q[0]] || "";
+        r.term.hidden = true;
+      }
+    });
+    Object.keys(chips).forEach(function (l) { chips[l].disabled = (m !== "quiz"); });
+    scoreEl.innerHTML = "&mdash;/40";
+    countEl.textContent = m === "study" ? "Answers shown. Switch to Quiz to test yourself." : "";
+    refresh();
+  }
+
+  function check() {
+    var right = 0;
+    rows.forEach(function (r) {
+      var given = ans[r.q[0]] || "";
+      var want = r.q[2];
+      var ok = given === want;
+      if (ok) right++;
+      r.row.classList.toggle("ok", ok);
+      r.row.classList.toggle("bad", !ok);
+      r.term.hidden = false;
+      r.term.textContent = ok
+        ? "✓ " + TERM[want]
+        : "✗ Answer: " + want + " – " + TERM[want];
+    });
+    checked = true;
+    scoreEl.textContent = right + "/40";
+    countEl.textContent = right + " of 40 correct. Wrong ones show the answer.";
+  }
+
+  function clearAll() {
+    ans = {};
+    save();
+    checked = false;
+    rows.forEach(function (r) { r.input.value = ""; });
+    clearMarks();
+    rows.forEach(function (r) { r.term.hidden = true; });
+    refresh();
+    rows[0].input.focus();
+  }
+
+  btnStudy.addEventListener("click", function () { setMode("study"); });
+  btnQuiz.addEventListener("click", function () { setMode("quiz"); });
+  btnCheck.addEventListener("click", check);
+  btnClear.addEventListener("click", clearAll);
+
+  setMode("study");
+})();
+</script>
+
+</body></html>
