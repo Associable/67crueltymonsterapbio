@@ -1,458 +1,1027 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Chap. 4 &amp; 5 Vocab Quiz</title>
+<title>Biochem Drill</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Public+Sans:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: one printed worksheet on a desk. Word bank on top (3 columns), then 40 numbered questions with a blank at the left, as on the paper. */
-:root {
-  --desk: #d3dccd;
-  --paper: #eef6e3;
-  --ink: #1d2a1e;
-  --muted: #566656;
-  --rule: #9db08f;
-  --pen: #1e44c8;
-  --good: #17703a;
-  --bad: #c0281f;
-  --accent: #2c6a3d;
-  --accent-ink: #f3fbe9;
-  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+/* Layout: one narrow reading column. Home is a topic grid; quiz and free-response screens swap in below the header. */
+:root{
+  --display:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#F2F5F8; --surface:#FFFFFF; --ink:#12202E; --muted:#54677A; --line:#D3DDE7;
+  --accent:#2457C5; --accent-ink:#FFFFFF; --accent-soft:#E3ECFB;
+  --good:#1B7F4B; --good-soft:#E1F4E9; --bad:#B3261E; --bad-soft:#FBE6E4;
+  --c-carbon:#5B6B7C; --c-polymers:#2E8B57; --c-carbs:#B86E00; --c-lipids:#C2410C;
+  --c-proteins:#7C4DCC; --c-nucleic:#0F8A8A; --c-enzymes:#B83280;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --desk: #11160f;
-    --paper: #1b231a;
-    --ink: #e5eddb;
-    --muted: #a4b59f;
-    --rule: #3f503b;
-    --pen: #8fb2ff;
-    --good: #66d28f;
-    --bad: #ff8f84;
-    --accent: #86c996;
-    --accent-ink: #10190f;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --desk: #11160f;
-  --paper: #1b231a;
-  --ink: #e5eddb;
-  --muted: #a4b59f;
-  --rule: #3f503b;
-  --pen: #8fb2ff;
-  --good: #66d28f;
-  --bad: #ff8f84;
-  --accent: #86c996;
-  --accent-ink: #10190f;
-  color-scheme: dark;
-}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E161F; --surface:#16212D; --ink:#E6EDF4; --muted:#93A5B8; --line:#2A3949;
+  --accent:#7BA3FF; --accent-ink:#0E161F; --accent-soft:#1D2C48;
+  --good:#5FD08F; --good-soft:#12301F; --bad:#FF8A80; --bad-soft:#3A1A18;
+  --c-carbon:#9FB0C2; --c-polymers:#5FD08F; --c-carbs:#F0A23B; --c-lipids:#FF8A5C;
+  --c-proteins:#B79BFF; --c-nucleic:#4FD1D1; --c-enzymes:#FF7FC0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E161F; --surface:#16212D; --ink:#E6EDF4; --muted:#93A5B8; --line:#2A3949;
+  --accent:#7BA3FF; --accent-ink:#0E161F; --accent-soft:#1D2C48;
+  --good:#5FD08F; --good-soft:#12301F; --bad:#FF8A80; --bad-soft:#3A1A18;
+  --c-carbon:#9FB0C2; --c-polymers:#5FD08F; --c-carbs:#F0A23B; --c-lipids:#FF8A5C;
+  --c-proteins:#B79BFF; --c-nucleic:#4FD1D1; --c-enzymes:#FF7FC0; color-scheme:dark}
 
-body {
-  background: var(--desk);
-  color: var(--ink);
-  font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.45;
-  padding-inline: 16px;
-  padding-block: 16px 40px;
-}
-.wrap { max-width: 54rem; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--body);padding-inline:16px;padding-block:20px 48px}
+.wrap{max-width:880px;margin-inline:auto;display:flex;flex-direction:column;gap:28px}
+button{font:inherit;color:inherit}
+sub,sup{line-height:0}
 
-/* toolbar */
-.bar {
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  z-index: 5;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  padding: 8px 10px;
-}
-.seg { display: inline-flex; border: 1px solid var(--accent); }
-.seg button, .act button {
-  font: 700 0.85rem/1 var(--body);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 10px 14px;
-  min-height: 40px;
-  border: 0;
-  cursor: pointer;
-  background: transparent;
-  color: var(--accent);
-}
-.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
-.act { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.act button { border: 1px solid var(--accent); }
-.act button.primary { background: var(--accent); color: var(--accent-ink); }
-.count { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--pen); outline-offset: 2px; }
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px}
+.brand{background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.brand h1{font:700 1.9rem/1.05 var(--display);letter-spacing:-.01em;margin:0}
+.brand p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.stats{font:400 .78rem/1.4 var(--mono);color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+.stats b{color:var(--ink);font-weight:500}
 
-/* the sheet */
-.sheet {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.55);
-  padding: 20px clamp(14px, 4vw, 36px) 28px;
-}
-.head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 12px;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 10px;
-}
-.head h1 { margin: 0; font-size: 1.35rem; font-weight: 800; line-height: 1.15; text-wrap: balance; }
-.head p { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
-.score { font: 700 2.2rem/1 var(--hand); color: var(--bad); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:5px;padding:.6rem 1rem;font-weight:500;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.btn:focus-visible,.opt:focus-visible,.topic:focus-visible,.brand:focus-visible,textarea:focus-visible,.rub input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
-/* answer bank */
-details.bank { margin-top: 14px; }
-details.bank summary {
-  cursor: pointer;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-block: 4px;
-}
-.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 4px 24px; margin-top: 8px; }
-.cols ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; min-width: 0; }
-.chip {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font: 400 0.9rem/1.3 var(--body);
-  color: var(--ink);
-  background: transparent;
-  border: 0;
-  padding: 4px 4px;
-  min-height: 28px;
-  cursor: pointer;
-}
-.chip b { display: inline-block; min-width: 2.2rem; font-weight: 700; }
-.chip:disabled { color: var(--ink); cursor: default; opacity: 1; }
-[data-mode="quiz"] .chip:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); }
-.chip.used span { text-decoration: line-through; text-decoration-color: var(--pen); text-decoration-thickness: 2px; color: var(--muted); }
+.lead{margin:0;max-width:62ch;color:var(--muted)}
+.lead strong{color:var(--ink);font-weight:600}
+h2{font:700 1.25rem/1.2 var(--display);margin:0}
+.sec{display:flex;flex-direction:column;gap:14px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sec-h span{color:var(--muted);font-size:.85rem}
 
-/* questions */
-.qs { margin-top: 12px; border-top: 1px solid var(--rule); }
-.q {
-  display: grid;
-  grid-template-columns: 4.4rem minmax(0, 1fr);
-  gap: 4px 14px;
-  align-items: end;
-  padding-block: 9px;
-  border-bottom: 1px dotted var(--rule);
-}
-.blank {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  border-bottom: 2px solid var(--ink);
-  border-radius: 0;
-  background: transparent;
-  color: var(--pen);
-  font: 700 1.75rem/1 var(--hand);
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0 0 2px;
-}
-.blank[readonly] { cursor: default; }
-.txt { margin: 0; max-width: 65ch; font-size: 0.97rem; }
-.txt b { font-weight: 800; margin-right: 0.3em; font-variant-numeric: tabular-nums; }
-.term { grid-column: 2; margin: 0; font-size: 0.85rem; color: var(--muted); }
-.q.ok .blank { border-bottom-color: var(--good); color: var(--good); }
-.q.ok .term { color: var(--good); }
-.q.bad .blank { border-bottom-color: var(--bad); color: var(--bad); text-decoration: line-through; }
-.q.bad .term { color: var(--bad); font-weight: 700; }
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.topic{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--tc);border-radius:6px;padding:14px 14px 12px;cursor:pointer;min-width:0}
+.topic:hover{border-color:var(--tc)}
+.motif{font:500 .95rem/1.3 var(--mono);color:var(--tc);overflow-wrap:anywhere}
+.topic h3{margin:0;font:600 1.05rem/1.25 var(--body)}
+.meta{color:var(--muted);font-size:.82rem;margin-top:auto}
 
-@media (max-width: 30rem) {
-  .q { grid-template-columns: 3.6rem minmax(0, 1fr); gap: 4px 10px; }
-  .head h1 { font-size: 1.15rem; }
-  .score { font-size: 1.8rem; }
-}
+.frqlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.frqcard{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer}
+.frqcard:hover{border-color:var(--accent)}
+.frqcard strong{font-weight:600}
+.frqcard span{color:var(--muted);font-size:.82rem}
+
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{font:500 .74rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--tc);display:inline-flex;align-items:center;gap:7px}
+.chip::before{content:"";width:9px;height:9px;background:var(--tc);border-radius:2px}
+.count{font:400 .8rem var(--mono);color:var(--muted)}
+.bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+.stem{font:500 1.15rem/1.5 var(--body);margin:0;max-width:66ch}
+.instr{font:500 .78rem var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin:0}
+.tblwrap{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;font:400 .9rem var(--mono);font-variant-numeric:tabular-nums;background:var(--surface);border:1px solid var(--line)}
+caption{caption-side:top;text-align:left;font:500 .8rem var(--body);color:var(--muted);padding:0 0 6px}
+th,td{padding:.4rem .8rem;border:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{background:var(--accent-soft);font-weight:500}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:grid;grid-template-columns:1.8rem 1fr;gap:12px;align-items:start;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.75rem .9rem;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .ltr{font:500 .8rem var(--mono);width:1.7rem;height:1.7rem;display:grid;place-items:center;border:1px solid var(--line);border-radius:4px;color:var(--muted)}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt[aria-pressed="true"] .ltr{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.opt:disabled{cursor:default;color:var(--ink)}
+.opt.good{border-color:var(--good);background:var(--good-soft)}
+.opt.good .ltr{background:var(--good);border-color:var(--good);color:var(--bg)}
+.opt.bad{border-color:var(--bad);background:var(--bad-soft)}
+.opt.bad .ltr{background:var(--bad);border-color:var(--bad);color:var(--bg)}
+.otxt{min-width:0;overflow-wrap:anywhere;padding-top:.15rem}
+.tag{display:block;margin-top:4px;font:500 .72rem var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.opt.good .tag{color:var(--good)} .opt.bad .tag{color:var(--bad)}
+.fb{border-left:4px solid var(--line);background:var(--surface);padding:12px 16px;border-radius:0 6px 6px 0}
+.fb.good{border-color:var(--good)} .fb.bad{border-color:var(--bad)}
+.fb strong{font-family:var(--display);font-size:1.05rem}
+.fb.good strong{color:var(--good)} .fb.bad strong{color:var(--bad)}
+.fb p{margin:4px 0 0;max-width:66ch}
+.kbd{color:var(--muted);font-size:.78rem}
+
+.score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score b{font:700 3.2rem/1 var(--display);font-variant-numeric:tabular-nums}
+.score span{font:400 1rem var(--mono);color:var(--muted)}
+.tb{display:grid;grid-template-columns:minmax(0,12rem) 1fr 3.2rem;gap:10px;align-items:center;font-size:.9rem}
+.tb .bar{height:8px}
+.tb .bar i{background:var(--tc)}
+.tb em{font:400 .8rem var(--mono);font-style:normal;text-align:right;color:var(--muted)}
+@media (max-width:520px){.tb{grid-template-columns:1fr 3.2rem}.tb .bar{grid-column:1/-1;grid-row:2}}
+.miss{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.miss .stem{font-size:1rem}
+.miss p{margin:0}
+.miss .ca{color:var(--good);font-weight:500}
+
+.part{display:flex;flex-direction:column;gap:6px}
+.part p{margin:0;max-width:68ch}
+.pts{font:400 .75rem var(--mono);color:var(--muted);margin-left:6px}
+textarea{width:100%;min-height:5.5rem;resize:vertical;font:inherit;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:.6rem .75rem}
+.guide{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.rub{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.rub input{margin-top:.35rem;width:1.05rem;height:1.05rem;accent-color:var(--accent)}
+.rub label{cursor:pointer}
+.rub small{display:block;color:var(--muted);font-size:.85rem;margin-top:2px}
+.model{border-top:1px solid var(--line);padding-top:12px;margin:0;max-width:68ch}
+.selfscore{font:500 .9rem var(--mono)}
+footer{color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer p{margin:0;max-width:60ch}
+.link{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:.8rem}
+.ai{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.ai-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ai-h strong{font:700 1.05rem var(--display);color:var(--accent)}
+.ai-h span{font-size:.78rem;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chipbtn{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:.3rem .85rem;font-size:.85rem;cursor:pointer}
+.chipbtn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.chipbtn:disabled{opacity:.45;cursor:not-allowed}
+.chipbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.thread{display:flex;flex-direction:column;gap:12px}
+.bub{display:flex;flex-direction:column;gap:2px;max-width:70ch}
+.bub small{font:500 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.bub p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.bub.me p{color:var(--muted)}
+.aiform{display:flex;gap:8px;flex-wrap:wrap}
+.aiform input{flex:1 1 14rem;min-width:0;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:.5rem .7rem}
+.aiform input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.aierr{color:var(--bad);font-size:.85rem;margin:0}
+.aibadge{font:500 .68rem var(--mono);letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);border-radius:3px;padding:1px 6px;margin-left:6px}
+.gen{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.gen select{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:.55rem .7rem;max-width:100%}
+.gen select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
-<div class="wrap" id="app" data-mode="study">
-  <div class="bar" role="toolbar" aria-label="Study controls">
-    <div class="seg" role="group" aria-label="Mode">
-      <button type="button" id="m-study" aria-pressed="true">Study</button>
-      <button type="button" id="m-quiz" aria-pressed="false">Quiz</button>
-    </div>
-    <div class="act">
-      <span class="count" id="count" aria-live="polite"></span>
-      <button type="button" class="primary" id="check" hidden>Check</button>
-      <button type="button" id="clear" hidden>Clear</button>
-    </div>
-  </div>
-
-  <main class="sheet">
-    <header class="head">
-      <div>
-        <h1>Chap. 4 &amp; 5 Vocab Quiz</h1>
-        <p>Mr. McKenzie/Mr. Schuelein</p>
-      </div>
-      <div class="score" id="score" aria-label="Score">&mdash;/40</div>
-    </header>
-
-    <details class="bank" open>
-      <summary>Answer bank</summary>
-      <div class="cols" id="bank"></div>
-    </details>
-
-    <div class="qs" id="qs"></div>
-  </main>
+<div class="wrap">
+  <header class="top">
+    <button class="brand" data-act="home" aria-label="Biochem Drill home">
+      <h1>Biochem Drill</h1>
+      <p>AP Biology · Chemistry of life</p>
+    </button>
+    <div class="stats" id="stats"></div>
+  </header>
+  <main id="app"></main>
+  <footer>
+    <p>Built-in questions are original and written in AP Biology style, testing the concepts behind your notes. Anything written by Claude is labeled AI and can contain mistakes, so check it against your textbook.</p>
+    <button class="link" data-act="reset" id="resetBtn">Clear saved progress</button>
+  </footer>
 </div>
 
 <script>
-(function () {
-  var BANK = [
-    ["A","Aldehyde Group"],["B","Amino Acid"],["C","Amino Group"],["D","Amylose"],["E","Carbonyl Group"],["F","Carboxyl Group"],
-    ["G","Cellulose"],["H","Chitin"],["I","Cholesterol"],["J","Cis-Trans Isomer"],["K","Dehydration Synthesis"],["L","Disaccharide"],
-    ["M","DNA"],["N","Enantiomer"],["O","Fatty Acid"],["P","Fructose"],["Q","Functional Group"],["R","Glucose"],
-    ["S","Glycogen"],["T","Glycosidic Linkage"],["U","Hydrocarbon"],["V","Hydrolysis"],["W","Hydroxyl Group"],["X","Isomer"],
-    ["Y","Ketone Group"],["Z","Lipid"],["AA","Macromolecule"],["BB","Methyl Group"],["CC","Monomer"],["DD","Monosaccharide"],
-    ["EE","Nucleic Acid"],["FF","Nucleotide"],["GG","Oligosaccharide"],["HH","Organic Compound"],["II","Peptide"],["JJ","Peptide Bond"],
-    ["KK","Phosphate Group"],["LL","Phospholipid"],["MM","Polymer"],["NN","Polypeptide"],["OO","Polysaccharide"],["PP","Purine"],
-    ["QQ","Pyrimidine"],["RR","RNA"],["SS","Saturated Fatty Acid"],["TT","Starch"],["UU","Steroid"],["VV","Stereoisomer"],
-    ["WW","Structural Isomer"],["XX","Sucrose"],["YY","Sulfhydryl Group"],["ZZ","Triacylglycerol (Triglyceride)"],["AAA","Unsaturated Fatty Acid"]
-  ];
-  var TERM = {};
-  BANK.forEach(function (b) { TERM[b[0]] = b[1]; });
+/* ---------- DATA ---------- */
+const TOPICS=[
+ {id:"carbon",name:"Carbon & Functional Groups",motif:"CH<sub>4</sub> · –COOH · –NH<sub>2</sub>"},
+ {id:"polymers",name:"Polymers: Building & Breaking",motif:"n monomers → polymer + (n−1) H<sub>2</sub>O"},
+ {id:"carbs",name:"Carbohydrates",motif:"C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>"},
+ {id:"lipids",name:"Lipids & Steroids",motif:"C<sub>57</sub>H<sub>110</sub>O<sub>6</sub>"},
+ {id:"proteins",name:"Proteins & Folding",motif:"–CO–NH– peptide bond"},
+ {id:"nucleic",name:"Nucleic Acids & Nucleotides",motif:"A=T · G≡C"},
+ {id:"enzymes",name:"Enzymes",motif:"E + S ⇌ ES → E + P"}
+];
+const BANK=[];
+function add(topic,q,opts,ans,exp,table){BANK.push({id:BANK.length,topic,q,opts,ans,exp,table:table||null,multi:Array.isArray(ans)})}
 
-  var Q = [
-    [1, "A class of large biological molecules.", "AA"],
-    [2, "A large molecule built by linking many smaller molecules together.", "MM"],
-    [3, "The monomer of a protein.", "B"],
-    [4, "A functional group that contains a carbon atom double bonded to an oxygen atom and single bonded to a hydroxyl (COOH).", "F"],
-    [5, "Molecules that possess the same molecular formulas and structure.", "VV"],
-    [6, "A group or chain of carbon atoms that contain a carbonyl group on a middle carbon.", "Y"],
-    [7, "A long chain of amino acids. It is another term for protein.", "NN"],
-    [8, "The monomer of a nucleic acid.", "FF"],
-    [9, "The disaccharide produced when a glucose molecule and a fructose molecule are combined.", "XX"],
-    [10, "This polysaccharide is composed of beta linkages and is used by plants to make cell wall material.", "G"],
-    [11, "Isomers that are mirror images of each other.", "N"],
-    [12, "Only single bonds exist between the carbons in this chain. They are solids at room temperature.", "SS"],
-    [13, "This nucleic acid contains the base uracil.", "RR"],
-    [14, "This catabolic reaction occurs by adding water (causes molecules or compounds to break apart).", "V"],
-    [15, "At least one double bond exists between the carbons in this chain. They are liquid at room temperature.", "AAA"],
-    [16, "DNA and RNA are examples of this macromolecule.", "EE"],
-    [17, "A functional group that is composed of a hydrogen atom and an oxygen atom (OH).", "W"],
-    [18, "The type of bond that links amino acids together.", "JJ"],
-    [19, "The type of bond that links monosaccharides together.", "T"],
-    [20, "A polysaccharide that makes up the exoskeleton in arthropods, such as beetles and lobsters.", "H"],
-    [21, "A functional group that contains a nitrogen and two hydrogens bonded to a carbon (NH₂).", "C"],
-    [22, "A type of compound molecule containing polar “heads” and nonpolar “tails”.", "LL"],
-    [23, "A type of starch that is found in muscle tissue.", "S"],
-    [24, "A functional group that contains an oxygen double bonded to a carbon (C=O).", "E"],
-    [25, "This category of nitrogenous bases are double ringed structures (Adenine and Guanine).", "PP"],
-    [26, "This category of nitrogenous bases are single ringed structures (Cytosine, Thymine & Uracil).", "QQ"],
-    [27, "This anabolic reaction forms a covalent bond between two monomers by removing water.", "K"],
-    [28, "A structural isomer of glucose.", "P"],
-    [29, "A compound that is made up of carbon and hydrogen. It may also contain oxygen and nitrogen.", "HH"],
-    [30, "These compounds are insoluble in water and are made up of glycerol and fatty acids. This includes fats, oils, and waxes.", "Z"],
-    [31, "The monomer of a carbohydrate.", "DD"],
-    [32, "Molecules that possess the same molecular formulas but differ in their structure.", "WW"],
-    [33, "A functional group that is composed of a carbon atom bonded to three hydrogen atoms (CH₃).", "BB"],
-    [34, "A group or chain of carbon atoms that contain a carbonyl group on an end carbon.", "A"],
-    [35, "A functional group that contains a sulfur atom bonded to a hydrogen atom (SH).", "YY"],
-    [36, "When covalently bonded to amino acids, they will form glycoproteins.", "GG"],
-    [37, "An alpha linked polysaccharide.", "D"],
-    [38, "A molecule that is considered to be the starting material for the biosynthesis of other molecules of its kind.", "I"],
-    [39, "A functional group that is composed of a phosphorus atom bonded to four oxygen atoms (PO₄).", "KK"],
-    [40, "The most common monosaccharide with an empirical formula of C₆H₁₂O₆.", "R"]
-  ];
+/* Carbon & functional groups */
+add("carbon","Carbon is the structural backbone of biological molecules mainly because a carbon atom",
+ ["has four valence electrons and can form up to four covalent bonds with many different atoms","has a permanent positive charge that attracts negatively charged groups","forms ionic bonds with hydrogen and oxygen more readily than any other element","has two valence electrons that allow it to form long chains through hydrogen bonds"],0,
+ "Four valence electrons let carbon share electrons in up to four covalent bonds. That makes chains, branches, and rings possible, with H, O, N, P, S, and other carbons as partners.");
+add("carbon","Propane (C<sub>3</sub>H<sub>8</sub>) and propene (C<sub>3</sub>H<sub>6</sub>) are both hydrocarbons. Which statement correctly compares them?",
+ ["Propene is unsaturated because it contains a carbon–carbon double bond, so its carbons hold fewer hydrogens than the maximum possible.","Propene is saturated because every carbon in it still forms four covalent bonds.","Propane is unsaturated because all of its bonds are single bonds.","Propane and propene must have identical shapes because both contain only carbon and hydrogen."],0,
+ "Saturation refers to how many hydrogens a carbon skeleton holds. A double bond means fewer hydrogens, so propene is unsaturated. A C=C bond also changes shape, because it is rigid and holds atoms in a fixed geometry.");
+add("carbon","Which pair of functional groups is found in every amino acid?",
+ ["Amino and carboxyl","Hydroxyl and sulfhydryl","Phosphate and methyl","Carbonyl and phosphate"],0,
+ "Every amino acid has an amino group (–NH<sub>2</sub>), a carboxyl group (–COOH), a hydrogen, and a variable R group on the central carbon.");
+add("carbon","Which functional group can release a hydrogen ion in solution and therefore gives an organic molecule acidic properties?",
+ ["Carboxyl (–COOH)","Methyl (–CH<sub>3</sub>)","Amino (–NH<sub>2</sub>)","Carbonyl (C=O)"],0,
+ "A carboxyl group donates H<sup>+</sup> and becomes –COO<sup>−</sup>, which is why these molecules are called acids. An amino group tends to accept H<sup>+</sup> (a base). Methyl and carbonyl groups do not behave as acids in cells.");
+add("carbon","Glucose and fructose both have the molecular formula C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, but their atoms are connected differently and they have different properties. These two molecules are best described as",
+ ["structural isomers","isotopes","stereoisomers","a monomer and its polymer"],0,
+ "Isomers share a molecular formula but differ in structure. Glucose and fructose differ in how their atoms are connected (where the carbonyl sits), so they are structural isomers. Stereoisomers share the same connections and differ only in 3-D orientation.");
+add("carbon","A sugar's carbonyl group is bonded to a carbon in the interior of the carbon chain rather than to a carbon at the end. This sugar is best classified as",
+ ["a ketose","an aldose","a disaccharide","a polysaccharide"],0,
+ "A carbonyl on an interior carbon makes a ketone, so the sugar is a ketose. A carbonyl at the end of the chain makes an aldehyde, so the sugar is an aldose.");
+add("carbon","A researcher attaches several hydroxyl groups to a nonpolar organic molecule. What is the most likely effect?",
+ ["Its solubility in water increases because –OH groups are polar and can form hydrogen bonds with water.","Its solubility in water decreases because –OH groups are nonpolar.","Its solubility does not change because only the carbon skeleton determines polarity.","It becomes an ionic compound and stops being organic."],0,
+ "The O–H bond is polar, so hydroxyl groups make a molecule more hydrophilic. Functional groups largely determine a molecule's chemical behavior.");
+add("carbon","Which of the following is a hydrocarbon?",
+ ["CH<sub>4</sub>","CO<sub>2</sub>","C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>","NH<sub>2</sub>CH<sub>2</sub>COOH"],0,
+ "A hydrocarbon contains only carbon and hydrogen. CO<sub>2</sub> has no hydrogen, and the sugar and the amino acid also contain oxygen (and nitrogen).");
+add("carbon","Which TWO statements about carbon skeletons are correct?",
+ ["Carbon skeletons can be unbranched chains, branched chains, or rings.","A carbon–carbon double bond allows the atoms on either side to rotate freely.","Double bonds in a hydrocarbon chain can introduce bends in the molecule.","Carbon skeletons in biological molecules are always unbranched."],[0,2],
+ "Skeletons form chains, branches, and rings. A double bond is rigid and can put a bend in a chain, as in unsaturated fatty acids. Double bonds do not rotate freely.");
 
-  var KEY = "chap45-vocab-answers";
-  var app = document.getElementById("app");
-  var qsEl = document.getElementById("qs");
-  var bankEl = document.getElementById("bank");
-  var scoreEl = document.getElementById("score");
-  var countEl = document.getElementById("count");
-  var btnStudy = document.getElementById("m-study");
-  var btnQuiz = document.getElementById("m-quiz");
-  var btnCheck = document.getElementById("check");
-  var btnClear = document.getElementById("clear");
+/* Polymers */
+add("polymers","When two glucose molecules join to form maltose, which other molecule is produced?",
+ ["Water","Carbon dioxide","Oxygen","ATP"],0,
+ "Joining monomers is a dehydration (condensation) reaction. Atoms equal to one H<sub>2</sub>O are removed from the monomers, and a covalent bond forms.");
+add("polymers","Which description best fits a hydrolysis reaction?",
+ ["A water molecule is added as the covalent bond between two monomers is broken.","A water molecule is removed as a covalent bond forms between two monomers.","Two polymers are joined directly with no change in the number of atoms.","A monomer is rearranged into an isomer without any bonds being broken."],0,
+ "Hydrolysis means breaking with water. The H and OH from water end up on the two new, separate molecules, converting a polymer into smaller units.");
+add("polymers","A ribosome links 50 amino acids into a single polypeptide. How many water molecules are released while this chain is built?",
+ ["49","50","51","25"],0,
+ "Each peptide bond releases one water. Joining 50 monomers in a line takes 49 bonds, so 49 waters are released (n − 1).");
+add("polymers","Which monomer–polymer pair is correctly matched?",
+ ["Glucose – glycogen","Amino acid – DNA","Nucleotide – starch","Glycerol – protein"],0,
+ "Glucose monomers make glycogen, starch, and cellulose. Amino acids make proteins, and nucleotides make nucleic acids.");
+add("polymers","Triglycerides are in the lipid group but are not considered true polymers. Which statement best explains why?",
+ ["They are not built as a long chain of repeating, similar monomers.","They are held together by hydrogen bonds instead of covalent bonds.","They contain no carbon atoms in their backbone.","They form without removing any water."],0,
+ "A triglyceride is one glycerol with three fatty acids attached. That is a small assembled molecule, not a repeating chain. The ester bonds are covalent and form by dehydration synthesis.");
+add("polymers","Which of the following is an anabolic process?",
+ ["Synthesis of a protein from amino acids","Digestion of starch into glucose","Hydrolysis of glycogen during exercise","Breakdown of a triglyceride into glycerol and fatty acids"],0,
+ "Anabolic reactions build larger molecules from smaller ones. The other three options break polymers or larger molecules down (catabolic).");
+add("polymers","Researchers hydrolyze a dipeptide in water made with heavy oxygen (<sup>18</sup>O). Which result would best support the idea that water is a reactant in hydrolysis?",
+ ["<sup>18</sup>O is found in the carboxyl group of one of the released amino acids.","<sup>18</sup>O is found in the R groups of both amino acids.","<sup>18</sup>O is found only in released carbon dioxide.","<sup>18</sup>O is not found in any product."],0,
+ "In hydrolysis the OH from water attaches to the carbonyl carbon (becoming part of a carboxyl group) and the H attaches to the nitrogen. The labeled oxygen therefore appears in a carboxyl group.");
+add("polymers","Glycosidic bonds, peptide bonds, and phosphodiester bonds are alike in that each",
+ ["is a covalent bond formed when water is removed during polymer synthesis","is a hydrogen bond between neighboring monomers","forms only in lipids","is broken when a water molecule is removed"],0,
+ "All three link monomers by dehydration synthesis (carbohydrates, proteins, and nucleic acids). Adding water, not removing it, breaks them.");
+add("polymers","Which TWO events occur during a dehydration synthesis reaction?",
+ ["A covalent bond forms between two monomers.","A water molecule is consumed.","A water molecule is released.","A polymer is split into its monomers."],[0,2],
+ "Dehydration synthesis forms a covalent bond and releases water. Consuming water and splitting polymers describe hydrolysis.");
 
-  var mode = "study";
-  var checked = false;
-  var ans = {};
-  var last = null;
-  try { ans = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { ans = {}; }
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(ans)); } catch (e) {} }
+/* Carbohydrates */
+add("carbs","A monosaccharide has five carbon atoms and the general formula (CH<sub>2</sub>O)<sub>n</sub>. What is its molecular formula?",
+ ["C<sub>5</sub>H<sub>10</sub>O<sub>5</sub>","C<sub>5</sub>H<sub>12</sub>O<sub>5</sub>","C<sub>5</sub>H<sub>5</sub>O<sub>10</sub>","C<sub>10</sub>H<sub>5</sub>O<sub>5</sub>"],0,
+ "(CH<sub>2</sub>O)<sub>n</sub> means a 1 : 2 : 1 ratio of C : H : O. With n = 5 you get C<sub>5</sub>H<sub>10</sub>O<sub>5</sub> (a pentose).");
+add("carbs","Humans digest starch easily but cannot digest cellulose, even though both are polymers of glucose. The best explanation is that",
+ ["human enzymes can hydrolyze α-glycosidic linkages in starch but cannot break the β-glycosidic linkages in cellulose","cellulose is made of fructose rather than glucose","starch has no covalent bonds between its monomers","cellulose is a lipid"],0,
+ "Starch has α linkages and cellulose has β linkages. The glucose units are the same, but the shape of the link differs. Enzymes are specific, and human amylase does not fit β linkages.");
+add("carbs","Which polysaccharide is stored in the liver and muscle cells of animals as a quick-access energy reserve?",
+ ["Glycogen","Cellulose","Chitin","Peptidoglycan"],0,
+ "Glycogen is the highly branched glucose polymer animals use to store energy. Starch plays that role in plants, while cellulose, chitin, and peptidoglycan are structural.");
+add("carbs","A fungal cell wall and the exoskeleton of an insect both contain which polysaccharide?",
+ ["Chitin","Cellulose","Glycogen","Amylose"],0,
+ "Chitin is a modified polysaccharide used for structural support in fungal cell walls and arthropod exoskeletons.");
+add("carbs","Penicillin blocks the synthesis of peptidoglycan. Which cells would be most directly harmed by this drug?",
+ ["Bacterial cells","Human skin cells","Plant leaf cells","Human red blood cells"],0,
+ "Peptidoglycan is a modified polysaccharide in bacterial cell walls. Animal cells have no cell wall, and plant cell walls are made of cellulose, so they are not targeted.");
+add("carbs","A person lacks the enzyme lactase. After drinking milk, which process is most directly affected?",
+ ["Hydrolysis of lactose into glucose and galactose","Dehydration synthesis of glycogen from glucose","Formation of peptide bonds in milk proteins","Hydrolysis of triglycerides into fatty acids"],0,
+ "Lactase catalyzes hydrolysis of the glycosidic bond in the disaccharide lactose. Without it, lactose is not broken down in the small intestine.");
+add("carbs","Glucose and galactose have the same connections between atoms and differ only in the orientation of the –OH group on carbon 4. These molecules are best described as",
+ ["stereoisomers","structural isomers","a monomer and a polymer","a ketose and an aldose"],0,
+ "Same atom connections but a different 3-D arrangement makes them stereoisomers. Both are aldoses.");
+add("carbs","Sucrose forms when glucose and fructose are joined. Which statement correctly describes this?",
+ ["A glycosidic bond forms and a molecule of water is released.","A peptide bond forms and a molecule of water is consumed.","A phosphodiester bond forms and carbon dioxide is released.","A glycosidic bond forms and a molecule of water is consumed."],0,
+ "Two monosaccharides join by dehydration synthesis. The new covalent bond is a glycosidic linkage, and water is released.");
+add("carbs","Which TWO of the following are polymers of glucose?",
+ ["Glycogen","Sucrose","Cellulose","Lactose"],[0,2],
+ "Glycogen and cellulose are long chains of glucose. Sucrose (glucose + fructose) and lactose (glucose + galactose) are disaccharides, not glucose polymers.");
+add("carbs","Cows and termites feed on plant material but cannot make cellulase themselves. They thrive because",
+ ["microbes in their digestive tracts produce enzymes that hydrolyze the β-glycosidic bonds of cellulose","cellulose is converted into starch by stomach acid","their cells contain chitin that digests plant fiber","cellulose is absorbed whole and used as an energy source"],0,
+ "Gut microbes supply the enzymes that can break β-1,4 linkages and release glucose that the host can use.");
 
-  // word bank in three columns, split as on the paper (A-R, S-JJ, KK-AAA)
-  var groups = [BANK.slice(0, 18), BANK.slice(18, 36), BANK.slice(36)];
-  var chips = {};
-  groups.forEach(function (g) {
-    var ul = document.createElement("ul");
-    g.forEach(function (b) {
-      var li = document.createElement("li");
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "chip";
-      btn.innerHTML = "<b>" + b[0] + ".</b><span>" + b[1] + "</span>";
-      btn.addEventListener("mousedown", function (e) { e.preventDefault(); });
-      btn.addEventListener("click", function () { pick(b[0]); });
-      chips[b[0]] = btn;
-      li.appendChild(btn);
-      ul.appendChild(li);
+/* Lipids */
+add("lipids","Which statement correctly describes the structure of a triglyceride?",
+ ["One glycerol molecule joined to three fatty acids","Three glycerol molecules joined to one fatty acid","A chain of many amino acids","Four fused carbon rings with a hydroxyl group"],0,
+ "A triglyceride is glycerol (a three-carbon alcohol) bonded to three fatty acid chains by ester linkages, formed by dehydration synthesis.");
+add("lipids","Butter is solid at room temperature, but olive oil is liquid. Which explanation is best?",
+ ["Butter is rich in saturated fatty acids whose straight chains pack tightly, while oils contain unsaturated fatty acids whose bends prevent tight packing.","Butter is made of protein and olive oil is made of carbohydrate.","Butter contains more double bonds, which pack together more tightly.","Olive oil is polar and dissolves in water, so it cannot form a solid."],0,
+ "Saturated chains are straight and stack closely, which favors a solid. Double bonds in unsaturated chains bend them, so they pack loosely and stay liquid.");
+add("lipids","In water, phospholipids spontaneously assemble into a bilayer. This arrangement forms because",
+ ["hydrophobic tails cluster away from water while polar heads face the water","the polar heads are repelled by water and face each other","fatty acid tails form hydrogen bonds with water on both sides","the glycerol backbone is nonpolar and orients toward the interior"],0,
+ "Hydrophilic phosphate-containing heads face the watery surroundings, and hydrophobic fatty acid tails are sheltered in the interior. No energy input is needed.");
+add("lipids","A student compares 18-carbon fatty acids that differ only in the number of double bonds. Which conclusion is best supported by the data?",
+ ["As the number of C=C double bonds increases, the melting point decreases.","As the number of C=C double bonds increases, the melting point increases.","Melting point is unrelated to the number of double bonds.","All 18-carbon fatty acids are solid at 20 °C."],0,
+ "Each double bond adds a kink that disrupts packing, so less energy is needed to melt the fat. Stearic acid melts well above room temperature while oleic and linoleic acids melt below it.",
+ {cap:"Melting points of 18-carbon fatty acids",head:["Fatty acid","C=C bonds","Melting point (°C)"],rows:[["Stearic","0","69.6"],["Oleic","1","13.4"],["Linoleic","2","−5.0"],["Linolenic","3","−11.0"]]});
+add("lipids","Cholesterol is classified as a lipid because it",
+ ["is largely hydrophobic and has a skeleton of four fused carbon rings","is a polymer of fatty acids joined by ester bonds","contains peptide bonds between its monomers","consists of glycerol joined to three fatty acids"],0,
+ "Steroids share a four-ring carbon skeleton and are mostly nonpolar. Cholesterol is also the starting point for other steroids, including sex hormones.");
+add("lipids","On a per-gram basis, fats release more energy than carbohydrates. This is mainly because fats",
+ ["contain many C–H bonds and relatively few oxygen atoms","contain many more oxygen atoms per carbon","are made of nucleotides","have stronger hydrogen bonds between molecules"],0,
+ "Fats are more reduced, with many energy-rich C–H bonds. Carbohydrates are already partly oxidized (about 4 kcal/g versus about 9 kcal/g for fats).");
+add("lipids","Testosterone and estrogen are both synthesized from which molecule?",
+ ["Cholesterol","Glycerol","Glucose","Phospholipid"],0,
+ "Steroid hormones are built from cholesterol, which provides the four-ring skeleton.");
+add("lipids","Food manufacturers partially hydrogenate liquid vegetable oil to produce a spreadable solid. What chemical change makes the oil more solid?",
+ ["Hydrogen is added across some C=C double bonds, converting them to single bonds and reducing bends.","Water is added to break ester bonds in the triglyceride.","Peptide bonds form between fatty acids.","Phosphate groups are added to the glycerol."],0,
+ "Adding H across double bonds makes chains straighter and more saturated, so they pack more tightly and the melting point rises.");
+add("lipids","Which TWO are functions of lipids in organisms?",
+ ["Long-term energy storage","Forming the structural framework of cell membranes","Storing hereditary information","Serving as the main catalyst for most cell reactions"],[0,1],
+ "Fats store energy and phospholipids form membranes. Nucleic acids store genetic information and most catalysts are proteins (enzymes).");
+add("lipids","Bile acids help digest dietary fat in the small intestine. They are effective because each molecule",
+ ["has both polar and nonpolar regions, which lets it break large fat droplets into smaller ones","is a polymer of glucose that hydrolyzes fat","is a hydrophilic protein that fits the active site of triglycerides","is entirely nonpolar and dissolves fat in water"],0,
+ "Bile acids are steroid-based emulsifiers. Their nonpolar side interacts with fats and their polar side with water, which increases the surface area for lipases to act.");
+
+/* Proteins */
+add("proteins","A peptide bond forms between",
+ ["the carboxyl group of one amino acid and the amino group of another","the R groups of two amino acids","the phosphate groups of two nucleotides","two glucose molecules"],0,
+ "The carboxyl carbon of one amino acid bonds to the amino nitrogen of the next, releasing water (dehydration synthesis).");
+add("proteins","The 20 amino acids used in proteins differ from one another in",
+ ["their R groups (side chains)","their amino groups","their carboxyl groups","the number of peptide bonds they contain"],0,
+ "The amino group, carboxyl group, and hydrogen are the same on all 20. The R group varies and can be nonpolar, polar, acidic, or basic.");
+add("proteins","In sickle-cell disease, one amino acid in the β chain of hemoglobin is changed from glutamic acid (polar, charged) to valine (nonpolar). Which statement best explains how one change can reduce function?",
+ ["The new R group alters interactions with nearby R groups and water, which changes how the protein folds and associates.","Valine adds a second peptide backbone that doubles the length of the chain.","The substitution converts the protein into a nucleic acid.","The substitution removes all hydrogen bonds from the polypeptide backbone."],0,
+ "Primary structure determines folding. A different R group changes which interactions form, which can change shape and cause abnormal hemoglobin to stick together.");
+add("proteins","Alpha helices and beta pleated sheets are examples of secondary structure. These patterns are held together mainly by hydrogen bonds between",
+ ["atoms of the polypeptide backbone","the sulfhydryl groups of cysteine","sugars and phosphates","nonpolar R groups in the protein interior"],0,
+ "Secondary structure comes from hydrogen bonding between backbone amino and carbonyl groups. R groups drive tertiary structure.");
+add("proteins","Which interaction between amino acid side chains forms a covalent bond that can stabilize tertiary structure?",
+ ["A disulfide bridge between two cysteine residues","A hydrogen bond between two backbone atoms","A hydrophobic interaction between nonpolar R groups","An ionic bond between oppositely charged R groups"],0,
+ "Two sulfhydryl groups (–SH) on cysteines can join to form a disulfide bridge (–S–S–), a covalent bond between R groups. The other interactions are weaker, noncovalent forces.");
+add("proteins","Hemoglobin consists of four polypeptide chains that associate to form one functional protein. This level of organization is called",
+ ["quaternary structure","primary structure","secondary structure","tertiary structure"],0,
+ "Quaternary structure is the association of two or more polypeptide subunits. A single folded chain has only tertiary structure.");
+add("proteins","Heating an egg white causes the clear liquid to turn into an opaque solid. Which explanation is best?",
+ ["Heat disrupts weak interactions, so the proteins unfold (denature), while their amino acid sequence stays intact.","Heat breaks every peptide bond and turns proteins into amino acids.","Heat converts the proteins into lipids.","Heat adds new amino acids to the polypeptide chains."],0,
+ "Denaturation unfolds secondary, tertiary, and quaternary structure by disrupting hydrogen bonds and other weak interactions. Peptide bonds and primary structure remain.");
+add("proteins","A transmembrane protein has a region that spans the hydrophobic interior of a phospholipid bilayer. Which type of R group is most likely to be found in that region?",
+ ["Nonpolar","Polar uncharged","Positively charged","Negatively charged"],0,
+ "Nonpolar R groups interact favorably with the hydrophobic fatty acid tails, while polar and charged groups would be found in regions exposed to water.");
+add("proteins","Chaperone proteins in a cell most directly help by",
+ ["assisting newly made polypeptides in folding into their correct three-dimensional shape","adding amino acids to the end of a growing chain","copying DNA before cell division","hydrolyzing starch into glucose"],0,
+ "Chaperones help proteins reach and keep the right shape, which is needed for function.");
+add("proteins","A purified enzyme is treated with urea and a reducing agent and loses all activity. When both chemicals are removed, activity returns. What is the best conclusion?",
+ ["The amino acid sequence contains the information needed to specify the protein's folded shape.","The enzyme's primary structure was destroyed and then rebuilt by the cell.","Folding requires ATP to be added from outside the system.","Peptide bonds were broken by the urea and re-formed on their own."],0,
+ "This is the classic Anfinsen result: the unfolded chain refolds spontaneously into its functional form because the sequence dictates the shape.");
+add("proteins","Which TWO are functions of proteins?",
+ ["Transporting substances, as hemoglobin carries oxygen","Defending the body, as antibodies do","Storing hereditary information","Serving as the primary long-term energy reserve of animals"],[0,1],
+ "Proteins carry out transport, defense, structure, signaling, and catalysis. DNA stores hereditary information and fats serve as long-term energy stores.");
+
+/* Nucleic acids */
+add("nucleic","Each monomer of a nucleic acid contains",
+ ["a five-carbon sugar, a phosphate group, and a nitrogenous base","an amino group, a carboxyl group, and an R group","glycerol and three fatty acids","a carbonyl group and several hydroxyl groups only"],0,
+ "A nucleotide has a pentose sugar (deoxyribose or ribose), a phosphate group, and a nitrogenous base.");
+add("nucleic","Which pair of nitrogenous bases consists of two purines?",
+ ["Adenine and guanine","Cytosine and thymine","Thymine and uracil","Guanine and cytosine"],0,
+ "Purines (A and G) have a double-ring structure. Pyrimidines (C, T, and U) have a single ring.");
+add("nucleic","One strand of DNA has the sequence 5′-ATGC-3′. Which sequence is the complementary strand?",
+ ["3′-TACG-5′","5′-TACG-3′","3′-UACG-5′","5′-ATGC-3′"],0,
+ "A pairs with T and G pairs with C, and the two strands run antiparallel, so the partner reads 3′-TACG-5′. DNA does not contain uracil.");
+add("nucleic","In a double-stranded DNA molecule, 22% of the nitrogenous bases are guanine. What percentage of the bases are adenine?",
+ ["28%","22%","56%","78%"],0,
+ "G pairs with C, so C is also 22%, which makes G + C = 44%. The remaining 56% is A + T, split evenly, so A = 28%.");
+add("nucleic","Which feature is found in RNA but not in DNA?",
+ ["The base uracil","The base thymine","Phosphate groups","Hydrogen-bonded base pairs between two strands in all RNAs"],0,
+ "RNA contains ribose and uracil in place of deoxyribose and thymine. Phosphate groups are found in both, and RNA is usually single-stranded.");
+add("nucleic","The sugar–phosphate backbone of a nucleic acid strand is held together by",
+ ["phosphodiester bonds linking the phosphate of one nucleotide to the sugar of the next","hydrogen bonds between bases","peptide bonds between amino acids","glycosidic bonds between glucose units"],0,
+ "Phosphodiester bonds are covalent and run along the backbone. Hydrogen bonds between bases hold two strands together.");
+add("nucleic","The two strands of DNA are connected by hydrogen bonds between bases, not by covalent bonds. How is this useful to a cell?",
+ ["The strands can be separated for replication and transcription without breaking the covalent backbones.","It makes DNA soluble in lipids.","It prevents DNA from ever being copied.","It allows the bases to form peptide bonds."],0,
+ "Hydrogen bonds are individually weak, so enzymes can unzip the strands while the sugar–phosphate backbones stay intact.");
+add("nucleic","Scientists measured the temperature at which three DNA samples separate into single strands. Which explanation best accounts for the pattern?",
+ ["G–C pairs have three hydrogen bonds and A–T pairs have two, so GC-rich DNA needs more heat to separate.","A–T pairs have more hydrogen bonds, so AT-rich DNA melts at higher temperatures.","GC-rich DNA has fewer phosphodiester bonds.","Melting temperature depends only on the length of the sample."],0,
+ "More hydrogen bonds per base pair means more energy is required to separate the strands.",
+ {cap:"Melting temperature of DNA samples of equal length",head:["Sample","GC content (%)","Melting temp. (°C)"],rows:[["X","30","78"],["Y","50","87"],["Z","70","96"]]});
+add("nucleic","ATP is classified as a nucleotide because it contains",
+ ["adenine, the sugar ribose, and three phosphate groups","adenine, deoxyribose, and one phosphate group","an amino acid joined to three phosphates","glycerol, adenine, and two fatty acids"],0,
+ "ATP is adenosine (adenine + ribose) with three phosphates. It is the main energy carrier of the cell.");
+add("nucleic","NAD<sup>+</sup> and FAD are nucleotide-based molecules that function in cells mainly to",
+ ["accept electrons (and H<sup>+</sup>) and carry them to other reactions","store genetic information","form the plasma membrane","digest proteins"],0,
+ "NAD<sup>+</sup> and FAD are reduced to NADH and FADH<sub>2</sub> when they pick up electrons and carry them to other reactions.");
+add("nucleic","Which TWO statements describe differences between DNA and RNA?",
+ ["DNA contains deoxyribose, while RNA contains ribose.","RNA is usually single-stranded, while DNA is usually double-stranded.","RNA contains thymine, while DNA contains uracil.","DNA is a polymer of amino acids, while RNA is a polymer of nucleotides."],[0,1],
+ "The sugar differs, and DNA is typically a double helix. RNA has uracil in place of thymine, and both are nucleotide polymers.");
+add("nucleic","A mutation changes one nucleotide in the DNA sequence of a gene. Which statement best explains how this could change an organism's phenotype?",
+ ["The change can alter the amino acid sequence of a protein, which can change its shape and function.","The change always converts the DNA into RNA.","The change moves the gene into a lipid membrane.","The change removes all phosphodiester bonds in the chromosome."],0,
+ "DNA base sequence determines the amino acid sequence of proteins. A different sequence can change folding and function, and many traits result from the actions of proteins.");
+
+/* Enzymes */
+add("enzymes","Enzymes increase the rate of a chemical reaction by",
+ ["lowering the activation energy of the reaction","increasing the free-energy difference between reactants and products","supplying ATP to the reactants","being used up as a reactant"],0,
+ "Catalysts lower the energy barrier. They do not change the overall energy difference between reactants and products and are not consumed.");
+add("enzymes","An enzyme catalyzes the breakdown of sucrose but not lactose. Which feature best explains this specificity?",
+ ["The shape and chemistry of its active site fit sucrose but not lactose.","Lactose is too large to be broken down by any enzyme.","The enzyme is consumed when it binds lactose.","The enzyme's primary structure contains no R groups."],0,
+ "The active site has a specific 3-D shape and arrangement of R groups. Only substrates that fit can bind.");
+add("enzymes","After catalyzing a reaction, an enzyme molecule is typically",
+ ["unchanged and able to catalyze more reactions","permanently altered into the product","broken down into amino acids","converted into a new substrate"],0,
+ "Enzymes are not consumed. They are released after the products form and can be reused.");
+add("enzymes","Based on the data, which statement best interprets the effect of temperature on this enzyme?",
+ ["The optimum is near 40 °C, and activity drops at higher temperatures because the enzyme begins to denature.","Rate rises without limit because temperature always lowers activation energy.","The enzyme is most active at 10 °C because it is the least denatured there.","At 60 °C the rate is highest because molecules have the most kinetic energy."],0,
+ "Rates rise with temperature as molecules collide more often, then fall sharply once heat unfolds the enzyme and the active site no longer works.",
+ {cap:"Rate of an enzyme-catalyzed reaction",head:["Temperature (°C)","Rate (µmol product/min)"],rows:[["10","2"],["20","5"],["30","9"],["40","14"],["50","6"],["60","0"]]});
+add("enzymes","Pepsin works best near pH 2 in the stomach. If pepsin enters the small intestine, where the pH is close to 8, its activity will most likely",
+ ["drop sharply because the pH change alters R-group charges and interactions, changing the shape of the active site","rise because a higher pH always speeds up reactions","stay the same because enzymes function at any pH","rise because trypsin passes its active site to pepsin"],0,
+ "Each enzyme has an optimum pH. Moving far from it changes the ionization of R groups, disrupts folding, and can denature the enzyme.");
+add("enzymes","A molecule that resembles the substrate binds to the active site of an enzyme and blocks it. Which statement describes the effect of greatly increasing substrate concentration?",
+ ["The inhibition can be overcome because substrate outcompetes the inhibitor for the active site.","The inhibition becomes permanent because the substrate denatures the enzyme.","The inhibitor changes the enzyme's primary structure.","The rate decreases further because substrate is a second inhibitor."],0,
+ "This is competitive inhibition. The substrate and inhibitor compete for the same site, so more substrate reduces the inhibitor's share of the binding.");
+add("enzymes","An inhibitor binds to an enzyme at a site other than the active site and changes the enzyme's shape so the substrate no longer fits. Compared with a competitive inhibitor, what happens when substrate concentration is increased?",
+ ["Adding more substrate does not fully restore the reaction rate.","Adding more substrate completely removes the inhibition.","The inhibitor is converted into substrate.","Adding substrate raises the activation energy."],0,
+ "Binding at an allosteric site reduces the amount of working enzyme, so extra substrate cannot fully overcome it.");
+add("enzymes","In some metabolic pathways the final product binds to and inhibits the first enzyme in the pathway. This feedback inhibition is beneficial because it",
+ ["prevents the cell from wasting resources by overproducing the product","permanently destroys the first enzyme","increases the activation energy for all reactions in the cell","converts the product back into the original substrate only"],0,
+ "When the product accumulates, it shuts down its own production. When it is used up, the enzyme becomes active again.");
+add("enzymes","Many coenzymes are derived from vitamins. Which statement about coenzymes is correct?",
+ ["They are nonprotein organic molecules that assist enzymes during catalysis.","They are amino acids that make up the active site.","They are enzymes that digest other enzymes.","They are inorganic ions that permanently bind the substrate."],0,
+ "Cofactors help enzymes work. Coenzymes are organic cofactors (for example NAD<sup>+</sup>), while metal ions such as Mg<sup>2+</sup> are inorganic cofactors.");
+add("enzymes","A student studies the effect of pH on catalase in liver, using hydrogen peroxide as the substrate. Which setup is the best negative control?",
+ ["A tube with hydrogen peroxide and buffer plus boiled liver","A tube with liver and buffer but no hydrogen peroxide, at the optimum pH","A tube using three times as much liver at pH 7","A tube with hydrogen peroxide only, with the temperature raised to 80 °C"],0,
+ "A control shows what happens without active enzyme. Boiled liver contains denatured catalase, so any bubbling would indicate the reaction occurs without enzymes. Only one variable differs.");
+add("enzymes","Which TWO statements about enzyme-catalyzed reactions are correct?",
+ ["Increasing substrate concentration can increase the rate until the enzymes are saturated.","Adding more enzyme changes the free-energy difference between reactants and products.","A temperature above the optimum can reduce the rate by denaturing the enzyme.","Enzymes are consumed as the reaction proceeds."],[0,2],
+ "Rate rises with substrate until all active sites are occupied. Excess heat unfolds the protein. Enzymes do not change the free-energy difference and are not consumed.");
+add("enzymes","When a substrate binds to an enzyme's active site, the enzyme often changes shape slightly to grip the substrate more tightly. This model of enzyme action is called",
+ ["induced fit","feedback inhibition","denaturation","competitive inhibition"],0,
+ "In the induced-fit model the active site adjusts around the substrate, which helps bring reactants into position.");
+
+/* ---- Question set 2 ---- */
+/* Carbon & functional groups */
+add("carbon","In ethene (C<sub>2</sub>H<sub>4</sub>), which statement correctly describes the bonding?",
+ ["The two carbon atoms share two pairs of electrons in a double bond, and each carbon is also bonded to two hydrogens.","The two carbon atoms share one pair of electrons, and each carbon is bonded to three hydrogens.","Each carbon forms only three covalent bonds because one valence electron stays unshared.","The two carbon atoms are held together by an ionic bond."],0,
+ "Each carbon still forms four covalent bonds: two to the other carbon (a double bond) and one to each of two hydrogens. Carbon in organic molecules shares electrons rather than forming ionic bonds.");
+add("carbon","A molecule has a carbonyl group at the end of its carbon chain, and the carbonyl carbon is also bonded to a hydrogen. This arrangement is characteristic of",
+ ["an aldehyde","a ketone","a carboxylic acid","an alcohol"],0,
+ "A carbonyl group at the end of a chain, bonded to a hydrogen, is an aldehyde. If the carbonyl sits inside the chain it is a ketone, and a carboxylic acid has an –OH on the carbonyl carbon.");
+add("carbon","Butane and isobutane both have the molecular formula C<sub>4</sub>H<sub>10</sub>. Butane is an unbranched chain and isobutane is a branched chain. These two molecules are",
+ ["structural isomers","stereoisomers","isotopes","the same molecule drawn two ways"],0,
+ "Same molecular formula with different connections between atoms makes structural isomers. Branching changes properties such as boiling point.");
+add("carbon","Phosphate groups (–PO<sub>4</sub>) are a key functional group in",
+ ["nucleic acids, ATP, and phospholipids","only hydrocarbons","the R groups of nonpolar amino acids","cellulose and starch"],0,
+ "Phosphate groups form the backbone of nucleic acids, make up the energy-carrying tail of ATP, and form the polar head of phospholipids.");
+add("carbon","Which TWO statements about the hydroxyl group (–OH) are correct?",
+ ["It is polar and can form hydrogen bonds with water.","It consists of an oxygen atom bonded to a hydrogen atom.","It is nonpolar and hydrophobic.","It consists of a carbon atom double-bonded to an oxygen atom."],[0,1],
+ "A hydroxyl group is an O–H unit, and the polar O–H bond lets it hydrogen-bond with water. A C=O unit is a carbonyl group.");
+add("carbon","In a skeletal drawing of an organic molecule, a zigzag line has no atom labels. What does each bend and each end of the line represent?",
+ ["A carbon atom, with enough hydrogens assumed to give it four bonds","An oxygen atom","A double bond","A water molecule"],0,
+ "In skeletal structures an unlabeled vertex or line end is a carbon atom, and the hydrogens are not drawn but are understood to complete four bonds per carbon.");
+add("carbon","Octane (C<sub>8</sub>H<sub>18</sub>), a component of gasoline, does not dissolve in water. Which feature best explains this?",
+ ["Its C–H bonds are nonpolar, so it cannot form hydrogen bonds with polar water molecules.","It contains many ionic bonds that water cannot break.","It contains many hydroxyl groups that repel water.","It has too many double bonds to fit between water molecules."],0,
+ "Hydrocarbons have nonpolar C–H bonds and no polar groups to interact with water, so they are hydrophobic. Octane has no double bonds or hydroxyl groups.");
+
+/* Polymers */
+add("polymers","During digestion, proteins are broken into amino acids. Which statement best describes the chemistry?",
+ ["Enzymes catalyze hydrolysis, adding a water molecule across each peptide bond.","Enzymes catalyze dehydration synthesis, removing water from each peptide bond.","Peptide bonds break spontaneously and release water.","Amino acids are rearranged into nucleotides."],0,
+ "Breaking a polymer into monomers is hydrolysis: water is added and the covalent bond between monomers is broken.");
+add("polymers","A linear, unbranched polymer contains 100 monomers. How many water molecules are consumed when it is completely hydrolyzed into individual monomers?",
+ ["99","100","101","50"],0,
+ "Building the chain released 99 waters (n − 1), one per bond. Breaking all 99 bonds consumes 99 waters.");
+add("polymers","Why do cells use enzymes for both dehydration synthesis and hydrolysis reactions?",
+ ["Enzymes lower the activation energy so the reactions proceed fast enough at cellular temperatures.","Enzymes supply the water molecules that these reactions need.","Enzymes change which monomers a cell can use.","Without enzymes these reactions can never occur."],0,
+ "Enzymes speed up reactions by lowering activation energy. Many of these reactions would be far too slow at body temperature without them.");
+add("polymers","A reaction mixture is sampled over time. Which process is occurring, and what change in the mixture would also be expected?",
+ ["Dehydration synthesis is occurring, and the amount of water in the mixture increases.","Hydrolysis is occurring, and the amount of water in the mixture increases.","Hydrolysis is occurring, and the amount of water in the mixture decreases.","Dehydration synthesis is occurring, and the amount of water in the mixture decreases."],0,
+ "Free monomers decrease while polymer increases, so monomers are being joined. Each bond formed releases a water molecule, so water increases. The total monomer units stay constant at 500 µM.",
+ {cap:"Reaction mixture over time",head:["Time (min)","Free monomers (µM)","Monomers in polymer (µM)"],rows:[["0","500","0"],["10","380","120"],["20","260","240"],["30","140","360"]]});
+add("polymers","Which TWO of the following are catabolic reactions?",
+ ["Hydrolysis of starch into maltose","Hydrolysis of a triglyceride into glycerol and fatty acids","Formation of a peptide bond between two amino acids","Synthesis of a DNA strand from nucleotides"],[0,1],
+ "Catabolic reactions break larger molecules into smaller ones. Peptide bond formation and DNA synthesis build polymers (anabolic).");
+add("polymers","Cells build thousands of different proteins from only 20 kinds of amino acids mainly because",
+ ["the order of the amino acids in a polypeptide can vary in countless ways","each protein uses a set of amino acids found in no other protein","the peptide bond is chemically different in every protein","R groups are removed from amino acids before they are linked"],0,
+ "Sequence matters. A polypeptide of n amino acids has 20<sup>n</sup> possible sequences, so a small set of monomers can make a huge variety of polymers.");
+add("polymers","A disaccharide made of two glucose units (maltose) is completely hydrolyzed. Which statement is correct?",
+ ["Two glucose molecules are produced and one water molecule is consumed.","One glucose molecule is produced and one water molecule is released.","Two glucose molecules are produced and one water molecule is released.","A polysaccharide is produced and one water molecule is consumed."],0,
+ "Hydrolysis uses one water to break the single glycosidic bond, giving two monosaccharides.");
+
+/* Carbohydrates */
+add("carbs","Glucose can supply energy to cells faster than starch can. The best explanation is that",
+ ["glucose can be used directly, while starch must first be hydrolyzed into glucose","glucose contains more carbon atoms than starch","starch has no C–H bonds","glucose is a lipid and stores more energy per gram"],0,
+ "Monosaccharides need no digestion, while polysaccharides must be hydrolyzed first. That extra step is why starch supplies glucose more gradually.");
+add("carbs","Which statement correctly compares plant and bacterial cell walls?",
+ ["Plant cell walls are made mainly of cellulose, while bacterial cell walls contain peptidoglycan.","Plant cell walls are made of peptidoglycan, while bacterial cell walls are made of cellulose.","Both are made mainly of chitin.","Both are made mainly of phospholipids."],0,
+ "Cellulose is a polysaccharide of β-glucose in plants. Peptidoglycan is a modified polysaccharide found in bacterial walls. Chitin is used by fungi and arthropods.");
+add("carbs","A student mixes substrates and enzymes and tests each tube with Benedict's reagent after 30 minutes. Which conclusion is best supported by the results?",
+ ["Each enzyme acts only on its own substrate: amylase on starch and cellulase on cellulose.","Cellulose cannot be broken down by any enzyme.","Starch is broken down into glucose without any enzyme.","Benedict's reagent detects starch."],0,
+ "Glucose appears only when enzyme and substrate match (tubes 1 and 3). Cellulose with amylase and starch with no enzyme give no glucose, showing enzyme specificity.",
+ {cap:"Benedict's reagent turns from blue to orange or brick red when glucose is present",head:["Tube","Substrate","Enzyme","Result"],rows:[["1","Starch","Amylase","Brick red"],["2","Cellulose","Amylase","Blue"],["3","Cellulose","Cellulase","Orange"],["4","Starch","None","Blue"]]});
+add("carbs","Lactose, the sugar in milk, is a disaccharide composed of",
+ ["glucose and galactose","glucose and fructose","two glucose molecules","galactose and fructose"],0,
+ "Lactose = glucose + galactose. Sucrose = glucose + fructose. Maltose = glucose + glucose.");
+add("carbs","Which TWO polysaccharides have mainly structural roles?",
+ ["Cellulose","Glycogen","Chitin","Starch"],[0,2],
+ "Cellulose supports plant cell walls and chitin supports fungal walls and arthropod exoskeletons. Glycogen and starch store glucose.");
+add("carbs","Glycogen is highly branched. How does branching help the body mobilize energy?",
+ ["Many chain ends are available, so enzymes can release glucose from many points at once.","Branching makes glycogen insoluble in all conditions.","Branching converts glucose into fructose.","Branching removes the need for enzymes."],0,
+ "Enzymes cut glucose units from the ends of the chain. More ends mean faster release when energy is needed.");
+add("carbs","Which feature of cellulose contributes most to the strength of plant cell walls?",
+ ["Parallel cellulose chains form hydrogen bonds with one another and bundle into microfibrils.","Cellulose chains are heavily branched like glycogen.","Cellulose chains are cross-linked by peptide bonds.","Cellulose contains α-glycosidic linkages that coil the chain."],0,
+ "Cellulose has β linkages, so chains are straight and can line up side by side. Many hydrogen bonds between chains make strong microfibrils.");
+
+/* Lipids */
+add("lipids","A phospholipid is described as amphipathic. This means that",
+ ["it has a hydrophilic phosphate-containing head and hydrophobic fatty acid tails","it is made only of carbon and hydrogen","it is soluble in water throughout the molecule","it contains three fatty acids and no phosphate"],0,
+ "Amphipathic molecules have both polar and nonpolar regions, which is what allows phospholipids to form bilayers.");
+add("lipids","The waxy coating on many plant leaves helps reduce water loss. This function is best explained by waxes being",
+ ["hydrophobic lipids that repel water","hydrophilic polysaccharides that attract water","proteins that form water channels","nucleic acids that store water"],0,
+ "Waxes are long-chain lipids that are nonpolar and water-repelling, so they form a waterproof barrier.");
+add("lipids","Which TWO statements about unsaturated fatty acids are correct?",
+ ["They contain at least one carbon–carbon double bond.","Cis double bonds put bends in the hydrocarbon chain that prevent tight packing.","They contain the maximum possible number of hydrogens.","They are always solid at room temperature."],[0,1],
+ "Double bonds mean fewer hydrogens (unsaturated) and cause kinks that reduce packing. That is why unsaturated fats are usually liquid oils.");
+add("lipids","Based on the data, which statement is best supported?",
+ ["Fats with a higher percentage of saturated fatty acids are more likely to be solid at 20 °C.","Fats with a higher percentage of saturated fatty acids are more likely to be liquid at 20 °C.","The physical state of a fat is unrelated to its fatty acid composition.","All plant fats are liquid at 20 °C."],0,
+ "Saturated chains are straight and pack tightly, so fats rich in them tend to be solid. Coconut oil is plant-derived yet solid here, so plant origin does not decide the state.",
+ {cap:"Composition of four fats",head:["Fat","Saturated fatty acids (%)","State at 20 °C"],rows:[["Coconut oil","87","Solid"],["Butter","63","Solid"],["Olive oil","14","Liquid"],["Canola oil","7","Liquid"]]});
+add("lipids","The enzyme lipase hydrolyzes a triglyceride. Which statement describes the reaction?",
+ ["One glycerol and three fatty acids are produced, and three water molecules are consumed.","One glycerol and three fatty acids are produced, and three water molecules are released.","Three glycerol molecules and one fatty acid are produced.","Three amino acids and one glycerol are produced."],0,
+ "A triglyceride has three ester bonds. Hydrolyzing each uses one water, releasing glycerol and three fatty acids.");
+add("lipids","Steroid hormones such as testosterone can pass directly through the plasma membrane of a cell. Which explanation is best?",
+ ["They are nonpolar lipids that can pass through the hydrophobic interior of the phospholipid bilayer.","They are large polar molecules that use water channels.","They are proteins that form pores in the membrane.","They are charged ions that dissolve in the bilayer."],0,
+ "Steroids are mostly hydrophobic, so they cross the nonpolar core of the bilayer without a transport protein.");
+add("lipids","Animals store most of their long-term energy as fat rather than as glycogen. Which statement best explains this?",
+ ["Fat stores more energy per gram and is hydrophobic, so it does not hold water, which makes storage more compact.","Fat has fewer C–H bonds than glycogen.","Fat is more soluble in water than glycogen.","Glycogen cannot be hydrolyzed."],0,
+ "Fats have more energy-rich C–H bonds (about 9 kcal/g compared with about 4 kcal/g for carbohydrates) and they are stored without water, so they are an efficient long-term fuel.");
+
+/* Proteins */
+add("proteins","How many different tetrapeptides (chains of four amino acids) are possible if each position can hold any of the 20 amino acids?",
+ ["160,000","80","8,000","1,024"],0,
+ "Each of the 4 positions has 20 choices, so there are 20 × 20 × 20 × 20 = 20<sup>4</sup> = 160,000 sequences.");
+add("proteins","A mutation changes a nonpolar amino acid in the interior of an enzyme to a charged amino acid. What is the most likely consequence?",
+ ["The tertiary structure is disrupted because a charged R group interacts poorly with the nonpolar interior, which can alter the active site.","The primary structure is unchanged.","The enzyme gains a second polypeptide chain.","Every peptide bond in the enzyme is broken."],0,
+ "R-group interactions drive tertiary structure. A charged group buried in a nonpolar interior can change folding and, in turn, the shape of the active site.");
+add("proteins","Which protein–function pairing is correct?",
+ ["Antibody – defense","Hemoglobin – structural support","Amylase – long-term energy storage","Collagen – catalysis"],0,
+ "Antibodies defend the body. Hemoglobin transports oxygen, amylase is an enzyme (catalysis), and collagen provides structural support.");
+add("proteins","Which of the following would remain unchanged after a protein is denatured by heat?",
+ ["The sequence of its amino acids","Its α helices and β pleated sheets","Its hydrophobic interactions","Its overall three-dimensional shape"],0,
+ "Denaturation disrupts the weak interactions that maintain secondary, tertiary, and quaternary structure, but it does not break the peptide bonds, so the primary structure stays the same.");
+add("proteins","In the watery environment of a cell, a typical globular protein folds so that",
+ ["nonpolar R groups cluster in the interior and polar R groups are on the surface","polar R groups cluster in the interior and nonpolar R groups are on the surface","all R groups are on the interior","all R groups are exposed to water"],0,
+ "Hydrophobic R groups avoid water and pack toward the center, while hydrophilic R groups face the aqueous surroundings.");
+add("proteins","A protein consists of one polypeptide chain that folds into a compact shape. What is the highest level of structure this protein has?",
+ ["Tertiary structure","Primary structure","Secondary structure","Quaternary structure"],0,
+ "Every protein has primary, secondary, and tertiary structure. Quaternary structure requires two or more polypeptide subunits.");
+add("proteins","Which interpretation of the data is best supported?",
+ ["Between 60 °C and 75 °C most of the protein molecules lose their native folded structure.","Peptide bonds begin to break at 45 °C.","Temperature has no effect on how this protein folds.","The protein is more folded at 90 °C than at 25 °C."],0,
+ "The fraction of properly folded protein drops sharply between 60 and 75 °C, consistent with heat disrupting the weak interactions that hold the folded shape.",
+ {cap:"Protein remaining in its native (folded) state",head:["Temperature (°C)","Native protein (%)"],rows:[["25","100"],["45","98"],["60","70"],["75","15"],["90","2"]]});
+add("proteins","Which TWO statements about peptide bonds are correct?",
+ ["They are covalent bonds.","They form by dehydration synthesis, releasing a water molecule.","They are ionic bonds between oppositely charged R groups.","They form between the R groups of adjacent amino acids."],[0,1],
+ "A peptide bond is a covalent bond between the carboxyl group of one amino acid and the amino group of the next, formed with loss of water. It links the backbone, not the R groups.");
+
+/* Nucleic acids */
+add("nucleic","Which statement describes the orientation of the two strands in a DNA double helix?",
+ ["They are antiparallel: one runs 5′ to 3′ while the other runs 3′ to 5′.","They are parallel: both run 5′ to 3′.","They are perpendicular to one another.","Both strands run 3′ to 5′."],0,
+ "The strands are complementary and antiparallel, which allows the bases to pair across the helix.");
+add("nucleic","An RNA strand is made using the DNA template 3′-TACGTT-5′. Which RNA sequence results?",
+ ["5′-AUGCAA-3′","5′-ATGCAA-3′","3′-AUGCAA-5′","5′-UACGUU-3′"],0,
+ "A pairs with U in RNA, T pairs with A, C with G, and the new strand is antiparallel to the template. That gives 5′-AUGCAA-3′.");
+add("nucleic","Two DNA samples are the same length. Sample 1 is 20% adenine and Sample 2 is 35% adenine. Which sample has the higher melting temperature, and why?",
+ ["Sample 1, because it has more G–C base pairs, which have three hydrogen bonds each","Sample 2, because it has more G–C base pairs","Sample 2, because A–T pairs have three hydrogen bonds","They are the same because they have equal length"],0,
+ "Sample 1 has 20% T, leaving 60% G + C. Sample 2 has 30% G + C. More G–C pairs means more hydrogen bonds to break, so Sample 1 melts at a higher temperature.");
+add("nucleic","Which statement best describes how RNA functions in gene expression?",
+ ["RNA carries and uses information from DNA to direct the synthesis of proteins.","RNA permanently stores all hereditary information in the nucleus.","RNA forms the double-stranded backbone of chromosomes.","RNA catalyzes the synthesis of lipids from carbohydrates."],0,
+ "DNA holds the genetic information, and RNA is made from DNA and used to build proteins.");
+add("nucleic","When the terminal phosphate group of ATP is removed by hydrolysis, which products are formed?",
+ ["ADP and inorganic phosphate","Adenine and ribose","AMP and two sugars","Glucose and phosphate"],0,
+ "ATP + H<sub>2</sub>O → ADP + P<sub>i</sub>. This releases energy that cells use for work.");
+add("nucleic","Which TWO nitrogenous bases are pyrimidines?",
+ ["Cytosine","Adenine","Thymine","Guanine"],[0,2],
+ "Pyrimidines (C, T, U) have a single ring. Adenine and guanine are purines with two fused rings.");
+add("nucleic","DNA replication depends on complementary base pairing because",
+ ["each original strand can serve as a template that specifies the order of nucleotides in the new strand","each strand is converted into RNA before copying","the bases bond to the sugar–phosphate backbone of the new strand","complementary bases form peptide bonds"],0,
+ "Because A always pairs with T and C with G, the sequence of one strand determines the sequence of its partner.");
+
+/* Enzymes */
+add("enzymes","An enzyme in human cells works best at about 37 °C. A student proposes heating the reaction to 60 °C to make it run faster. What is the most likely result?",
+ ["The rate would drop because the enzyme would likely denature.","The rate would increase because enzymes speed up at every higher temperature.","The rate would not change because enzymes are unaffected by temperature.","The enzyme would adapt and lower its optimum temperature to 60 °C."],0,
+ "Higher temperature increases collisions only up to a point. Well above the optimum, the protein unfolds and the active site is lost.");
+add("enzymes","What best explains why the reaction rate levels off in the data?",
+ ["Nearly all enzyme active sites are occupied, so adding more substrate cannot increase the rate.","The enzyme is consumed as substrate concentration rises.","The substrate becomes a competitive inhibitor at high concentration.","Higher substrate concentration raises the activation energy."],0,
+ "At low substrate concentration, extra substrate means more enzyme–substrate complexes. Once the enzyme is saturated, the rate approaches a maximum.",
+ {cap:"Rate of reaction with a fixed amount of enzyme",head:["Substrate (mM)","Rate (µmol/min)"],rows:[["1","10"],["2","18"],["4","30"],["8","40"],["16","44"],["32","45"]]});
+add("enzymes","An allosteric activator binds an enzyme at a site other than the active site and stabilizes the enzyme's active shape. What is the most likely effect?",
+ ["The enzyme's activity increases.","The enzyme is denatured.","The enzyme is consumed in the reaction.","The activation energy of the reaction increases."],0,
+ "Allosteric regulators bind away from the active site and change its shape. An activator favors the active form, so activity increases.");
+add("enzymes","Liver tissue is boiled and then added to hydrogen peroxide, and no bubbles form. Which explanation is best?",
+ ["Boiling denatured catalase, so its active site could no longer bind hydrogen peroxide.","Boiling converted hydrogen peroxide into an inhibitor.","Boiling removed all of the peptide bonds from the liver.","Boiling made catalase a competitive inhibitor of itself."],0,
+ "Heat unfolds the enzyme, so the active-site shape is lost and catalysis stops.");
+add("enzymes","How does an enzyme affect a reversible reaction?",
+ ["It speeds up how quickly equilibrium is reached without changing the position of equilibrium.","It shifts the equilibrium to favor the products.","It changes the free-energy difference between reactants and products.","It is used up as the reaction proceeds."],0,
+ "Enzymes lower activation energy for both directions of a reaction, so equilibrium is reached faster. They do not change the free energy of the reactants or products.");
+add("enzymes","Which TWO changes would most likely decrease the rate of an enzyme-catalyzed reaction?",
+ ["Adding a competitive inhibitor","Lowering the pH far below the enzyme's optimum","Adding more substrate when the enzyme is not saturated","Adding a cofactor the enzyme requires"],[0,1],
+ "A competitive inhibitor blocks active sites, and an extreme pH disrupts the enzyme's shape. More substrate (when unsaturated) or a needed cofactor would increase the rate.");
+add("enzymes","A student tests how temperature affects the activity of an enzyme using four water baths. Which variables should be kept constant?",
+ ["pH, enzyme concentration, substrate concentration, and reaction time","Temperature, pH, and enzyme concentration","Only reaction time","Nothing needs to be kept constant"],0,
+ "Only the independent variable (temperature) should change. Other factors that affect enzyme activity must be controlled so any difference is due to temperature.");
+
+/* Free response */
+const FRQ=[
+ {id:"f1",topic:"proteins",title:"Hemoglobin and sickle-cell disease",
+  intro:"In sickle-cell disease, a single nucleotide change in the gene for the β chain of hemoglobin replaces glutamic acid (a polar, charged amino acid) with valine (a nonpolar amino acid). Hemoglobin is made of four polypeptide subunits.",
+  parts:[
+   {t:"Identify the level of protein structure that is directly changed by this mutation and describe the change.",r:"Primary structure. The amino acid sequence differs by one residue (glutamic acid replaced by valine).",m:"Primary structure is changed because one amino acid in the sequence is substituted."},
+   {t:"Explain how the substitution could alter the three-dimensional shape of the polypeptide.",r:"The R group differs in polarity or charge, so interactions with other R groups and with water change, which affects folding (tertiary structure).",m:"A nonpolar R group replaces a polar charged one, so hydrogen bonding, ionic and hydrophobic interactions differ and the chain folds differently."},
+   {t:"Identify the level of structure that describes the four subunits of hemoglobin and explain how the mutation could affect it.",r:"Quaternary structure. The altered surface can cause hemoglobin molecules to stick to each other in fibers.",m:"The association of four subunits is quaternary structure. A nonpolar patch on the surface can cause hemoglobin molecules to aggregate."},
+   {t:"Predict one effect on red blood cells and justify your prediction.",r:"A reasonable prediction tied to the protein change: for example, red blood cells distort, carry less oxygen, or block capillaries because the hemoglobin aggregates.",m:"Red blood cells can become rigid and sickle-shaped, which reduces oxygen delivery and can block small vessels, because the abnormal hemoglobin forms fibers."}
+  ]},
+ {id:"f2",topic:"enzymes",title:"Catalase and pH",
+  intro:"Catalase is an enzyme that breaks down hydrogen peroxide into water and oxygen. A student places equal pieces of liver (a source of catalase) in hydrogen peroxide solutions buffered at pH 3, 7, and 11 at the same temperature and measures the volume of oxygen released in 2 minutes.",
+  parts:[
+   {t:"Identify the independent variable and the dependent variable.",r:"Independent: pH. Dependent: volume of oxygen gas released (rate of reaction).",m:"The independent variable is pH, and the dependent variable is the volume of oxygen produced."},
+   {t:"Describe an appropriate negative control and explain why it is needed.",r:"A setup with boiled or no liver (no active enzyme) but all other components. It shows whether hydrogen peroxide breaks down without active catalase.",m:"Use hydrogen peroxide and buffer with boiled liver. If little or no oxygen forms, the oxygen produced in the other tubes is due to active catalase."},
+   {t:"Predict the relative results at pH 3, 7, and 11 and explain using enzyme structure.",r:"Highest at or near pH 7 and lower at pH 3 and 11. Extreme pH alters R-group charges, disrupts the shape of the active site, and denatures the enzyme.",m:"Most oxygen at pH 7 and less at pH 3 and 11, since extreme pH changes ionization and interactions of R groups, so the active site no longer fits the substrate."},
+   {t:"Explain why the rate would level off if the concentration of hydrogen peroxide were increased with a fixed amount of liver.",r:"Enzyme molecules become saturated: all active sites are occupied, so adding more substrate does not increase the rate.",m:"With a fixed amount of catalase, all active sites are eventually occupied, so additional substrate cannot be processed any faster."}
+  ]},
+ {id:"f3",topic:"lipids",title:"Membrane lipids in cold water",
+  intro:"The plasma membranes of fish living in very cold water contain a higher proportion of unsaturated fatty acids than the membranes of fish living in warm water.",
+  parts:[
+   {t:"Describe the structure of a phospholipid and identify which portion is hydrophilic.",r:"Glycerol attached to two fatty acid tails and a phosphate-containing head. The phosphate head is hydrophilic (polar).",m:"A phospholipid has a glycerol backbone, two fatty acid chains, and a phosphate group. The head with the phosphate group is polar and hydrophilic."},
+   {t:"Explain why phospholipids form a bilayer in a watery environment.",r:"Hydrophobic tails are shielded from water in the interior and polar heads face water on both sides.",m:"Heads interact with water on both sides, and the nonpolar tails cluster in the middle away from water."},
+   {t:"Explain how unsaturated fatty acids affect how phospholipids pack together.",r:"Double bonds create bends (kinks), preventing tight packing and increasing space between molecules.",m:"Double bonds produce kinks in the tails, so the phospholipids cannot pack closely, which keeps the membrane more fluid."},
+   {t:"Predict what would happen to a cold-water fish's membrane if it contained mostly saturated fatty acids, and justify your prediction.",r:"The membrane would become too rigid or stiff at low temperatures, reducing movement of molecules and function of membrane proteins.",m:"Straight saturated tails pack tightly and the membrane would become rigid in the cold, interfering with membrane transport and the function of membrane proteins."}
+  ]},
+ {id:"f4",topic:"carbs",title:"Starch, glycogen, and cellulose",
+  intro:"Starch, glycogen, and cellulose are all polymers of glucose, but they have different functions in organisms.",
+  parts:[
+   {t:"Identify the type of reaction that joins glucose monomers and name the bond that forms. State what is released.",r:"Dehydration synthesis forming glycosidic bonds; water is released.",m:"Dehydration synthesis joins glucose by glycosidic bonds and releases water."},
+   {t:"Describe the structural difference between starch and cellulose.",r:"Starch has α-glycosidic linkages, cellulose has β-glycosidic linkages. Cellulose chains are straight and form hydrogen-bonded bundles (microfibrils).",m:"Starch is joined by α linkages and cellulose by β linkages, so cellulose chains are straight and bundle by hydrogen bonding."},
+   {t:"Explain why humans can obtain energy from starch but not from cellulose.",r:"Human enzymes (amylase) are specific to α linkages and cannot hydrolyze β linkages.",m:"Enzymes are specific. Human digestive enzymes fit α-glycosidic bonds in starch but not the β linkages in cellulose."},
+   {t:"Relate the structure of glycogen or cellulose to its function.",r:"Glycogen: highly branched with many ends, which allows rapid hydrolysis for energy. Or cellulose: strong fibers for structural support in plant cell walls.",m:"Glycogen is highly branched, which provides many ends for enzymes to cut off glucose quickly. Cellulose forms tough fibers that support plant cell walls."}
+  ]},
+ {id:"f5",topic:"nucleic",title:"DNA structure and mutation",
+  intro:"A segment of the template strand of a gene reads 3′-TACGGCATT-5′.",
+  parts:[
+   {t:"Write the complementary DNA strand and label its 5′ and 3′ ends.",r:"5′-ATGCCGTAA-3′.",m:"The complementary strand is 5′-ATGCCGTAA-3′ (antiparallel)."},
+   {t:"Identify the type of bond that holds the two strands together and the type of bond in each strand's backbone.",r:"Hydrogen bonds between bases; phosphodiester bonds in the sugar–phosphate backbone.",m:"Hydrogen bonds join complementary bases, and phosphodiester bonds link the nucleotides in each strand."},
+   {t:"Describe two structural differences between DNA and RNA.",r:"Any two: ribose vs. deoxyribose; uracil vs. thymine; single-stranded vs. double-stranded.",m:"RNA has ribose instead of deoxyribose, uracil instead of thymine, and is usually single-stranded."},
+   {t:"Explain how a single nucleotide change in a gene could lead to a different phenotype.",r:"Base sequence determines amino acid sequence; a change can alter the protein's shape and function, which can change the trait.",m:"A changed nucleotide can change an amino acid, which can change the protein's folding and function, and so can change the phenotype."}
+  ]}
+];
+</script>
+
+<script>
+/* ---------- APP ---------- */
+const $app=document.getElementById("app");
+const L="ABCD";
+const S={view:"home",quiz:null};
+const BASE=BANK.filter(q=>!q.ai).length;
+let sampleFn=null,aiGone=false,genCtl=null,genBusy=false;
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const cleanHTML=s=>esc(s).replace(/&lt;(\/?)(sub|sup)&gt;/g,"<$1$2>");
+const plain=h=>{const d=document.createElement("div");d.innerHTML=h;return d.textContent};
+const aiOn=()=>!!sampleFn&&!aiGone;
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},
+  del(k){try{localStorage.removeItem(k)}catch(e){}}
+};
+let missed=new Set(store.get("bd-missed",[]));
+let best=store.get("bd-best",{});
+let tally=store.get("bd-tally",{a:0,c:0});
+let resetArmed=false,resetTimer=null;
+
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const topicOf=id=>TOPICS.find(t=>t.id===id);
+const idsOf=t=>BANK.filter(q=>q.topic===t&&!q.ai).map(q=>q.id);
+const ansList=q=>q.multi?q.ans:[q.ans];
+
+function stats(){
+  const acc=tally.a?Math.round(100*tally.c/tally.a)+"%":"–";
+  document.getElementById("stats").innerHTML=`<span>Answered <b>${tally.a}</b></span><span>Accuracy <b>${acc}</b></span><span>To review <b>${missed.size}</b></span>`;
+}
+function save(){store.set("bd-missed",[...missed]);store.set("bd-best",best);store.set("bd-tally",tally)}
+function bestText(key){const b=best[key];return b?`Best ${b.c}/${b.t}`:"Not attempted"}
+
+/* ----- Home ----- */
+function home(){
+  S.view="home";S.quiz=null;stats();
+  $app.innerHTML=`
+  <div class="sec" style="gap:28px">
+    <p class="lead"><strong>${BASE} multiple-choice questions</strong> and <strong>${FRQ.length} free-response prompts</strong> covering carbon chemistry, macromolecules, and enzymes. Pick a topic, take a mixed exam, or drill what you missed.${aiOn()?" Claude can also tutor you on any question and write new ones.":""}</p>
+    <div class="row">
+      <button class="btn primary" data-act="exam">Mixed exam · 20 questions</button>
+      <button class="btn" data-act="missed" ${missed.size?"":"disabled"}>Review missed${missed.size?` (${missed.size})`:""}</button>
+    </div>
+    <section class="sec" aria-labelledby="h-t">
+      <div class="sec-h"><h2 id="h-t">Practice by topic</h2><span>Instant feedback after every question</span></div>
+      <div class="grid">${TOPICS.map(t=>{const n=idsOf(t.id).length;return `
+        <button class="topic" data-act="topic" data-id="${t.id}" style="--tc:var(--c-${t.id})">
+          <span class="motif">${t.motif}</span>
+          <h3>${t.name}</h3>
+          <span class="meta">${n} questions · ${bestText(t.id)}</span>
+        </button>`}).join("")}</div>
+    </section>
+    ${genHTML()}
+    <section class="sec" aria-labelledby="h-f">
+      <div class="sec-h"><h2 id="h-f">Free response</h2><span>Write your answer, then score yourself with the guide</span></div>
+      <div class="frqlist">${FRQ.map(f=>`
+        <button class="frqcard" data-act="frq" data-id="${f.id}" style="--tc:var(--c-${f.topic})">
+          <strong>${f.title}</strong>
+          <span>${f.parts.length} parts · ${f.parts.length} points</span>
+        </button>`).join("")}</div>
+    </section>
+  </div>`;
+}
+
+/* ----- Quiz ----- */
+function start(title,ids,key){
+  S.view="quiz";
+  S.quiz={title,key,i:0,items:shuffle(ids).map(id=>({id,perm:shuffle(BANK[id].opts.map((_,i)=>i)),picked:[],checked:false,correct:false,chat:[],busy:false,live:"",err:"",ctl:null}))};
+  renderQuiz();
+}
+function renderQuiz(){
+  const z=S.quiz,it=z.items[z.i],q=BANK[it.id],t=topicOf(q.topic);
+  const need=q.multi?2:1;
+  const pct=Math.round(100*z.i/z.items.length);
+  const opts=it.perm.map((orig,p)=>{
+    const sel=it.picked.includes(p),isAns=ansList(q).includes(orig);
+    let cls="opt",tag="";
+    if(it.checked){
+      if(isAns){cls+=" good";tag=sel?"Your answer · correct":"Correct answer"}
+      else if(sel){cls+=" bad";tag="Your answer"}
+    }
+    return `<button class="${cls}" data-act="pick" data-p="${p}" aria-pressed="${sel}" ${it.checked?"disabled":""}><span class="ltr">${L[p]}</span><span class="otxt">${q.opts[orig]}${tag?`<span class="tag">${tag}</span>`:""}</span></button>`;
+  }).join("");
+  const tbl=q.table?`<div class="tblwrap"><table><caption>${q.table.cap}</caption><thead><tr>${q.table.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${q.table.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`:"";
+  const last=z.i===z.items.length-1;
+  $app.innerHTML=`
+  <div class="sec" style="gap:18px;--tc:var(--c-${q.topic})">
+    <div class="qhead"><span class="chip">${t.name}${q.ai?'<span class="aibadge">AI-generated</span>':''}</span><span class="count">${z.title} · ${z.i+1} / ${z.items.length}</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${z.items.length}" aria-valuenow="${z.i}"><i style="width:${pct}%"></i></div>
+    <p class="stem">${q.q}</p>
+    ${tbl}
+    ${q.multi?`<p class="instr">Select two answers</p>`:""}
+    <div class="opts" role="group" aria-label="Answer choices">${opts}</div>
+    ${it.checked?`
+      <div class="fb ${it.correct?"good":"bad"}" role="status"><strong>${it.correct?"Correct":"Not quite"}</strong><p>${q.exp}</p></div>
+      <div class="row"><button class="btn primary" id="next" data-act="next">${last?"See results":"Next question"}</button></div>`
+    :`
+      <div class="row"><button class="btn primary" id="check" data-act="check" ${it.picked.length===need?"":"disabled"}>Check answer</button>
+      <span class="kbd">Keys: A–D to choose, Enter to check</span></div>`}
+    <div id="ai"></div>
+    <div><button class="link" data-act="home">Quit to home</button></div>
+  </div>`;
+  renderAI();
+  if(it.checked){const n=document.getElementById("next");if(n)n.focus({preventScroll:false})}
+}
+function pick(p){
+  const z=S.quiz,it=z.items[z.i],q=BANK[it.id];
+  if(it.checked)return;
+  if(q.multi){
+    if(it.picked.includes(p))it.picked=it.picked.filter(x=>x!==p);
+    else{it.picked.push(p);if(it.picked.length>2)it.picked.shift()}
+  }else it.picked=[p];
+  document.querySelectorAll(".opt").forEach(b=>b.setAttribute("aria-pressed",String(it.picked.includes(+b.dataset.p))));
+  const c=document.getElementById("check");if(c)c.disabled=it.picked.length!==(q.multi?2:1);
+}
+function check(){
+  const z=S.quiz,it=z.items[z.i],q=BANK[it.id];
+  if(it.checked)return;
+  const need=q.multi?2:1;
+  if(it.picked.length!==need)return;
+  const sel=it.picked.map(p=>it.perm[p]).sort((a,b)=>a-b);
+  const ans=ansList(q).slice().sort((a,b)=>a-b);
+  it.correct=sel.length===ans.length&&sel.every((v,i)=>v===ans[i]);
+  it.checked=true;
+  if(!q.ai){tally.a++;if(it.correct){tally.c++;missed.delete(q.id)}else missed.add(q.id);save();stats()}
+  renderQuiz();
+}
+function next(){
+  const z=S.quiz;
+  if(z.i<z.items.length-1){z.i++;renderQuiz();window.scrollTo(0,0)}
+  else finish();
+}
+function finish(){
+  const z=S.quiz,n=z.items.length,c=z.items.filter(i=>i.correct).length;
+  if(z.key){const b=best[z.key];if(!b||c/n>b.c/b.t){best[z.key]={c,t:n};save()}}
+  S.view="results";renderResults();window.scrollTo(0,0);
+}
+function renderResults(){
+  const z=S.quiz,n=z.items.length,c=z.items.filter(i=>i.correct).length;
+  const by={};
+  z.items.forEach(i=>{const t=BANK[i.id].topic;(by[t]=by[t]||{c:0,t:0});by[t].t++;if(i.correct)by[t].c++});
+  const rows=TOPICS.filter(t=>by[t.id]).map(t=>{const b=by[t.id];return `<div class="tb" style="--tc:var(--c-${t.id})"><span>${t.name}</span><div class="bar"><i style="width:${100*b.c/b.t}%"></i></div><em>${b.c}/${b.t}</em></div>`}).join("");
+  const wrong=z.items.filter(i=>!i.correct);
+  const wrongHtml=wrong.map(i=>{const q=BANK[i.id];return `<article class="miss"><p class="count">${topicOf(q.topic).name}</p><p class="stem">${q.q}</p><p class="ca">Correct: ${ansList(q).map(o=>q.opts[o]).join(" · ")}</p><p>${q.exp}</p></article>`}).join("");
+  $app.innerHTML=`
+  <div class="sec" style="gap:24px">
+    <div class="sec"><h2>${z.title} results</h2>
+      <div class="score"><b>${c}/${n}</b><span>${Math.round(100*c/n)}% correct</span></div></div>
+    <section class="sec"><h2>By topic</h2>${rows}</section>
+    <div class="row">
+      ${wrong.length?`<button class="btn primary" data-act="retry">Practice the ${wrong.length} I missed</button>`:""}
+      ${z.gen&&aiOn()?`<button class="btn" data-act="gen" data-gen data-label="Generate 5 more" data-topic="${z.gen}">Generate 5 more</button><span class="kbd" id="genStatus" role="status"></span>`:""}
+      <button class="btn" data-act="home">Back to home</button>
+    </div>
+    ${wrong.length?`<section class="sec"><h2>Questions to review</h2>${wrongHtml}</section>`:`<p class="lead">No misses in this set.</p>`}
+  </div>`;
+}
+
+/* ----- Free response ----- */
+function frq(id){
+  const f=FRQ.find(x=>x.id===id);
+  S.view="frq";stats();
+  const parts=f.parts.map((p,i)=>`
+    <div class="part"><p><b>(${L[i].toLowerCase()})</b> ${p.t}<span class="pts">1 pt</span></p>
+    <textarea id="${f.id}-${i}" aria-label="Your answer for part ${L[i].toLowerCase()}" placeholder="Type your answer here"></textarea></div>`).join("");
+  const rub=f.parts.map((p,i)=>`
+    <div class="rub"><input type="checkbox" id="${f.id}-r${i}"><label for="${f.id}-r${i}"><b>(${L[i].toLowerCase()})</b> I earned this point<small>Needs: ${p.r}</small></label></div>`).join("");
+  const model=f.parts.map((p,i)=>`<b>(${L[i].toLowerCase()})</b> ${p.m}`).join("<br>");
+  $app.innerHTML=`
+  <div class="sec" style="gap:18px;--tc:var(--c-${f.topic})" data-frq="${f.id}">
+    <div class="qhead"><span class="chip">${topicOf(f.topic).name}</span><span class="count">Free response · ${f.parts.length} points</span></div>
+    <h2>${f.title}</h2>
+    <p class="stem">${f.intro}</p>
+    ${parts}
+    <div class="row"><button class="btn primary" data-act="guide" id="guideBtn" aria-controls="guide" aria-expanded="false">Show scoring guide</button><button class="btn" data-act="home">Back to home</button></div>
+    <div class="guide" id="guide" hidden>
+      <h2>Scoring guide</h2>
+      ${rub}
+      <div class="selfscore" id="selfscore" aria-live="polite">Self-score: 0 / ${f.parts.length}</div>
+      <p class="model"><b>Sample response</b><br>${model}</p>
+    </div>
+  </div>`;
+}
+
+/* ----- Events ----- */
+function act(a,b){
+  if(genCtl&&["home","topic","exam","missed","frq","retry"].includes(a))genCtl.abort();
+  switch(a){
+    case "home":home();window.scrollTo(0,0);break;
+    case "topic":{const t=topicOf(b.dataset.id);start(t.name,idsOf(t.id),t.id);window.scrollTo(0,0);break}
+    case "exam":start("Mixed exam",shuffle(BANK.filter(q=>!q.ai).map(q=>q.id)).slice(0,20),"exam");window.scrollTo(0,0);break;
+    case "missed":{const ids=[...missed].filter(id=>BANK[id]);if(ids.length){start("Review missed",ids,null);window.scrollTo(0,0)}break}
+    case "retry":{const ids=S.quiz.items.filter(i=>!i.correct).map(i=>i.id);start("Practice missed",ids,null);window.scrollTo(0,0);break}
+    case "gen":generate(b.dataset.topic||(document.getElementById("genTopic")||{}).value||"all");break;
+    case "genstop":if(genCtl)genCtl.abort();break;
+    case "chip":askAI(b.dataset.q);break;
+    case "aistop":{const z=S.quiz;const it=z&&z.items[z.i];if(it&&it.ctl)it.ctl.abort();break}
+    case "pick":pick(+b.dataset.p);break;
+    case "check":check();break;
+    case "next":next();break;
+    case "frq":frq(b.dataset.id);window.scrollTo(0,0);break;
+    case "guide":{const g=document.getElementById("guide");g.hidden=!g.hidden;b.textContent=g.hidden?"Show scoring guide":"Hide scoring guide";b.setAttribute("aria-expanded",String(!g.hidden));if(!g.hidden)g.scrollIntoView({behavior:"smooth",block:"start"});break}
+    case "reset":{
+      const r=document.getElementById("resetBtn");
+      if(!resetArmed){resetArmed=true;r.textContent="Click again to clear all saved progress";clearTimeout(resetTimer);resetTimer=setTimeout(()=>{resetArmed=false;r.textContent="Clear saved progress"},4000)}
+      else{clearTimeout(resetTimer);resetArmed=false;r.textContent="Clear saved progress";missed=new Set();best={};tally={a:0,c:0};["bd-missed","bd-best","bd-tally"].forEach(store.del);home()}
+      break}
+  }
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-act]");if(!b||b.disabled)return;act(b.dataset.act,b)});
+document.addEventListener("change",e=>{
+  const w=e.target.closest("[data-frq]");if(!w||e.target.type!=="checkbox")return;
+  const boxes=w.querySelectorAll(".rub input");
+  document.getElementById("selfscore").textContent=`Self-score: ${[...boxes].filter(x=>x.checked).length} / ${boxes.length}`;
+});
+document.addEventListener("keydown",e=>{
+  if(S.view!=="quiz"||e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.target.closest&&e.target.closest("input,textarea,select"))return;
+  const z=S.quiz,it=z.items[z.i];
+  const k=e.key.toLowerCase(),idx="abcd".indexOf(k),num="1234".indexOf(k);
+  const p=idx>=0?idx:num;
+  if(p>=0&&p<it.perm.length&&!it.checked){pick(p);return}
+  if(e.key==="Enter"&&!(e.target.closest&&e.target.closest("button"))){
+    if(it.checked)next();else check();
+  }
+});
+
+/* ----- AI tutor (Claude via the sample capability) ----- */
+const AI_ERR={
+  rate_limited:"Too many requests, or you have reached your Claude usage limit. Try again in a little while.",
+  session_expired:"Sign in to Claude again to keep using the tutor.",
+  refused:"Claude could not respond to that. Try rephrasing your question.",
+  prompt_too_large:"That conversation got too long. Move on to the next question.",
+  upstream_error:"Could not reach Claude just now. Try again."
+};
+const AI_GONE=["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"];
+
+function aiContext(it){
+  const q=BANK[it.id];
+  const opts=it.perm.map((o,p)=>`${L[p]}. ${plain(q.opts[o])}`).join("\n");
+  const key=ansList(q).map(o=>L[it.perm.indexOf(o)]).sort().join(" and ");
+  const picked=it.picked.map(p=>L[p]).sort().join(" and ")||"nothing";
+  const tbl=q.table?"\nData table ("+q.table.cap+"):\n"+[q.table.head.join(" | "),...q.table.rows.map(r=>r.join(" | "))].join("\n"):"";
+  const state=it.checked
+    ?`The student has checked their answer and it was ${it.correct?"correct":"incorrect"}. Their choice: ${picked}. The correct answer: ${key}. Official explanation: ${plain(q.exp)}`
+    :`The student has NOT answered yet and currently has ${picked} selected. Never state, confirm, or hint at which option letter is correct, and do not reveal the answer outright. Give a hint that points toward the underlying concept and nudges their reasoning.`;
+  return `You are a friendly, precise AP Biology tutor helping a high-school student practice Unit 1 (chemistry of life: carbon, macromolecules, enzymes).
+Question: ${plain(q.q)}${q.multi?" (Select two answers.)":""}${tbl}
+Options:
+${opts}
+${state}
+${q.ai?"This question was written by an AI, so its answer key could be wrong. If the key looks wrong to you, say so plainly.":"The answer key above is authoritative."}
+Rules: Reply in at most 140 words. Plain text only, with no markdown symbols (no asterisks, pound signs, or bullet characters), in short paragraphs; write formulas like C6H12O6. Stay on this question and AP Biology, and steer back politely if asked about something unrelated. Be accurate to the AP Biology course and say so if you are unsure. The student's conversation with you follows.`;
+}
+function paintLive(it){
+  if(S.quiz&&S.quiz.items[S.quiz.i]===it){const el=document.getElementById("live");if(el)el.textContent=it.live}
+}
+function renderAI(){
+  const host=document.getElementById("ai");
+  if(!host||S.view!=="quiz"||!S.quiz)return;
+  if(!aiOn()){host.innerHTML="";return}
+  const it=S.quiz.items[S.quiz.i];
+  const chips=it.checked
+    ?[["Explain it simply","Explain why the correct answer is right, in simple terms."],["Why are the others wrong?","Briefly explain why each of the other options is wrong."],["Memory trick","Give me a memory trick or analogy for this concept."],["Quiz me on it","Ask me one quick follow-up question on this concept, then wait for my reply."]]
+    :[["Give me a hint","Give me a hint without giving away the answer."],["What concept is this?","Which concept is this question testing? Do not give away the answer."]];
+  const bubbles=it.chat.map(m=>`<div class="bub ${m.role==="user"?"me":""}"><small>${m.role==="user"?"You":"Claude"}</small><p>${esc(m.content)}</p></div>`).join("")
+    +(it.busy?`<div class="bub"><small>Claude</small><p id="live">${it.live?esc(it.live):"Thinking…"}</p></div>`:"");
+  host.innerHTML=`<section class="ai" aria-label="Claude tutor">
+    <div class="ai-h"><strong>Ask Claude</strong><span>AI tutor. It can make mistakes, so check against your notes.</span></div>
+    <div class="chips">${chips.map(c=>`<button class="chipbtn" data-act="chip" data-q="${esc(c[1])}" ${it.busy?"disabled":""}>${c[0]}</button>`).join("")}</div>
+    ${bubbles?`<div class="thread">${bubbles}</div>`:""}
+    ${it.err?`<p class="aierr" role="alert">${it.err}</p>`:""}
+    <form class="aiform" id="aiForm" autocomplete="off">
+      <input id="aiInput" type="text" maxlength="400" placeholder="${it.checked?"Ask a follow-up question":"Ask about this concept"}" aria-label="Ask Claude about this question" ${it.busy?"disabled":""}>
+      ${it.busy?`<button type="button" class="btn" data-act="aistop">Stop</button>`:`<button type="submit" class="btn">Send</button>`}
+    </form>
+  </section>`;
+}
+async function askAI(text){
+  text=(text||"").trim();
+  if(!text||!aiOn()||!S.quiz)return;
+  const it=S.quiz.items[S.quiz.i];
+  if(it.busy)return;
+  it.chat.push({role:"user",content:text});
+  it.busy=true;it.live="";it.err="";it.ctl=new AbortController();
+  renderAI();
+  try{
+    const r=await sampleFn([{role:"user",content:aiContext(it)},...it.chat],{
+      cache:false,signal:it.ctl.signal,
+      onText:({text:t})=>{it.live=t;paintLive(it)}
     });
-    bankEl.appendChild(ul);
-  });
-
-  // questions
-  var rows = Q.map(function (q) {
-    var row = document.createElement("div");
-    row.className = "q";
-    var input = document.createElement("input");
-    input.type = "text";
-    input.id = "a" + q[0];
-    input.className = "blank";
-    input.maxLength = 3;
-    input.autocomplete = "off";
-    input.autocapitalize = "characters";
-    input.spellcheck = false;
-    input.setAttribute("enterkeyhint", "next");
-    input.setAttribute("aria-label", "Answer for question " + q[0]);
-    var txt = document.createElement("p");
-    txt.className = "txt";
-    var num = document.createElement("b");
-    num.textContent = q[0] + ".";
-    txt.appendChild(num);
-    txt.appendChild(document.createTextNode(q[1]));
-    var term = document.createElement("p");
-    term.className = "term";
-    term.hidden = true;
-    row.appendChild(input);
-    row.appendChild(txt);
-    row.appendChild(term);
-    qsEl.appendChild(row);
-
-    input.addEventListener("focus", function () { last = input; });
-    input.addEventListener("input", function () {
-      var v = input.value.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3);
-      input.value = v;
-      setAnswer(q[0], v);
-    });
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); focusNext(input); }
-    });
-    return { q: q, row: row, input: input, term: term };
-  });
-
-  function focusNext(input) {
-    var i = rows.findIndex(function (r) { return r.input === input; });
-    if (i > -1 && rows[i + 1]) rows[i + 1].input.focus();
+    it.chat.push({role:"assistant",content:r.text});
+  }catch(e){
+    if(e&&e.text)it.chat.push({role:"assistant",content:e.text});
+    if(!e||e.code!=="cancelled"){
+      if(e&&AI_GONE.includes(e.code))aiGone=true;
+      it.err=AI_ERR[e&&e.code]||"Could not get an answer. Try again.";
+    }
+  }finally{
+    it.busy=false;it.live="";it.ctl=null;
   }
-
-  function setAnswer(n, v) {
-    if (v) ans[n] = v; else delete ans[n];
-    save();
-    if (checked) { checked = false; clearMarks(); }
-    refresh();
+  if(S.quiz&&S.quiz.items[S.quiz.i]===it&&S.view==="quiz"){
+    renderAI();
+    const inp=document.getElementById("aiInput");if(inp&&!aiGone)inp.focus({preventScroll:true});
   }
+}
 
-  function pick(letter) {
-    if (mode !== "quiz") return;
-    var target = last || rows[0].input;
-    var n = parseInt(target.id.slice(1), 10);
-    target.value = letter;
-    setAnswer(n, letter);
-    focusNext(target);
+/* ----- AI-written practice questions ----- */
+function genHTML(){
+  if(!aiOn())return "";
+  return `<section class="gen" aria-labelledby="h-a">
+    <div class="sec-h"><h2 id="h-a">AI practice</h2><span>Claude writes new questions each time</span></div>
+    <p class="lead">Generate five fresh AP-style questions on any topic. Each one comes with the tutor for hints and explanations. Questions written by Claude can contain mistakes.</p>
+    <div class="row">
+      <label for="genTopic" class="kbd">Topic</label>
+      <select id="genTopic"><option value="all">All topics</option>${TOPICS.map(t=>`<option value="${t.id}">${t.name}</option>`).join("")}</select>
+      <button class="btn primary" data-act="gen" data-gen data-label="Generate 5 questions">Generate 5 questions</button>
+    </div>
+    <p class="kbd" id="genStatus" role="status"></p>
+  </section>`;
+}
+function setGen(busy,msg){
+  document.querySelectorAll("[data-gen]").forEach(b=>{b.dataset.act=busy?"genstop":"gen";b.textContent=busy?"Stop":(b.dataset.label||"Generate 5 questions")});
+  const s=document.getElementById("genStatus");if(s)s.textContent=msg||"";
+}
+function toQuestion(x,scope){
+  try{
+    if(!x||typeof x.q!=="string"||typeof x.exp!=="string")return null;
+    if(!Array.isArray(x.opts)||x.opts.length!==4||!x.opts.every(o=>typeof o==="string"&&o.trim()))return null;
+    if(new Set(x.opts.map(o=>o.trim())).size!==4)return null;
+    let ans=x.ans;
+    if(Array.isArray(ans)){
+      ans=[...new Set(ans)].filter(n=>Number.isInteger(n)&&n>=0&&n<4).sort((a,b)=>a-b);
+      if(ans.length!==2)return null;
+    }else if(!(Number.isInteger(ans)&&ans>=0&&ans<4))return null;
+    const topic=scope.some(t=>t.id===x.topic)?x.topic:scope[0].id;
+    return {id:-1,topic,q:cleanHTML(x.q.trim()),opts:x.opts.map(o=>cleanHTML(o.trim())),ans,exp:cleanHTML(x.exp.trim()),table:null,multi:Array.isArray(ans),ai:true};
+  }catch(e){return null}
+}
+async function generate(topic){
+  if(!aiOn()||genBusy)return;
+  const scope=topic==="all"?TOPICS:[topicOf(topic)||TOPICS[0]];
+  genBusy=true;genCtl=new AbortController();
+  setGen(true,"Claude is writing questions. This can take up to a minute.");
+  const list=scope.map(t=>`${t.id} = ${t.name}`).join("; ");
+  const prompt=`You write original multiple-choice questions for a high-school AP Biology student reviewing Unit 1 (chemistry of life).
+Topics: ${list}.
+Write exactly 5 questions${scope.length>1?", spread across different topics":", all on this topic"}. Vary the style: some direct concept checks, some real-world scenarios, at least one that describes an experiment or a small data set in words, and at most one "select two" question (end its stem with "Select TWO.").
+Requirements:
+- Be accurate to the College Board AP Biology course. Before you answer, verify every answer key and make sure exactly one option is correct (exactly two for a select-two question).
+- Each question has exactly 4 options. Wrong options must be plausible misconceptions, not jokes. Vary which option is correct.
+- Test understanding rather than recall of exact wording.
+- Plain text only. For chemical formulas and charges use only <sub> and <sup> tags, like C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>. No other HTML and no markdown.
+Reply with only a JSON array of 5 objects shaped like: {"topic":"enzymes","q":"question text","opts":["option text","option text","option text","option text"],"ans":2,"exp":"One to three sentences on why the key is right."}. For a select-two question use "ans":[0,3].`;
+  try{
+    const raw=await sampleFn.json(prompt,{signal:genCtl.signal,cache:false});
+    const made=(Array.isArray(raw)?raw:[]).map(x=>toQuestion(x,scope)).filter(Boolean).slice(0,5);
+    if(made.length<3){genBusy=false;genCtl=null;setGen(false,"Claude's reply was not usable. Try again.");return}
+    const ids=made.map(m=>{m.id=BANK.length;BANK.push(m);return m.id});
+    genBusy=false;genCtl=null;
+    start("AI practice",ids,null);
+    S.quiz.gen=topic;
+    window.scrollTo(0,0);
+  }catch(e){
+    genBusy=false;genCtl=null;
+    const code=e&&e.code;
+    if(code==="cancelled"){setGen(false,"");return}
+    if(AI_GONE.includes(code)){aiGone=true;if(S.view==="home")home();return}
+    setGen(false,code==="invalid_json"?"Claude's reply was not valid. Try again.":(AI_ERR[code]||"Could not get questions. Try again."));
   }
+}
 
-  function clearMarks() {
-    rows.forEach(function (r) {
-      r.row.classList.remove("ok", "bad");
-      r.term.hidden = (mode !== "study");
-      if (mode === "study") r.term.textContent = "= " + TERM[r.q[2]];
-    });
-    scoreEl.innerHTML = "&mdash;/40";
-  }
+document.addEventListener("submit",e=>{
+  if(e.target.id!=="aiForm")return;
+  e.preventDefault();
+  const i=document.getElementById("aiInput");
+  const v=i.value;i.value="";
+  askAI(v);
+});
 
-  function refresh() {
-    var used = {};
-    var n = 0;
-    Object.keys(ans).forEach(function (k) { used[ans[k]] = true; n++; });
-    Object.keys(chips).forEach(function (l) {
-      chips[l].classList.toggle("used", mode === "quiz" && !!used[l]);
-    });
-    if (mode === "quiz" && !checked) countEl.textContent = n + " of 40 answered";
-  }
-
-  function setMode(m) {
-    mode = m;
-    checked = false;
-    app.setAttribute("data-mode", m);
-    btnStudy.setAttribute("aria-pressed", String(m === "study"));
-    btnQuiz.setAttribute("aria-pressed", String(m === "quiz"));
-    btnCheck.hidden = btnClear.hidden = (m !== "quiz");
-    rows.forEach(function (r) {
-      r.row.classList.remove("ok", "bad");
-      if (m === "study") {
-        r.input.readOnly = true;
-        r.input.tabIndex = -1;
-        r.input.value = r.q[2];
-        r.term.hidden = false;
-        r.term.textContent = "= " + TERM[r.q[2]];
-      } else {
-        r.input.readOnly = false;
-        r.input.tabIndex = 0;
-        r.input.value = ans[r.q[0]] || "";
-        r.term.hidden = true;
-      }
-    });
-    Object.keys(chips).forEach(function (l) { chips[l].disabled = (m !== "quiz"); });
-    scoreEl.innerHTML = "&mdash;/40";
-    countEl.textContent = m === "study" ? "Answers shown. Switch to Quiz to test yourself." : "";
-    refresh();
-  }
-
-  function check() {
-    var right = 0;
-    rows.forEach(function (r) {
-      var given = ans[r.q[0]] || "";
-      var want = r.q[2];
-      var ok = given === want;
-      if (ok) right++;
-      r.row.classList.toggle("ok", ok);
-      r.row.classList.toggle("bad", !ok);
-      r.term.hidden = false;
-      r.term.textContent = ok
-        ? "✓ " + TERM[want]
-        : "✗ Answer: " + want + " – " + TERM[want];
-    });
-    checked = true;
-    scoreEl.textContent = right + "/40";
-    countEl.textContent = right + " of 40 correct. Wrong ones show the answer.";
-  }
-
-  function clearAll() {
-    ans = {};
-    save();
-    checked = false;
-    rows.forEach(function (r) { r.input.value = ""; });
-    clearMarks();
-    rows.forEach(function (r) { r.term.hidden = true; });
-    refresh();
-    rows[0].input.focus();
-  }
-
-  btnStudy.addEventListener("click", function () { setMode("study"); });
-  btnQuiz.addEventListener("click", function () { setMode("quiz"); });
-  btnCheck.addEventListener("click", check);
-  btnClear.addEventListener("click", clearAll);
-
-  setMode("study");
+(async()=>{
+  try{const c=window.claude;if(c&&typeof c.use==="function")sampleFn=await c.use("sample")}catch(e){sampleFn=null}
+  if(aiOn()){if(S.view==="home")home();else if(S.view==="quiz")renderAI()}
 })();
+
+home();
 </script>
 
 </body></html>
